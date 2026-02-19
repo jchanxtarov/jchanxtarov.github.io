@@ -54,7 +54,7 @@
       </button>
       <ul class="nav-menu" :class="{open:menuOpen}">
         <li v-for="key in ['about','publications','talks','experience','education','teaching','awards','media','service','projects']" :key="key">
-          <a :href="'#'+key" @click="closeMenu">{{ t['nav.'+key] }}</a>
+          <a :href="'#'+key" @click.prevent="scrollToSection(key)">{{ t['nav.'+key] }}</a>
         </li>
       </ul>
       <div class="nav-actions">

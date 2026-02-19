@@ -95,6 +95,13 @@ createApp({
 
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.replaceState(null, '', window.location.pathname);
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      closeMenu();
     }
 
     function setFilter(f) {
@@ -190,7 +197,7 @@ createApp({
       publications, greeting,
       t, langLabel, themeIcon,
       filteredPubs, displayedPubs, talks, displayedTalks, news, displayedNews, awards, displayedAwards, media, displayedMedia,
-      toggleLang, toggleTheme, toggleMenu, closeMenu, scrollToTop, setFilter, setSort,
+      toggleLang, toggleTheme, toggleMenu, closeMenu, scrollToTop, scrollToSection, setFilter, setSort,
       formatAuthors, talkTitle, talkDesc, talkType, talkYear, mediaTitle, pubDate, pubTypeLabel,
     };
   }
