@@ -213,17 +213,17 @@ const TRANSLATIONS = {
     "awards.title":"Awards & Honors",
     "awards.items":[
       {year:"Feb 2025",title:"Finalist, Best Employee Award — ZOZO Group",desc:"Top 10 of 1,700+ employees."},
-      {year:"Nov 2024",title:"Most Excellent Award, Technology Division — INTERSECTION 2024 (LINE Yahoo! Group)",desc:"Awarded the top prize in the Technology Division at INTERSECTION 2024 (LINE Yahoo! Group). Selected from 27,000+ employees."},
       {year:"Dec 2024",title:"Best Paper Award — CIE51",desc:"International Conference on Computers and Industrial Engineering."},
+      {year:"Nov 2024",title:"Most Excellent Award, Technology Division — INTERSECTION 2024 (LINE Yahoo! Group)",desc:"Awarded the top prize in the Technology Division at INTERSECTION 2024 (LINE Yahoo! Group). Selected from 27,000+ employees."},
       {year:"Oct 2023",title:"Outstanding Paper Award — APIEMS 2023",desc:"Asia Pacific Industrial Engineering and Management Systems Conference."},
-      {year:"Feb 2023",title:"Most Excellent Award — JUSE Data Analysis Competition",desc:"Awarded the top prize at the 2023 JUSE Data Analysis Competition, JIMA Division."},
       {year:"Jun 2023",title:"Outstanding Paper Award — JSAI Annual Conference",desc:"Awarded for research on fashion image retrieval at the Japanese Society for Artificial Intelligence."},
+      {year:"Feb 2023",title:"Most Excellent Award — JUSE Data Analysis Competition",desc:"Awarded the top prize at the 2023 JUSE Data Analysis Competition, JIMA Division."},
       {year:"Feb 2022",title:"Grand Prix, Best Employee Award — ZOZO Group",desc:"Top 5 of 1,700+ employees. Highest recognition for research impact and leadership."},
-      {year:"Feb 2019",title:"Technical Skills Award — JUSE Data Analysis Competition",desc:"JIMA Division award at the 2019 JUSE Data Analysis Competition."},
       {year:"Mar 2019",title:"Best Student Award — Waseda University, Management Systems Engineering",desc:"Graduated top of class from Master's program with GPA 3.95."},
+      {year:"Feb 2019",title:"Technical Skills Award — JUSE Data Analysis Competition",desc:"JIMA Division award at the 2019 JUSE Data Analysis Competition."},
       {year:"May 2018",title:"Outstanding Student Presentation Award — JIMA Spring Conference",desc:"Japan Industrial Management Association Spring 2018 Student Presentation Competition."},
-      {year:"Feb 2017",title:"Technical Skills Award — JUSE Data Analysis Competition",desc:"JIMA Division award at the 2017 JUSE Data Analysis Competition."},
-      {year:"May 2017",title:"Outstanding Student Presentation Award — JIMA Spring Conference",desc:"Japan Industrial Management Association Spring 2017 Conference."}
+      {year:"May 2017",title:"Outstanding Student Presentation Award — JIMA Spring Conference",desc:"Japan Industrial Management Association Spring 2017 Conference."},
+      {year:"Feb 2017",title:"Technical Skills Award — JUSE Data Analysis Competition",desc:"JIMA Division award at the 2017 JUSE Data Analysis Competition."}
     ],
     // Media
     "media.title":"Media Coverage","media.subtitle":"Research featured in 100+ media outlets. Selected highlights below.",
@@ -323,17 +323,17 @@ const TRANSLATIONS = {
     "awards.title":"受賞歴",
     "awards.items":[
       {year:"2025年2月",title:"最優秀社員賞 ファイナリスト — ZOZOグループ",desc:"1,700名以上の社員の中から上位10名に選出。"},
-      {year:"2024年11月",title:"最優秀賞 テクノロジー部門 — INTERSECTION 2024（LINEヤフーグループ）",desc:"INTERSECTION 2024（LINEヤフーグループ）のテクノロジー部門で最優秀賞を受賞。27,000名以上の社員の中から選出。"},
       {year:"2024年12月",title:"Best Paper Award — CIE51",desc:"国際会議 Computers and Industrial Engineering にて受賞。"},
+      {year:"2024年11月",title:"最優秀賞 テクノロジー部門 — INTERSECTION 2024（LINEヤフーグループ）",desc:"INTERSECTION 2024（LINEヤフーグループ）のテクノロジー部門で最優秀賞を受賞。27,000名以上の社員の中から選出。"},
       {year:"2023年10月",title:"Outstanding Paper Award — APIEMS 2023",desc:"国際会議 Asia Pacific Industrial Engineering and Management Systems にて受賞。"},
-      {year:"2023年2月",title:"最優秀賞 — 日科技連データ解析コンペティション",desc:"2023年度データ解析コンペティション JIMA部会にて最優秀賞を受賞。"},
       {year:"2023年6月",title:"全国大会優秀賞 — 人工知能学会",desc:"ファッション画像検索に関する研究で受賞。"},
+      {year:"2023年2月",title:"最優秀賞 — 日科技連データ解析コンペティション",desc:"2023年度データ解析コンペティション JIMA部会にて最優秀賞を受賞。"},
       {year:"2022年2月",title:"最優秀社員賞 グランプリ — ZOZOグループ",desc:"1,700名以上の中から上位5名に選出。研究成果とリーダーシップが評価されました。"},
-      {year:"2019年2月",title:"技能賞 — 日科技連データ解析コンペティション",desc:"2019年度データ解析コンペティション JIMA部会にて受賞。"},
       {year:"2019年3月",title:"最優秀学生賞（首席卒業）— 早稲田大学大学院 経営システム工学専攻",desc:"GPA 3.95で首席卒業。"},
+      {year:"2019年2月",title:"技能賞 — 日科技連データ解析コンペティション",desc:"2019年度データ解析コンペティション JIMA部会にて受賞。"},
       {year:"2018年5月",title:"優秀賞 — 日本経営工学会 春季学生発表大会",desc:"2018年春季学生発表大会にて受賞。"},
-      {year:"2017年2月",title:"技能賞 — 日科技連データ解析コンペティション",desc:"2017年度データ解析コンペティション JIMA部会にて受賞。"},
-      {year:"2017年5月",title:"優秀学生発表賞 — 日本経営工学会 春季大会",desc:"2017年春季大会にて受賞。"}
+      {year:"2017年5月",title:"優秀学生発表賞 — 日本経営工学会 春季大会",desc:"2017年春季大会にて受賞。"},
+      {year:"2017年2月",title:"技能賞 — 日科技連データ解析コンペティション",desc:"2017年度データ解析コンペティション JIMA部会にて受賞。"}
     ],
     "media.title":"メディア掲載","media.subtitle":"研究成果が100件以上のメディアで取り上げられています。主な掲載先は以下の通りです。",
     "media.more":"その他、主要テックメディア等100件以上に掲載...",

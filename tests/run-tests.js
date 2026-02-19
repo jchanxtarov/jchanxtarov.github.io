@@ -563,6 +563,82 @@ function testImageReferences() {
   }
 }
 
+function testDateSortOrder() {
+  log('\n📅 Testing Date Sort Order (descending)...', 'cyan');
+
+  const MONTH_MAP = {Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12};
+  const JA_MONTH_RE = /(\d{4})年(?:(\d{1,2})月)?/;
+  const EN_MONTH_RE = /^([A-Z][a-z]{2})\s+(\d{4})$/;
+  const YEAR_ONLY_RE = /^(\d{4})$/;
+
+  // Parse date string to {year, month} for comparison. month=0 means year-only.
+  function parseDate(dateStr) {
+    let m;
+    if ((m = dateStr.match(JA_MONTH_RE))) {
+      return { year: parseInt(m[1]), month: m[2] ? parseInt(m[2]) : 0 };
+    }
+    if ((m = dateStr.match(EN_MONTH_RE))) {
+      return { year: parseInt(m[2]), month: MONTH_MAP[m[1]] || 0 };
+    }
+    if ((m = dateStr.match(YEAR_ONLY_RE))) {
+      return { year: parseInt(m[1]), month: 0 };
+    }
+    return null;
+  }
+
+  function toSortValue(d) {
+    return d.year * 100 + d.month;
+  }
+
+  function checkSorted(items, dateField, label) {
+    const errors = [];
+    for (let i = 1; i < items.length; i++) {
+      const prev = parseDate(items[i - 1][dateField]);
+      const curr = parseDate(items[i][dateField]);
+      if (!prev || !curr) {
+        errors.push(`  Unparseable date at index ${!prev ? i - 1 : i}: "${items[!prev ? i - 1 : i][dateField]}"`);
+        continue;
+      }
+      if (toSortValue(prev) < toSortValue(curr)) {
+        errors.push(`  [${i-1}] "${items[i-1][dateField]}" comes before [${i}] "${items[i][dateField]}"`);
+      }
+    }
+    if (assert(errors.length === 0, `${label} should be sorted by date descending`)) {
+      log(`  ✓ ${label} is sorted correctly (${items.length} items)`, 'green');
+    } else {
+      log(`  ✗ ${label} is NOT sorted correctly:`, 'red');
+      errors.forEach(e => log(`    ${e}`, 'red'));
+    }
+  }
+
+  const sandbox = loadDataFile();
+  const en = sandbox.TRANSLATIONS.en;
+  const ja = sandbox.TRANSLATIONS.ja;
+  const talks = sandbox.TALKS;
+
+  // News (EN)
+  if (en['news.items'] && en['news.items'].length > 0) {
+    checkSorted(en['news.items'], 'date', 'EN news.items');
+  }
+  // News (JA)
+  if (ja['news.items'] && ja['news.items'].length > 0) {
+    checkSorted(ja['news.items'], 'date', 'JA news.items');
+  }
+  // Awards (EN)
+  if (en['awards.items'] && en['awards.items'].length > 0) {
+    checkSorted(en['awards.items'], 'year', 'EN awards.items');
+  }
+  // Awards (JA)
+  if (ja['awards.items'] && ja['awards.items'].length > 0) {
+    checkSorted(ja['awards.items'], 'year', 'JA awards.items');
+  }
+  // Talks (EN year field)
+  if (Array.isArray(talks) && talks.length > 0) {
+    checkSorted(talks, 'year', 'TALKS (EN year)');
+    checkSorted(talks, 'yearJa', 'TALKS (JA yearJa)');
+  }
+}
+
 function printSummary() {
   log('\n' + '='.repeat(60), 'blue');
   log('TEST SUMMARY', 'blue');
@@ -607,6 +683,7 @@ function runAllTests() {
     testContactSectionMobile();
     testPublicationSorting();
     testTranslationCompleteness();
+    testDateSortOrder();
   } catch (error) {
     log(`\n❌ Error running tests: ${error.message}`, 'red');
     log(error.stack, 'red');
