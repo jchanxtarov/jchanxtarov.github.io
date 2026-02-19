@@ -1,5 +1,7 @@
 # Ryotaro Shimizu — Personal Academic Website
 
+Live site: **https://jchanxtarov.github.io/taro_web/**
+
 ## Project Structure
 
 ```
@@ -11,6 +13,10 @@ taro_web/
 │   └── data.js         # Publications, translations, talks, media data
 ├── pics/               # Photos (profile, talks, projects)
 ├── docs/               # CV, Resume PDFs
+├── scripts/            # Build & hook scripts
+├── tests/              # Test suite
+├── .github/workflows/  # GitHub Actions CI
+├── .githooks/          # Git hook scripts (pre-push)
 └── README.md           # This file
 ```
 
@@ -19,7 +25,7 @@ taro_web/
 - **Vue.js 3** (CDN, no build step required)
 - **CSS Custom Properties** for theming (light/dark mode)
 - **Semantic Scholar API** for real-time citation counts
-- **ClustrMaps** for visitor tracking map
+- **MapMyVisitors (ClustrMaps)** for visitor tracking map
 - **Font Awesome 6** for icons
 - **Inter** (Google Fonts) for typography
 
@@ -57,69 +63,77 @@ node tests/run-tests.js
 ### Test Coverage
 
 The test suite includes:
+- **File Structure Tests**: Validates required files and directory structure
 - **HTML Structure Tests**: Validates proper HTML structure, meta tags, and sections
 - **CSS Tests**: Checks for CSS variables, dark mode support, and responsive design
-- **Navigation Tests**: Verifies navigation bar, menu items, and language/theme toggles
-- **Hero Section Tests**: Validates hero section content and social links
-- **Section Structure Tests**: Ensures all required sections exist (About, Publications, Talks, etc.)
-- **Logo Tests**: Verifies logo files and styling (including Waseda logo dark mode fix)
-- **Image Tests**: Checks image paths, lazy loading, and alt text
 - **JavaScript Tests**: Validates Vue.js setup and data structures
-- **Data Integrity Tests**: Ensures all publications, talks, and media have required fields
-- **Translation Tests**: Verifies both English and Japanese translations
-- **Accessibility Tests**: Checks for proper semantic HTML and ARIA labels
-- **Responsive Design Tests**: Validates mobile-friendly design
-- **Performance Tests**: Checks for lazy loading and secure external links
+- **Image Reference Tests**: Checks all referenced images exist on disk
+- **Publication Sorting Tests**: Ensures same-venue/same-date publications are grouped correctly
+- **Translation Completeness Tests**: Verifies EN/JA key parity and critical section titles
 
-### Browser Tests
+### Git Hooks (Pre-push)
 
-Open `tests/test.html` in a browser to run interactive tests with visual results.
-
-### Git Hooks
-
-Automated tests run before each push to prevent broken code:
+Tests run automatically before every `git push` via a pre-push hook:
 
 ```bash
-# Install git hooks
+# Install git hooks (also runs automatically via npm postinstall)
 npm run install-hooks
 
 # Or manually:
 bash scripts/install-hooks.sh
 ```
 
-Once installed, tests will automatically run before every `git push`. To bypass (not recommended):
+Once installed, `git push` will first run the test suite. If any test fails, the push is aborted. To bypass (not recommended):
 
 ```bash
 git push --no-verify
 ```
 
-### Continuous Integration
+### Continuous Integration (GitHub Actions)
 
-Tests also run automatically on GitHub Actions for all pushes and pull requests. See `.github/workflows/test.yml` for configuration.
+Tests also run on GitHub Actions for all pushes and pull requests to `main`/`master`/`develop`. See `.github/workflows/test.yml`.
 
-## Deploying to GitHub Pages
+## Deployment
 
-### Method 1: Deploy from root of `main` branch
+This site is deployed on **GitHub Pages** from the `main` branch.
 
-1. Push all files to the `main` branch of your GitHub repository:
+### Initial Setup (already done)
 
 ```bash
+# 1. Install GitHub CLI
+brew install gh
+
+# 2. Authenticate (with workflow scope for GitHub Actions)
+gh auth login --hostname github.com --git-protocol https --web
+gh auth refresh -h github.com -s workflow
+
+# 3. Initialize repo and push
 git init
 git add .
 git commit -m "Initial commit: personal academic website"
 git branch -M main
-git remote add origin https://github.com/jchanxtarov/taro_web.git
-git push -u origin main
+gh repo create jchanxtarov/taro_web --public --source=. --push \
+  --description "Personal academic website for Ryotaro Shimizu"
+
+# 4. Enable GitHub Pages via API
+gh api repos/jchanxtarov/taro_web/pages -X POST \
+  --input - <<< '{"build_type":"legacy","source":{"branch":"main","path":"/"}}'
+
+# 5. Install pre-push test hook
+npm run install-hooks
 ```
 
-2. Go to **Settings > Pages** in your GitHub repository.
-3. Under "Build and deployment":
-   - Source: **Deploy from a branch**
-   - Branch: **main** / **/ (root)**
-4. Click **Save**.
-5. Your site will be live at: `https://jchanxtarov.github.io/taro_web/`
+### Updating the Site
 
-### Method 2: Custom domain (optional)
+```bash
+# Edit files, then:
+git add <changed-files>
+git commit -m "Description of changes"
+git push origin main
+# Tests run automatically before push; site updates within ~1 minute after push
+```
+
+### Custom Domain (optional)
 
 1. Add a `CNAME` file in the root with your custom domain:
    ```
@@ -139,6 +153,7 @@ Edit `js/data.js` — the `PUBLICATIONS` array. Each entry:
   authors: ["Author 1", "Ryotaro Shimizu", "Author 3"],
   venue: "Conference/Journal Name",
   year: 2025,
+  date: "Jul 2025",  // "Mon YYYY" format for month-level sorting
   type: "conference",  // "conference" | "journal" | "workshop" | "domestic"
   citations: 0,        // Updated automatically via Semantic Scholar API
   links: { paper: "https://..." }
@@ -155,15 +170,18 @@ Edit the `TRANSLATIONS` object in `js/data.js`. Both `en` and `ja` keys must be 
 
 ### Profile Photo
 
-Replace or add your profile photo in `pics/` and update the `hero-bg` image path in `index.html` (line ~64).
+Replace or add your profile photo in `pics/` and update the `hero-bg` image path in `index.html`.
 
 ### Google Analytics
 
 Uncomment the GA4 block in `index.html` `<head>` and replace `GA_MEASUREMENT_ID` with your actual Google Analytics Measurement ID.
 
-### ClustrMaps
+### Visitor Tracking (MapMyVisitors)
 
-The current site uses ClustrMaps ID `1bv7x`. To change it, update the `src` attribute of the ClustrMaps script tag in the footer of `index.html`.
+The visitor map widget is embedded in the footer of `index.html`. Statistics are available at:
+https://mapmyvisitors.com/web/1c2n5
+
+To change the widget, update the `src` attribute of the `#mapmyvisitors` script tag in the footer.
 
 ## Features
 
@@ -171,8 +189,10 @@ The current site uses ClustrMaps ID `1bv7x`. To change it, update the `src` attr
 - **Dark/Light** theme toggle (respects system preference)
 - **Real-time citation counts** via Semantic Scholar API
 - **Publication filtering** by type (Conference / Journal / Workshop / Domestic)
-- **Show more/less** publications (top 5 by default)
+- **Publication sorting** by date with month-level granularity
+- **Show more/less** for publications, talks, awards, media, and news
 - **Scroll animations** via Intersection Observer
 - **Responsive** design (mobile, tablet, desktop)
-- **ClustrMaps** visitor tracking map
+- **Visitor tracking map** via MapMyVisitors
 - **SEO** optimized (JSON-LD structured data, Open Graph tags)
+- **Automated testing** via pre-push hook and GitHub Actions CI
