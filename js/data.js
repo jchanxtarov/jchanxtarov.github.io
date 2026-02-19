@@ -244,7 +244,7 @@ const TRANSLATIONS = {
     "collab.research":"Research Collaboration","collab.research.d":"I am actively seeking research collaborators in AI, machine learning, and data mining. Let's do something exciting together.",
     "collab.speaking":"Speaking Invitations","collab.speaking.d":"I am actively accepting speaking invitations for conferences, workshops, seminars, and events. Topics include AI/ML research, fashion tech, and industry-academia collaboration.",
     "collab.event":"Event & Conference Co-organizing","collab.event.d":"I am looking for partners to co-organize academic conferences, workshops, tech meetups, and industry events. Whether it's a new conference, a hackathon, or a cross-industry networking event — let's create something exciting together!",
-    "collab.mentoring":"Student Mentoring","collab.mentoring.d":"I welcome students who want mentoring in AI/ML research, career development, or data science. Whether you're an undergraduate, graduate student, or early-career researcher — feel free to reach out.",
+    "collab.mentoring":"Student Mentoring","collab.mentoring.d":"I welcome students who want mentoring in AI/ML research, career development, and more. Whether you're an undergraduate or graduate student — feel free to reach out.",
     "collab.contact":"Feel free to reach out via email or LinkedIn. I look forward to hearing from you!",
     "collab.email":"Contact Me",
     // Footer
@@ -349,7 +349,7 @@ const TRANSLATIONS = {
     "collab.research":"共同研究","collab.research.d":"AI・機械学習・データマイニング領域での共同研究者を積極的に募集しています。一緒に面白いことをしましょう。",
     "collab.speaking":"講演依頼","collab.speaking.d":"カンファレンス、ワークショップ、セミナー、イベントでの講演依頼を積極的に受け付けています。AI/ML研究、ファッションテック、産学連携などのテーマで講演可能です。",
     "collab.event":"イベント・学会の共催","collab.event.d":"学会やワークショップ、テック勉強会、業界イベントを一緒に企画・運営してくれる方を募集しています。新しいカンファレンスの立ち上げ、ハッカソン、異業種交流イベントなど、一緒に面白いことをやりましょう！",
-    "collab.mentoring":"メンタリング","collab.mentoring.d":"AI・機械学習の研究やキャリア、データサイエンスについてメンタリングを希望する学生を歓迎しています。学部生・大学院生・若手研究者の方、お気軽にご連絡ください。",
+    "collab.mentoring":"メンタリング","collab.mentoring.d":"AI・機械学習の研究やキャリアなどについてメンタリングを希望する学生を歓迎しています。学部生・大学院生の方、お気軽にご連絡ください。",
     "collab.contact":"お気軽にメールまたはLinkedInからご連絡ください。お待ちしております！",
     "collab.email":"お問い合わせ",
     "footer.visitors":"訪問者マップ","footer.update":"最終更新：2026年2月",
