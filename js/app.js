@@ -93,6 +93,10 @@ createApp({
       menuOpen.value = false;
     }
 
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     function setFilter(f) {
       pubFilter.value = f;
       showAllPubs.value = false;
@@ -186,7 +190,7 @@ createApp({
       publications, greeting,
       t, langLabel, themeIcon,
       filteredPubs, displayedPubs, talks, displayedTalks, news, displayedNews, awards, displayedAwards, media, displayedMedia,
-      toggleLang, toggleTheme, toggleMenu, closeMenu, setFilter, setSort,
+      toggleLang, toggleTheme, toggleMenu, closeMenu, scrollToTop, setFilter, setSort,
       formatAuthors, talkTitle, talkDesc, talkType, talkYear, mediaTitle, pubDate, pubTypeLabel,
     };
   }
