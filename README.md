@@ -1,6 +1,6 @@
 # Ryotaro Shimizu — Personal Academic Website
 
-Live site: **https://jchanxtarov.github.io/taro_web/**
+Live site: **https://jchanxtarov.github.io/**
 
 ## Project Structure
 
@@ -112,12 +112,10 @@ git init
 git add .
 git commit -m "Initial commit: personal academic website"
 git branch -M main
-gh repo create jchanxtarov/taro_web --public --source=. --push \
+gh repo create jchanxtarov/jchanxtarov.github.io --public --source=. --push \
   --description "Personal academic website for Ryotaro Shimizu"
 
-# 4. Enable GitHub Pages via API
-gh api repos/jchanxtarov/taro_web/pages -X POST \
-  --input - <<< '{"build_type":"legacy","source":{"branch":"main","path":"/"}}'
+# 4. GitHub Pages is automatically enabled for <username>.github.io repos
 
 # 5. Install pre-push test hook
 npm run install-hooks
