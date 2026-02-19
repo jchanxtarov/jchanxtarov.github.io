@@ -406,6 +406,127 @@ function testTranslationCompleteness() {
   });
 }
 
+function testNewsItemLayout() {
+  log('\n📰 Testing News Item Layout (narrow-screen wrapping)...', 'cyan');
+
+  const cssPath = path.join(__dirname, '..', 'style.css');
+  const css = fs.readFileSync(cssPath, 'utf-8');
+
+  // .news-item should use flexbox with min-width: 0 to allow text truncation
+  const newsItemBlock = css.match(/\.news-item\s*\{[^}]*\}/s);
+  if (assert(newsItemBlock, 'CSS should have .news-item rule')) {
+    log('  ✓ .news-item rule exists', 'green');
+
+    const rule = newsItemBlock[0];
+    if (assert(rule.includes('display: flex') || rule.includes('display:flex'), '.news-item should use display: flex')) {
+      log('  ✓ .news-item uses display: flex', 'green');
+    } else {
+      log('  ✗ .news-item does not use display: flex', 'red');
+    }
+
+    if (assert(rule.includes('min-width: 0') || rule.includes('min-width:0'), '.news-item should have min-width: 0 to prevent overflow')) {
+      log('  ✓ .news-item has min-width: 0', 'green');
+    } else {
+      log('  ✗ .news-item missing min-width: 0 (text may overflow on narrow screens)', 'red');
+    }
+  } else {
+    log('  ✗ .news-item rule not found', 'red');
+  }
+
+  // .news-item > p should have flex: 1 and word-wrap for proper wrapping
+  const newsItemPBlock = css.match(/\.news-item\s*>\s*p\s*\{[^}]*\}/s);
+  if (assert(newsItemPBlock, 'CSS should have .news-item > p rule for text wrapping')) {
+    log('  ✓ .news-item > p rule exists', 'green');
+
+    const pRule = newsItemPBlock[0];
+    if (assert(pRule.includes('flex: 1') || pRule.includes('flex:1'), '.news-item > p should have flex: 1')) {
+      log('  ✓ .news-item > p has flex: 1', 'green');
+    } else {
+      log('  ✗ .news-item > p missing flex: 1', 'red');
+    }
+
+    if (assert(pRule.includes('min-width: 0') || pRule.includes('min-width:0'), '.news-item > p should have min-width: 0')) {
+      log('  ✓ .news-item > p has min-width: 0', 'green');
+    } else {
+      log('  ✗ .news-item > p missing min-width: 0', 'red');
+    }
+
+    const hasWordWrap = pRule.includes('word-wrap: break-word') || pRule.includes('overflow-wrap: break-word');
+    if (assert(hasWordWrap, '.news-item > p should have word-wrap/overflow-wrap: break-word')) {
+      log('  ✓ .news-item > p has word-wrap: break-word', 'green');
+    } else {
+      log('  ✗ .news-item > p missing word-wrap: break-word', 'red');
+    }
+  } else {
+    log('  ✗ .news-item > p rule not found', 'red');
+  }
+
+  // .news-date should have flex-shrink: 0 so date column stays fixed width
+  const newsDateBlock = css.match(/\.news-date\s*\{[^}]*\}/s);
+  if (assert(newsDateBlock, 'CSS should have .news-date rule')) {
+    const dateRule = newsDateBlock[0];
+    if (assert(dateRule.includes('flex-shrink: 0') || dateRule.includes('flex-shrink:0'), '.news-date should have flex-shrink: 0')) {
+      log('  ✓ .news-date has flex-shrink: 0', 'green');
+    } else {
+      log('  ✗ .news-date missing flex-shrink: 0 (date column may shrink on narrow screens)', 'red');
+    }
+  } else {
+    log('  ✗ .news-date rule not found', 'red');
+  }
+}
+
+function testContactSectionMobile() {
+  log('\n📱 Testing Contact Section Mobile Layout...', 'cyan');
+
+  const cssPath = path.join(__dirname, '..', 'style.css');
+  const css = fs.readFileSync(cssPath, 'utf-8');
+
+  // .collab-links should have flex-wrap: wrap
+  const collabLinksBlock = css.match(/\.collab-links\s*\{[^}]*\}/s);
+  if (assert(collabLinksBlock, 'CSS should have .collab-links rule')) {
+    log('  ✓ .collab-links rule exists', 'green');
+
+    const rule = collabLinksBlock[0];
+    if (assert(rule.includes('flex-wrap: wrap') || rule.includes('flex-wrap:wrap'), '.collab-links should have flex-wrap: wrap')) {
+      log('  ✓ .collab-links has flex-wrap: wrap', 'green');
+    } else {
+      log('  ✗ .collab-links missing flex-wrap: wrap (buttons may overflow on mobile)', 'red');
+    }
+  } else {
+    log('  ✗ .collab-links rule not found', 'red');
+  }
+
+  // Mobile media query should include .collab-btn styles
+  const mobileSection = css.match(/@media\s*\(\s*max-width:\s*768px\s*\)\s*\{([\s\S]*?)\n\}/);
+  if (assert(mobileSection, 'CSS should have 768px mobile media query')) {
+    log('  ✓ 768px media query exists', 'green');
+
+    const mobileCSS = mobileSection[1];
+
+    // .collab-links should go column direction on mobile
+    if (assert(mobileCSS.includes('collab-links'), 'Mobile styles should include .collab-links adjustments')) {
+      log('  ✓ Mobile .collab-links styles exist', 'green');
+    } else {
+      log('  ✗ Mobile .collab-links styles missing', 'red');
+    }
+
+    // .collab-btn should have full width on mobile
+    if (assert(mobileCSS.includes('collab-btn'), 'Mobile styles should include .collab-btn adjustments')) {
+      log('  ✓ Mobile .collab-btn styles exist', 'green');
+
+      if (assert(mobileCSS.includes('white-space: normal') || mobileCSS.includes('white-space:normal'), '.collab-btn should allow text wrapping on mobile')) {
+        log('  ✓ .collab-btn allows text wrapping on mobile', 'green');
+      } else {
+        log('  ✗ .collab-btn may truncate text on mobile (missing white-space: normal)', 'red');
+      }
+    } else {
+      log('  ✗ Mobile .collab-btn styles missing', 'red');
+    }
+  } else {
+    log('  ✗ 768px media query not found', 'red');
+  }
+}
+
 function testImageReferences() {
   log('\n🖼️  Testing Image References...', 'cyan');
   
@@ -482,6 +603,8 @@ function runAllTests() {
     testCSSContent();
     testJavaScriptContent();
     testImageReferences();
+    testNewsItemLayout();
+    testContactSectionMobile();
     testPublicationSorting();
     testTranslationCompleteness();
   } catch (error) {

@@ -166,7 +166,7 @@ const TRANSLATIONS = {
       {date:"Aug 2025",text:'Research featured in <a href="https://xtech.nikkei.com/atcl/nxt/mag/rob/18/012600001/00173/?P=3" target="_blank">Nikkei Robotics</a>.',isNew:false},
       {date:"Aug 2023",text:'Press release on <a href="https://www.waseda.jp/top/news/92745" target="_blank">Fashion AI research</a> (Waseda University × ZOZO Research).',isNew:false},
       {date:"Jun 2023",text:'Research featured in <a href="https://hotozero.com/knowledge/fis/" target="_blank">"Hotozero" interview article</a>.',isNew:false},
-      {date:"Dec 2022",text:'Research featured in <a href="https://www.nikkei.com/article/DGKKZO66764470S2A211C2TEB000/" target="_blank">Nikkei (日本経済新聞)</a>.',isNew:false},
+      {date:"Dec 2022",text:'Research featured in <a href="https://www.nikkei.com/article/DGKKZO66764470S2A211C2TEB000/" target="_blank">Nikkei (The Nikkei)</a>.',isNew:false},
       {date:"Dec 2022",text:'Research featured in <a href="https://www.fnn.jp/articles/-/452781" target="_blank">FNN (Fuji News Network)</a>.',isNew:false},
       {date:"Nov 2022",text:'<a href="https://www.waseda.jp/top/news/85840" target="_blank">Press release</a> on Fashion Intelligence System (Waseda University × ZOZO Research).',isNew:false},
       {date:"Mar 2019",text:'Received Best Student Award (Top Graduate) from Waseda University, M.Eng. in Management Systems Engineering.',isNew:false},
