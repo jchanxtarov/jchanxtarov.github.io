@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# Pre-push hook to run tests before pushing
+# This prevents broken code from being pushed to the repository
+
+echo "🧪 Running tests before push..."
+echo "================================"
+
+# Run the test suite
+cd "$(git rev-parse --show-toplevel)/tests"
+node run-tests.js
+
+# Capture exit code
+TEST_EXIT_CODE=$?
+
+if [ $TEST_EXIT_CODE -ne 0 ]; then
+  echo ""
+  echo "❌ Tests failed! Push aborted."
+  echo "Please fix the failing tests before pushing."
+  echo "To bypass this hook (not recommended), use: git push --no-verify"
+  exit 1
+fi
+
+echo ""
+echo "✅ All tests passed! Proceeding with push..."
+exit 0

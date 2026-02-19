@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Suite - Ryotaro Shimizu Website</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 { color: #333; }
+    .test-section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .test-case {
+      padding: 10px;
+      margin: 10px 0;
+      border-left: 4px solid #ddd;
+      background: #fafafa;
+    }
+    .test-case.pass {
+      border-left-color: #4caf50;
+      background: #f1f8f4;
+    }
+    .test-case.fail {
+      border-left-color: #f44336;
+      background: #fef1f0;
+    }
+    .test-case h3 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+    }
+    .test-case p {
+      margin: 4px 0;
+      font-size: 14px;
+      color: #666;
+    }
+    .test-stats {
+      display: flex;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .stat {
+      padding: 15px;
+      border-radius: 6px;
+      text-align: center;
+      flex: 1;
+    }
+    .stat.passed {
+      background: #4caf50;
+      color: white;
+    }
+    .stat.failed {
+      background: #f44336;
+      color: white;
+    }
+    .stat.total {
+      background: #2196f3;
+      color: white;
+    }
+    .stat h2 {
+      margin: 0;
+      font-size: 32px;
+    }
+    .stat p {
+      margin: 5px 0 0 0;
+      font-size: 14px;
+    }
+    .error-details {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 12px;
+      color: #856404;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧪 Ryotaro Shimizu Website - Test Suite</h1>
+  <div id="stats" class="test-stats"></div>
+  <div id="results"></div>
+
+  <script>
+    const tests = [];
+    let passed = 0;
+    let failed = 0;
+
+    function test(name, testFn) {
+      try {
+        testFn();
+        tests.push({ name, status: 'pass', error: null });
+        passed++;
+      } catch (e) {
+        tests.push({ name, status: 'fail', error: e.message });
+        failed++;
+      }
+    }
+
+    function assert(condition, message) {
+      if (!condition) {
+        throw new Error(message || 'Assertion failed');
+      }
+    }
+
+    function assertEquals(actual, expected, message) {
+      if (actual !== expected) {
+        throw new Error(message || `Expected ${expected}, but got ${actual}`);
+      }
+    }
+
+    function assertExists(element, message) {
+      if (!element) {
+        throw new Error(message || 'Element does not exist');
+      }
+    }
+
+    function assertNotNull(value, message) {
+      if (value === null || value === undefined) {
+        throw new Error(message || 'Value is null or undefined');
+      }
+    }
+
+    function assertGreaterThan(actual, expected, message) {
+      if (actual <= expected) {
+        throw new Error(message || `Expected ${actual} to be greater than ${expected}`);
+      }
+    }
+
+    // Run tests after DOM is loaded
+    window.addEventListener('DOMContentLoaded', () => {
+      runTests();
+      displayResults();
+    });
+
+    function runTests() {
+      // ========== HTML Structure Tests ==========
+      test('HTML file exists and loads', () => {
+        assert(document.documentElement, 'HTML document should exist');
+        assertEquals(document.documentElement.tagName, 'HTML', 'Root element should be HTML');
+      });
+
+      test('Page has proper DOCTYPE', () => {
+        const doctype = document.doctype;
+        assertNotNull(doctype, 'DOCTYPE should exist');
+        assertEquals(doctype.name, 'html', 'DOCTYPE should be html');
+      });
+
+      test('Page has meta viewport tag', () => {
+        const viewport = document.querySelector('meta[name="viewport"]');
+        assertExists(viewport, 'Viewport meta tag should exist');
+        assert(viewport.content.includes('width=device-width'), 'Viewport should include width=device-width');
+      });
+
+      test('Page has proper title', () => {
+        const title = document.querySelector('title');
+        assertExists(title, 'Title tag should exist');
+        assert(title.textContent.includes('Ryotaro Shimizu'), 'Title should include name');
+      });
+
+      test('Page has meta description', () => {
+        const desc = document.querySelector('meta[name="description"]');
+        assertExists(desc, 'Meta description should exist');
+        assertGreaterThan(desc.content.length, 50, 'Meta description should be meaningful');
+      });
+
+      test('Page has Open Graph tags', () => {
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        assertExists(ogTitle, 'OG title should exist');
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        assertExists(ogDesc, 'OG description should exist');
+      });
+
+      // ========== CSS Tests ==========
+      test('CSS file loads correctly', () => {
+        const styleSheets = document.styleSheets;
+        assertGreaterThan(styleSheets.length, 0, 'At least one stylesheet should be loaded');
+      });
+
+      test('Font Awesome icons are loaded', () => {
+        const faLink = document.querySelector('link[href*="font-awesome"]');
+        assertExists(faLink, 'Font Awesome should be included');
+      });
+
+      test('Google Fonts are loaded', () => {
+        const fontLink = document.querySelector('link[href*="fonts.googleapis.com"]');
+        assertExists(fontLink, 'Google Fonts should be included');
+      });
+
+      // ========== Navigation Tests ==========
+      test('Navigation bar exists', () => {
+        const nav = document.querySelector('.navbar');
+        assertExists(nav, 'Navigation bar should exist');
+      });
+
+      test('Navigation has logo', () => {
+        const logo = document.querySelector('.nav-logo');
+        assertExists(logo, 'Navigation logo should exist');
+      });
+
+      test('Navigation has menu items', () => {
+        const menuItems = document.querySelectorAll('.nav-menu li');
+        assertGreaterThan(menuItems.length, 5, 'Navigation should have multiple menu items');
+      });
+
+      test('Language toggle button exists', () => {
+        const langBtn = document.querySelector('.btn-icon .lang-label');
+        assertExists(langBtn, 'Language toggle button should exist');
+      });
+
+      test('Theme toggle button exists', () => {
+        const themeBtn = document.querySelectorAll('.btn-icon')[1];
+        assertExists(themeBtn, 'Theme toggle button should exist');
+      });
+
+      test('Mobile menu toggle exists', () => {
+        const toggle = document.querySelector('.nav-toggle');
+        assertExists(toggle, 'Mobile menu toggle should exist');
+      });
+
+      // ========== Hero Section Tests ==========
+      test('Hero section exists', () => {
+        const hero = document.querySelector('.hero');
+        assertExists(hero, 'Hero section should exist');
+      });
+
+      test('Hero has background image', () => {
+        const heroBg = document.querySelector('.hero-bg');
+        assertExists(heroBg, 'Hero background should exist');
+        assert(heroBg.style.backgroundImage, 'Hero should have background image');
+      });
+
+      test('Hero displays name', () => {
+        const name = document.querySelector('.hero-name');
+        assertExists(name, 'Hero name should exist');
+        assert(name.textContent.includes('Ryotaro Shimizu'), 'Hero should display full name');
+      });
+
+      test('Hero displays Japanese name', () => {
+        const nameJa = document.querySelector('.hero-name-ja');
+        assertExists(nameJa, 'Japanese name should exist');
+        assert(nameJa.textContent.includes('清水'), 'Japanese name should be displayed');
+      });
+
+      test('Hero displays job title', () => {
+        const title = document.querySelector('.hero-title');
+        assertExists(title, 'Job title should exist');
+        assert(title.textContent.toLowerCase().includes('director'), 'Job title should be displayed');
+      });
+
+      test('Hero has social links', () => {
+        const links = document.querySelectorAll('.hero-links a');
+        assertGreaterThan(links.length, 3, 'Hero should have multiple social links');
+      });
+
+      test('Hero social links are external', () => {
+        const links = document.querySelectorAll('.hero-links a');
+        links.forEach(link => {
+          if (link.href.startsWith('http')) {
+            assertEquals(link.target, '_blank', 'External links should open in new tab');
+            assertEquals(link.rel, 'noopener', 'External links should have rel="noopener"');
+          }
+        });
+      });
+
+      // ========== Section Structure Tests ==========
+      test('About section exists', () => {
+        const about = document.querySelector('#about');
+        assertExists(about, 'About section should exist');
+      });
+
+      test('Publications section exists', () => {
+        const pubs = document.querySelector('#publications');
+        assertExists(pubs, 'Publications section should exist');
+      });
+
+      test('Talks section exists', () => {
+        const talks = document.querySelector('#talks');
+        assertExists(talks, 'Talks section should exist');
+      });
+
+      test('Experience section exists', () => {
+        const exp = document.querySelector('#experience');
+        assertExists(exp, 'Experience section should exist');
+      });
+
+      test('Education section exists', () => {
+        const edu = document.querySelector('#education');
+        assertExists(edu, 'Education section should exist');
+      });
+
+      test('Teaching section exists', () => {
+        const teaching = document.querySelector('#teaching');
+        assertExists(teaching, 'Teaching section should exist');
+      });
+
+      test('Awards section exists', () => {
+        const awards = document.querySelector('#awards');
+        assertExists(awards, 'Awards section should exist');
+      });
+
+      test('Media section exists', () => {
+        const media = document.querySelector('#media');
+        assertExists(media, 'Media section should exist');
+      });
+
+      test('Service section exists', () => {
+        const service = document.querySelector('#service');
+        assertExists(service, 'Service section should exist');
+      });
+
+      test('Projects section exists', () => {
+        const projects = document.querySelector('#projects');
+        assertExists(projects, 'Projects section should exist');
+      });
+
+      // ========== Logo Tests ==========
+      test('Waseda logo files exist', () => {
+        const wasedaLogos = document.querySelectorAll('img[src*="waseda.png"]');
+        assertGreaterThan(wasedaLogos.length, 0, 'Waseda logos should be present');
+      });
+
+      test('ZOZO logo files exist', () => {
+        const zozoLogos = document.querySelectorAll('img[src*="zozo"]');
+        assertGreaterThan(zozoLogos.length, 0, 'ZOZO logos should be present');
+      });
+
+      test('All timeline logos have proper attributes', () => {
+        const logos = document.querySelectorAll('.timeline-logo');
+        logos.forEach(logo => {
+          assert(logo.alt, 'Logo should have alt text');
+          assert(logo.classList.contains('timeline-logo'), 'Logo should have timeline-logo class');
+        });
+      });
+
+      // ========== Image Tests ==========
+      test('Hero background image path is correct', () => {
+        const heroBg = document.querySelector('.hero-bg');
+        assert(heroBg.style.backgroundImage.includes('pics/'), 'Hero background should be in pics folder');
+      });
+
+      test('Project images exist', () => {
+        const projectImages = document.querySelectorAll('.project-image');
+        assertGreaterThan(projectImages.length, 0, 'Project images should exist');
+      });
+
+      test('Project images have loading="lazy"', () => {
+        const projectImages = document.querySelectorAll('.project-image');
+        projectImages.forEach(img => {
+          assertEquals(img.loading, 'lazy', 'Project images should have lazy loading');
+        });
+      });
+
+      test('All images have alt text', () => {
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+          assert(img.alt !== undefined, 'All images should have alt attribute');
+        });
+      });
+
+      // ========== JavaScript Tests ==========
+      test('Vue.js is loaded', () => {
+        assertExists(window.Vue, 'Vue.js should be loaded');
+      });
+
+      test('App data is defined', () => {
+        assertExists(window.TRANSLATIONS, 'TRANSLATIONS should be defined');
+        assertExists(window.PUBLICATIONS, 'PUBLICATIONS should be defined');
+        assertExists(window.TALKS, 'TALKS should be defined');
+        assertExists(window.MEDIA, 'MEDIA should be defined');
+      });
+
+      test('Translations have both languages', () => {
+        assertExists(TRANSLATIONS.en, 'English translations should exist');
+        assertExists(TRANSLATIONS.ja, 'Japanese translations should exist');
+      });
+
+      test('Publications data is array', () => {
+        assert(Array.isArray(PUBLICATIONS), 'PUBLICATIONS should be an array');
+        assertGreaterThan(PUBLICATIONS.length, 0, 'PUBLICATIONS should not be empty');
+      });
+
+      test('Talks data is array', () => {
+        assert(Array.isArray(TALKS), 'TALKS should be an array');
+        assertGreaterThan(TALKS.length, 0, 'TALKS should not be empty');
+      });
+
+      test('Media data is array', () => {
+        assert(Array.isArray(MEDIA), 'MEDIA should be an array');
+        assertGreaterThan(MEDIA.length, 0, 'MEDIA should not be empty');
+      });
+
+      // ========== Data Integrity Tests ==========
+      test('All publications have required fields', () => {
+        PUBLICATIONS.forEach((pub, i) => {
+          assertNotNull(pub.title, `Publication ${i} should have title`);
+          assertNotNull(pub.year, `Publication ${i} should have year`);
+          assertNotNull(pub.authors, `Publication ${i} should have authors`);
+        });
+      });
+
+      test('All talks have required fields', () => {
+        TALKS.forEach((talk, i) => {
+          assertNotNull(talk.title, `Talk ${i} should have title`);
+          assertNotNull(talk.year, `Talk ${i} should have year`);
+          assertNotNull(talk.type, `Talk ${i} should have type`);
+        });
+      });
+
+      test('All media items have required fields', () => {
+        MEDIA.forEach((item, i) => {
+          assertNotNull(item.source, `Media ${i} should have source`);
+          assertNotNull(item.url, `Media ${i} should have url`);
+          assertNotNull(item.date, `Media ${i} should have date`);
+        });
+      });
+
+      // ========== Translation Tests ==========
+      test('Projects section uses Non-Research Projects', () => {
+        const projectsTitleEn = TRANSLATIONS.en['projects.title'];
+        assertEquals(projectsTitleEn, 'Non-Research Projects', 'English projects title should be "Non-Research Projects"');
+        
+        const projectsTitleJa = TRANSLATIONS.ja['projects.title'];
+        assertEquals(projectsTitleJa, 'Non-Research Projects', 'Japanese projects title should be "Non-Research Projects"');
+      });
+
+      test('Navigation translations exist', () => {
+        const navKeys = ['about', 'publications', 'talks', 'experience', 'education', 'teaching', 'awards', 'media', 'service', 'projects'];
+        navKeys.forEach(key => {
+          assertNotNull(TRANSLATIONS.en['nav.' + key], `English nav.${key} should exist`);
+          assertNotNull(TRANSLATIONS.ja['nav.' + key], `Japanese nav.${key} should exist`);
+        });
+      });
+
+      // ========== Accessibility Tests ==========
+      test('Page has main landmark', () => {
+        const main = document.querySelector('main');
+        assertExists(main, 'Page should have main element');
+      });
+
+      test('Page has footer', () => {
+        const footer = document.querySelector('footer');
+        assertExists(footer, 'Page should have footer');
+      });
+
+      test('Interactive elements have aria-label', () => {
+        const navToggle = document.querySelector('.nav-toggle');
+        assertExists(navToggle.getAttribute('aria-label'), 'Nav toggle should have aria-label');
+      });
+
+      test('All sections have IDs for navigation', () => {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+          if (section.classList.contains('hero') || section.classList.contains('collaboration')) {
+            return; // Skip hero and collaboration sections
+          }
+          assert(section.id, 'Section should have ID attribute');
+        });
+      });
+
+      // ========== Responsive Design Tests ==========
+      test('Viewport is set for mobile', () => {
+        const viewport = document.querySelector('meta[name="viewport"]');
+        assert(viewport.content.includes('width=device-width'), 'Viewport should be mobile-friendly');
+      });
+
+      test('Mobile menu toggle has proper structure', () => {
+        const toggle = document.querySelector('.nav-toggle');
+        const spans = toggle.querySelectorAll('span');
+        assertEquals(spans.length, 3, 'Mobile menu toggle should have 3 spans for hamburger icon');
+      });
+
+      // ========== Performance Tests ==========
+      test('Images use lazy loading', () => {
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        assertGreaterThan(lazyImages.length, 0, 'Some images should use lazy loading');
+      });
+
+      test('External links are secure', () => {
+        const externalLinks = document.querySelectorAll('a[target="_blank"]');
+        externalLinks.forEach(link => {
+          assert(link.rel.includes('noopener') || link.rel.includes('noreferrer'), 
+            'External links should have rel="noopener" or "noreferrer"');
+        });
+      });
+
+      test('Favicon is present', () => {
+        const favicon = document.querySelector('link[rel="icon"]');
+        assertExists(favicon, 'Favicon should be present');
+      });
+
+      // ========== Content Tests ==========
+      test('Timeline items have dates', () => {
+        const dates = document.querySelectorAll('.timeline-date');
+        assertGreaterThan(dates.length, 5, 'Timeline should have multiple date entries');
+      });
+
+      test('Project cards are properly structured', () => {
+        const projectCards = document.querySelectorAll('.project-card');
+        assertGreaterThan(projectCards.length, 2, 'Should have multiple project cards');
+        
+        projectCards.forEach(card => {
+          const body = card.querySelector('.project-body');
+          assertExists(body, 'Project card should have body');
+        });
+      });
+
+      test('Copyright year is current or recent', () => {
+        const footer = document.querySelector('.footer-info');
+        const currentYear = new Date().getFullYear();
+        assert(footer.textContent.includes(currentYear.toString()), 
+          'Footer should include current year');
+      });
+    }
+
+    function displayResults() {
+      const total = tests.length;
+      const passRate = ((passed / total) * 100).toFixed(1);
+
+      // Display stats
+      const statsHTML = `
+        <div class="stat total">
+          <h2>${total}</h2>
+          <p>Total Tests</p>
+        </div>
+        <div class="stat passed">
+          <h2>${passed}</h2>
+          <p>Passed (${passRate}%)</p>
+        </div>
+        <div class="stat failed">
+          <h2>${failed}</h2>
+          <p>Failed</p>
+        </div>
+      `;
+      document.getElementById('stats').innerHTML = statsHTML;
+
+      // Display test results
+      const categories = {
+        'HTML Structure Tests': [],
+        'CSS Tests': [],
+        'Navigation Tests': [],
+        'Hero Section Tests': [],
+        'Section Structure Tests': [],
+        'Logo Tests': [],
+        'Image Tests': [],
+        'JavaScript Tests': [],
+        'Data Integrity Tests': [],
+        'Translation Tests': [],
+        'Accessibility Tests': [],
+        'Responsive Design Tests': [],
+        'Performance Tests': [],
+        'Content Tests': []
+      };
+
+      // Categorize tests
+      tests.forEach(test => {
+        let categorized = false;
+        for (const category in categories) {
+          if (test.name.includes(category.replace(' Tests', ''))) {
+            categories[category].push(test);
+            categorized = true;
+            break;
+          }
+        }
+        if (!categorized) {
+          // Default category based on keywords
+          if (test.name.includes('HTML') || test.name.includes('DOCTYPE') || test.name.includes('meta')) {
+            categories['HTML Structure Tests'].push(test);
+          } else if (test.name.includes('CSS') || test.name.includes('style') || test.name.includes('Font')) {
+            categories['CSS Tests'].push(test);
+          } else if (test.name.includes('Navigation') || test.name.includes('menu') || test.name.includes('nav')) {
+            categories['Navigation Tests'].push(test);
+          } else if (test.name.includes('Hero') || test.name.includes('hero')) {
+            categories['Hero Section Tests'].push(test);
+          } else if (test.name.includes('section') || test.name.includes('About') || test.name.includes('Publications')) {
+            categories['Section Structure Tests'].push(test);
+          } else if (test.name.includes('logo') || test.name.includes('Logo')) {
+            categories['Logo Tests'].push(test);
+          } else if (test.name.includes('image') || test.name.includes('Image') || test.name.includes('img')) {
+            categories['Image Tests'].push(test);
+          } else if (test.name.includes('JavaScript') || test.name.includes('Vue') || test.name.includes('App data')) {
+            categories['JavaScript Tests'].push(test);
+          } else if (test.name.includes('publications') || test.name.includes('talks') || test.name.includes('media')) {
+            categories['Data Integrity Tests'].push(test);
+          } else if (test.name.includes('Translation') || test.name.includes('Projects section')) {
+            categories['Translation Tests'].push(test);
+          } else if (test.name.includes('aria') || test.name.includes('Accessibility') || test.name.includes('landmark')) {
+            categories['Accessibility Tests'].push(test);
+          } else if (test.name.includes('Responsive') || test.name.includes('mobile') || test.name.includes('Viewport')) {
+            categories['Responsive Design Tests'].push(test);
+          } else if (test.name.includes('Performance') || test.name.includes('lazy') || test.name.includes('secure')) {
+            categories['Performance Tests'].push(test);
+          } else {
+            categories['Content Tests'].push(test);
+          }
+        }
+      });
+
+      // Render categorized results
+      let resultsHTML = '';
+      for (const category in categories) {
+        if (categories[category].length > 0) {
+          resultsHTML += `<div class="test-section"><h2>${category}</h2>`;
+          categories[category].forEach(test => {
+            resultsHTML += `
+              <div class="test-case ${test.status}">
+                <h3>${test.status === 'pass' ? '✅' : '❌'} ${test.name}</h3>
+                ${test.error ? `<p>Error: ${test.error}</p><div class="error-details">${test.error}</div>` : '<p>Test passed successfully</p>'}
+              </div>
+            `;
+          });
+          resultsHTML += '</div>';
+        }
+      }
+      document.getElementById('results').innerHTML = resultsHTML;
+
+      // Log summary to console
+      console.log(`Test Summary: ${passed}/${total} passed (${passRate}%)`);
+      if (failed > 0) {
+        console.warn(`${failed} test(s) failed. See details above.`);
+      }
+    }
+  </script>
+
+  <!-- Load the actual website's scripts for testing -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script src="../js/data.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+name: Website Tests
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Run tests
+      run: |
+        cd tests
+        node run-tests.js
+        
+    - name: Test results summary
+      if: always()
+      run: |
+        echo "Test execution completed"
+        echo "Check logs above for detailed results"

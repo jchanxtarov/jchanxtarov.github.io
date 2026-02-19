@@ -1,0 +1,24 @@
+{
+  "name": "ryotaro-shimizu-website",
+  "version": "1.0.0",
+  "description": "Personal website for Ryotaro Shimizu - Machine Learning Researcher",
+  "scripts": {
+    "test": "node tests/run-tests.js",
+    "install-hooks": "bash scripts/install-hooks.sh",
+    "serve": "python3 -m http.server 8000",
+    "postinstall": "npm run install-hooks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jchanxtarov/taro_web"
+  },
+  "author": "Ryotaro Shimizu",
+  "license": "MIT",
+  "keywords": [
+    "portfolio",
+    "personal-website",
+    "machine-learning",
+    "research",
+    "vue"
+  ]
+}

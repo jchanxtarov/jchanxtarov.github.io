@@ -1,0 +1,497 @@
+#!/usr/bin/env node
+
+/**
+ * Automated Test Runner for Ryotaro Shimizu Website
+ * This script runs all tests and reports results
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+// ANSI color codes
+const colors = {
+  reset: '\x1b[0m',
+  red: '\x1b[31m',
+  green: '\x1b[32m',
+  yellow: '\x1b[33m',
+  blue: '\x1b[34m',
+  cyan: '\x1b[36m'
+};
+
+let totalTests = 0;
+let passedTests = 0;
+let failedTests = 0;
+const failedTestDetails = [];
+
+function log(message, color = 'reset') {
+  console.log(`${colors[color]}${message}${colors.reset}`);
+}
+
+function assert(condition, message) {
+  totalTests++;
+  if (condition) {
+    passedTests++;
+    return true;
+  } else {
+    failedTests++;
+    failedTestDetails.push(message);
+    return false;
+  }
+}
+
+function testFileStructure() {
+  log('\n📁 Testing File Structure...', 'cyan');
+  
+  const requiredFiles = [
+    'index.html',
+    'style.css',
+    'js/app.js',
+    'js/data.js',
+    'README.md'
+  ];
+
+  requiredFiles.forEach(file => {
+    const exists = fs.existsSync(path.join(__dirname, '..', file));
+    if (assert(exists, `File should exist: ${file}`)) {
+      log(`  ✓ ${file} exists`, 'green');
+    } else {
+      log(`  ✗ ${file} is missing`, 'red');
+    }
+  });
+}
+
+function testDataFolder() {
+  log('\n📊 Testing Data Folder...', 'cyan');
+  
+  const dataPath = path.join(__dirname, '..', 'data');
+  const exists = fs.existsSync(dataPath);
+  
+  if (assert(exists, 'Data folder should exist')) {
+    log('  ✓ Data folder exists', 'green');
+    
+    const csvFiles = fs.readdirSync(dataPath).filter(f => f.endsWith('.csv'));
+    if (assert(csvFiles.length > 0, 'Data folder should contain CSV files')) {
+      log(`  ✓ Found ${csvFiles.length} CSV files`, 'green');
+    } else {
+      log('  ✗ No CSV files found in data folder', 'red');
+    }
+  } else {
+    log('  ✗ Data folder is missing', 'red');
+  }
+}
+
+function testPicsFolder() {
+  log('\n🖼️  Testing Pics Folder...', 'cyan');
+  
+  const picsPath = path.join(__dirname, '..', 'pics');
+  const exists = fs.existsSync(picsPath);
+  
+  if (assert(exists, 'Pics folder should exist')) {
+    log('  ✓ Pics folder exists', 'green');
+    
+    // Check for logos subfolder
+    const logosPath = path.join(picsPath, 'logos');
+    if (assert(fs.existsSync(logosPath), 'Logos subfolder should exist')) {
+      log('  ✓ Logos subfolder exists', 'green');
+      
+      const requiredLogos = ['waseda.png', 'zozo.png', 'sophia.png'];
+      requiredLogos.forEach(logo => {
+        const logoPath = path.join(logosPath, logo);
+        if (assert(fs.existsSync(logoPath), `Logo should exist: ${logo}`)) {
+          log(`    ✓ ${logo} exists`, 'green');
+        } else {
+          log(`    ✗ ${logo} is missing`, 'red');
+        }
+      });
+    } else {
+      log('  ✗ Logos subfolder is missing', 'red');
+    }
+  } else {
+    log('  ✗ Pics folder is missing', 'red');
+  }
+}
+
+function testHTMLContent() {
+  log('\n📄 Testing HTML Content...', 'cyan');
+  
+  const htmlPath = path.join(__dirname, '..', 'index.html');
+  const html = fs.readFileSync(htmlPath, 'utf-8');
+  
+  // Test DOCTYPE
+  if (assert(html.includes('<!DOCTYPE html>'), 'HTML should have DOCTYPE')) {
+    log('  ✓ DOCTYPE is present', 'green');
+  } else {
+    log('  ✗ DOCTYPE is missing', 'red');
+  }
+  
+  // Test meta tags
+  if (assert(html.includes('<meta name="viewport"'), 'HTML should have viewport meta tag')) {
+    log('  ✓ Viewport meta tag is present', 'green');
+  } else {
+    log('  ✗ Viewport meta tag is missing', 'red');
+  }
+  
+  if (assert(html.includes('<meta name="description"'), 'HTML should have description meta tag')) {
+    log('  ✓ Description meta tag is present', 'green');
+  } else {
+    log('  ✗ Description meta tag is missing', 'red');
+  }
+  
+  // Test sections
+  const sections = ['about', 'publications', 'talks', 'experience', 'education', 'teaching', 'awards', 'media', 'service', 'projects'];
+  sections.forEach(section => {
+    if (assert(html.includes(`id="${section}"`), `HTML should have ${section} section`)) {
+      log(`  ✓ Section "${section}" is present`, 'green');
+    } else {
+      log(`  ✗ Section "${section}" is missing`, 'red');
+    }
+  });
+  
+  // Test Vue.js
+  if (assert(html.includes('Vue') || html.includes('vue'), 'HTML should include Vue.js')) {
+    log('  ✓ Vue.js is included', 'green');
+  } else {
+    log('  ✗ Vue.js is not included', 'red');
+  }
+  
+  // Test logo images use correct path
+  const wasedaLogoMatches = html.match(/pics\/logos\/waseda\.png/g);
+  if (assert(wasedaLogoMatches && wasedaLogoMatches.length > 0, 'HTML should reference Waseda logo')) {
+    log(`  ✓ Waseda logo is referenced ${wasedaLogoMatches.length} times`, 'green');
+  } else {
+    log('  ✗ Waseda logo is not referenced', 'red');
+  }
+}
+
+function testCSSContent() {
+  log('\n🎨 Testing CSS Content...', 'cyan');
+  
+  const cssPath = path.join(__dirname, '..', 'style.css');
+  const css = fs.readFileSync(cssPath, 'utf-8');
+  
+  // Test CSS variables
+  if (assert(css.includes(':root'), 'CSS should define root variables')) {
+    log('  ✓ Root CSS variables are defined', 'green');
+  } else {
+    log('  ✗ Root CSS variables are missing', 'red');
+  }
+  
+  // Test dark mode
+  if (assert(css.includes('[data-theme="dark"]'), 'CSS should support dark mode')) {
+    log('  ✓ Dark mode styles are present', 'green');
+  } else {
+    log('  ✗ Dark mode styles are missing', 'red');
+  }
+  
+  // Test timeline logo styling
+  if (assert(css.includes('.timeline-logo'), 'CSS should style timeline logos')) {
+    log('  ✓ Timeline logo styles are present', 'green');
+    
+    // Check for background color fix
+    const logoStyles = css.match(/\.timeline-logo\s*{[^}]*}/s);
+    if (logoStyles) {
+      const hasBackground = logoStyles[0].includes('background');
+      if (assert(hasBackground, 'Timeline logo should have background style for dark mode visibility')) {
+        log('  ✓ Timeline logo has background style', 'green');
+      } else {
+        log('  ⚠ Timeline logo might not be visible in dark mode', 'yellow');
+      }
+    }
+  } else {
+    log('  ✗ Timeline logo styles are missing', 'red');
+  }
+  
+  // Test responsive design
+  if (assert(css.includes('@media'), 'CSS should include media queries for responsive design')) {
+    log('  ✓ Responsive design media queries are present', 'green');
+  } else {
+    log('  ✗ Responsive design media queries are missing', 'red');
+  }
+}
+
+function testJavaScriptContent() {
+  log('\n⚙️  Testing JavaScript Content...', 'cyan');
+  
+  const dataPath = path.join(__dirname, '..', 'js', 'data.js');
+  const data = fs.readFileSync(dataPath, 'utf-8');
+  
+  // Test data structures
+  if (assert(data.includes('TRANSLATIONS'), 'data.js should define TRANSLATIONS')) {
+    log('  ✓ TRANSLATIONS is defined', 'green');
+  } else {
+    log('  ✗ TRANSLATIONS is not defined', 'red');
+  }
+  
+  if (assert(data.includes('PUBLICATIONS'), 'data.js should define PUBLICATIONS')) {
+    log('  ✓ PUBLICATIONS is defined', 'green');
+  } else {
+    log('  ✗ PUBLICATIONS is not defined', 'red');
+  }
+  
+  if (assert(data.includes('TALKS'), 'data.js should define TALKS')) {
+    log('  ✓ TALKS is defined', 'green');
+  } else {
+    log('  ✗ TALKS is not defined', 'red');
+  }
+  
+  if (assert(data.includes('MEDIA'), 'data.js should define MEDIA')) {
+    log('  ✓ MEDIA is defined', 'green');
+  } else {
+    log('  ✗ MEDIA is not defined', 'red');
+  }
+  
+  // Test for "Non-Research Projects"
+  const projectsTitleMatch = data.match(/"projects\.title":\s*"([^"]+)"/g);
+  if (projectsTitleMatch) {
+    const hasNonResearch = projectsTitleMatch.some(match => 
+      match.includes('Non-Research Project')
+    );
+    if (assert(hasNonResearch, 'Projects title should be "Non-Research Projects"')) {
+      log('  ✓ Projects title is "Non-Research Projects"', 'green');
+    } else {
+      log('  ✗ Projects title is not updated to "Non-Research Projects"', 'red');
+    }
+  }
+  
+  // Test app.js
+  const appPath = path.join(__dirname, '..', 'js', 'app.js');
+  const app = fs.readFileSync(appPath, 'utf-8');
+  
+  if (assert(app.includes('createApp'), 'app.js should create Vue app')) {
+    log('  ✓ Vue app is created in app.js', 'green');
+  } else {
+    log('  ✗ Vue app creation is missing in app.js', 'red');
+  }
+  
+  if (assert(app.includes('localStorage'), 'app.js should use localStorage for preferences')) {
+    log('  ✓ localStorage is used for user preferences', 'green');
+  } else {
+    log('  ✗ localStorage is not used', 'red');
+  }
+}
+
+function loadDataFile() {
+  const vm = require('vm');
+  const dataPath = path.join(__dirname, '..', 'js', 'data.js');
+  const dataContent = fs.readFileSync(dataPath, 'utf-8');
+  // Replace const/let declarations with var so they become sandbox properties
+  const execContent = dataContent.replace(/^(const|let)\s+/gm, 'var ');
+  const sandbox = {};
+  vm.runInNewContext(execContent, sandbox);
+  return sandbox;
+}
+
+function testPublicationSorting() {
+  log('\n📚 Testing Publication Sorting...', 'cyan');
+
+  const sandbox = loadDataFile();
+  const pubs = sandbox.PUBLICATIONS;
+  if (!assert(Array.isArray(pubs) && pubs.length > 0, 'PUBLICATIONS should be a non-empty array')) {
+    log('  ✗ PUBLICATIONS is missing or empty', 'red');
+    return;
+  }
+  log(`  ✓ Found ${pubs.length} publications`, 'green');
+
+  // Test: every publication with a date field must have a valid "Mon YYYY" format
+  const VALID_MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const invalidDates = pubs.filter(p => {
+    if (!p.date) return false; // date is optional (year-only is allowed)
+    const parts = p.date.split(' ');
+    return parts.length !== 2 || !VALID_MONTHS.includes(parts[0]) || isNaN(Number(parts[1]));
+  });
+  if (assert(invalidDates.length === 0, 'All publication dates should be in "Mon YYYY" format')) {
+    log('  ✓ All date fields are valid', 'green');
+  } else {
+    invalidDates.forEach(p => log(`    ✗ Invalid date "${p.date}" in: ${p.title.slice(0,50)}`, 'red'));
+  }
+
+  // Test: sorting by newest should group same-venue same-date publications together
+  const MONTH_ORDER = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+  function sortKey(p) {
+    if (p.date) {
+      const parts = p.date.split(' ');
+      if (parts.length === 2 && MONTH_ORDER[parts[0]] !== undefined) {
+        return p.year * 12 + MONTH_ORDER[parts[0]];
+      }
+    }
+    return p.year * 12;
+  }
+
+  const sorted = [...pubs].sort((a, b) => sortKey(b) - sortKey(a));
+
+  // Build groups: publications with the same venue and date should be contiguous
+  const seen = new Map(); // key -> last index
+  let nonContiguousGroups = [];
+  sorted.forEach((p, i) => {
+    if (!p.date) return;
+    const key = `${p.venue}|${p.date}`;
+    if (seen.has(key) && seen.get(key) !== i - 1) {
+      // Check if all entries between last seen and current are also the same group
+      let contiguous = true;
+      for (let j = seen.get(key) + 1; j < i; j++) {
+        const jKey = `${sorted[j].venue}|${sorted[j].date}`;
+        if (jKey !== key) { contiguous = false; break; }
+      }
+      if (!contiguous) {
+        nonContiguousGroups.push(key);
+      }
+    }
+    seen.set(key, i);
+  });
+
+  if (assert(nonContiguousGroups.length === 0, 'Same-venue same-date publications should be contiguous after sorting')) {
+    log('  ✓ Publications with same venue and date are grouped together after sorting', 'green');
+  } else {
+    nonContiguousGroups.forEach(g => log(`    ✗ Non-contiguous group: ${g}`, 'red'));
+  }
+
+  // Test: MIRU 2025 papers specifically
+  const miru2025 = sorted.filter(p => p.venue === 'MIRU 2025');
+  if (miru2025.length > 0) {
+    const indices = sorted.reduce((acc, p, i) => {
+      if (p.venue === 'MIRU 2025') acc.push(i);
+      return acc;
+    }, []);
+    const isContiguous = indices.every((idx, j) => j === 0 || idx === indices[j-1] + 1);
+    if (assert(isContiguous, 'MIRU 2025 papers should appear contiguously in sorted output')) {
+      log(`  ✓ All ${miru2025.length} MIRU 2025 papers are contiguous in sorted order`, 'green');
+    } else {
+      log(`  ✗ MIRU 2025 papers at indices [${indices.join(', ')}] are not contiguous`, 'red');
+    }
+  }
+}
+
+function testTranslationCompleteness() {
+  log('\n🌐 Testing Translation Completeness...', 'cyan');
+
+  const sandbox = loadDataFile();
+  const en = sandbox.TRANSLATIONS.en;
+  const ja = sandbox.TRANSLATIONS.ja;
+
+  if (!assert(en && ja, 'Both EN and JA translations should exist')) {
+    log('  ✗ Translation objects missing', 'red');
+    return;
+  }
+
+  // Keys that are expected to match between EN and JA (excluding arrays which have different structures)
+  const enKeys = Object.keys(en).filter(k => typeof en[k] === 'string');
+  const jaKeys = Object.keys(ja).filter(k => typeof ja[k] === 'string');
+
+  const missingInJa = enKeys.filter(k => !(k in ja));
+  const missingInEn = jaKeys.filter(k => !(k in en));
+
+  if (assert(missingInJa.length === 0, 'All EN string keys should exist in JA')) {
+    log(`  ✓ All ${enKeys.length} EN string keys have JA translations`, 'green');
+  } else {
+    missingInJa.forEach(k => log(`    ✗ Missing JA translation for: "${k}"`, 'red'));
+  }
+
+  if (assert(missingInEn.length === 0, 'All JA string keys should exist in EN')) {
+    log(`  ✓ All JA-only string keys also exist in EN`, 'green');
+  } else {
+    missingInEn.forEach(k => log(`    ✗ Missing EN translation for: "${k}"`, 'red'));
+  }
+
+  // Check critical section titles
+  const criticalKeys = ['pub.title', 'pub.subtitle', 'exp.title', 'edu.title', 'awards.title', 'service.title', 'news.title', 'media.title', 'teaching.title', 'talks.title'];
+  criticalKeys.forEach(key => {
+    const hasEn = key in en && en[key];
+    const hasJa = key in ja && ja[key];
+    if (assert(hasEn && hasJa, `Critical key "${key}" should exist in both EN and JA`)) {
+      log(`  ✓ "${key}" present in both languages`, 'green');
+    } else {
+      if (!hasEn) log(`    ✗ "${key}" missing in EN`, 'red');
+      if (!hasJa) log(`    ✗ "${key}" missing in JA`, 'red');
+    }
+  });
+}
+
+function testImageReferences() {
+  log('\n🖼️  Testing Image References...', 'cyan');
+  
+  const htmlPath = path.join(__dirname, '..', 'index.html');
+  const html = fs.readFileSync(htmlPath, 'utf-8');
+  
+  // Extract image references
+  const imgMatches = html.match(/src="pics\/[^"]+"/g) || [];
+  const bgMatches = html.match(/url\('pics\/[^']+'\)/g) || [];
+  
+  const allImages = [
+    ...imgMatches.map(m => m.match(/pics\/([^"]+)/)[0]),
+    ...bgMatches.map(m => m.match(/pics\/([^']+)/)[0])
+  ];
+  
+  log(`  Found ${allImages.length} image references in HTML`, 'blue');
+  
+  let existingImages = 0;
+  let missingImages = 0;
+  
+  allImages.forEach(imgPath => {
+    const fullPath = path.join(__dirname, '..', imgPath);
+    if (fs.existsSync(fullPath)) {
+      existingImages++;
+    } else {
+      missingImages++;
+      log(`    ⚠ Image not found: ${imgPath}`, 'yellow');
+    }
+  });
+  
+  log(`  ✓ ${existingImages} images exist`, 'green');
+  if (missingImages > 0) {
+    log(`  ⚠ ${missingImages} images are missing`, 'yellow');
+  }
+}
+
+function printSummary() {
+  log('\n' + '='.repeat(60), 'blue');
+  log('TEST SUMMARY', 'blue');
+  log('='.repeat(60), 'blue');
+  
+  const passRate = totalTests > 0 ? ((passedTests / totalTests) * 100).toFixed(1) : 0;
+  
+  log(`Total Tests: ${totalTests}`, 'cyan');
+  log(`Passed: ${passedTests}`, 'green');
+  log(`Failed: ${failedTests}`, failedTests > 0 ? 'red' : 'green');
+  log(`Pass Rate: ${passRate}%`, passRate >= 90 ? 'green' : (passRate >= 70 ? 'yellow' : 'red'));
+  
+  if (failedTests > 0) {
+    log('\n❌ Failed Tests:', 'red');
+    failedTestDetails.forEach(detail => {
+      log(`  - ${detail}`, 'red');
+    });
+  } else {
+    log('\n✅ All tests passed!', 'green');
+  }
+  
+  log('\n' + '='.repeat(60), 'blue');
+  
+  // Exit with appropriate code
+  process.exit(failedTests > 0 ? 1 : 0);
+}
+
+// Run all tests
+function runAllTests() {
+  log('\n🧪 Starting Test Suite for Ryotaro Shimizu Website...', 'cyan');
+  log('='.repeat(60), 'blue');
+  
+  try {
+    testFileStructure();
+    testDataFolder();
+    testPicsFolder();
+    testHTMLContent();
+    testCSSContent();
+    testJavaScriptContent();
+    testImageReferences();
+    testPublicationSorting();
+    testTranslationCompleteness();
+  } catch (error) {
+    log(`\n❌ Error running tests: ${error.message}`, 'red');
+    log(error.stack, 'red');
+    process.exit(1);
+  }
+  
+  printSummary();
+}
+
+// Run tests
+runAllTests();
