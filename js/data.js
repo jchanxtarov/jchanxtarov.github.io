@@ -173,8 +173,8 @@ const TRANSLATIONS = {
       {date:"May 2017",text:'Received <a href="https://www.jimanet.jp/information/awards/best-presentation-award" target="_blank">Best Presentation Award</a> at JIMA Spring Conference.',isNew:false}
     ],
     // Talks
-    "talks.title":"Talks & Lectures",
-    "talks.invited":"Invited Talk","talks.conference":"Conference","talks.workshop":"Workshop","talks.domestic":"Domestic",
+    "talks.title":"Talks & Presentations",
+    "talks.invited":"Invited Talk","talks.award":"Award Talk","talks.presentation":"Presentation","talks.conference":"Conference","talks.workshop":"Workshop","talks.domestic":"Domestic",
     "talks.confTitle":"Conference Presentations","talks.confDesc":"Oral/poster presentations at top-tier international conferences worldwide.",
     "talks.wsDesc":"Workshop presentations at major computer vision and ML conferences.",
     "talks.domesticDesc":"Presentations at Japanese domestic conferences. Best Research Award at JSAI 2023.",
@@ -239,9 +239,10 @@ const TRANSLATIONS = {
     "awards.showAll":"Show All Awards","awards.showLess":"Show Less",
     "media.showAll":"Show All Media","media.showLess":"Show Less",
     "collab.title":"Let's Work Together","collab.subtitle":"I welcome speaking invitations, research collaborations, and event partnerships.",
-    "collab.research":"Research Collaboration","collab.research.d":"I am actively seeking research collaborators in recommender systems, explainable AI, computer vision, and LLMs. Let's push the boundaries of AI research together.",
-    "collab.speaking":"Speaking Invitations","collab.speaking.d":"I am actively accepting speaking invitations for conferences, workshops, seminars, and corporate events. Topics include AI/ML research, fashion tech, and industry-academia collaboration.",
+    "collab.research":"Research Collaboration","collab.research.d":"I am actively seeking research collaborators in AI, machine learning, and data mining. Let's do something exciting together.",
+    "collab.speaking":"Speaking Invitations","collab.speaking.d":"I am actively accepting speaking invitations for conferences, workshops, seminars, and events. Topics include AI/ML research, fashion tech, and industry-academia collaboration.",
     "collab.event":"Event & Conference Co-organizing","collab.event.d":"I am looking for partners to co-organize academic conferences, workshops, tech meetups, and industry events. Whether it's a new conference, a hackathon, or a cross-industry networking event — let's create something exciting together!",
+    "collab.mentoring":"Student Mentoring","collab.mentoring.d":"I welcome students who want mentoring in AI/ML research, career development, or data science. Whether you're an undergraduate, graduate student, or early-career researcher — feel free to reach out.",
     "collab.contact":"Feel free to reach out via email or LinkedIn. I look forward to hearing from you!",
     "collab.email":"Contact Me",
     // Footer
@@ -283,8 +284,8 @@ const TRANSLATIONS = {
       {date:"2019年3月",text:'早稲田大学大学院 経営システム工学専攻にて専攻賞（優秀学生賞・首席卒業）を受賞しました。',isNew:false},
       {date:"2017年5月",text:'<a href="https://www.jimanet.jp/information/awards/best-presentation-award" target="_blank">日本経営工学会春季大会</a>にてBest Presentation Awardを受賞しました。',isNew:false}
     ],
-    "talks.title":"講演等",
-    "talks.invited":"招待講演","talks.conference":"学会発表","talks.workshop":"ワークショップ","talks.domestic":"国内",
+    "talks.title":"講演・登壇等",
+    "talks.invited":"招待講演","talks.award":"受賞者講演","talks.presentation":"登壇","talks.conference":"学会発表","talks.workshop":"ワークショップ","talks.domestic":"国内",
     "talks.confTitle":"学会発表","talks.confDesc":"世界各地のトップ国際会議での口頭・ポスター発表。",
     "talks.wsDesc":"主要なコンピュータビジョン・機械学習カンファレンスでのワークショップ発表。",
     "talks.domesticDesc":"国内学会での発表。JSAI 2023にて研究賞受賞。",
@@ -341,9 +342,10 @@ const TRANSLATIONS = {
     "awards.showAll":"すべての受賞歴を表示","awards.showLess":"折りたたむ",
     "media.showAll":"すべてのメディア掲載を表示","media.showLess":"折りたたむ",
     "collab.title":"講演・共同研究のご依頼","collab.subtitle":"講演依頼、共同研究、イベント共催のご相談を歓迎しています。",
-    "collab.research":"共同研究","collab.research.d":"推薦システム、説明可能AI、コンピュータビジョン、LLM分野での共同研究者を積極的に募集しています。一緒にAI研究の最前線を切り拓きましょう。",
-    "collab.speaking":"講演依頼","collab.speaking.d":"カンファレンス、ワークショップ、セミナー、企業イベントでの講演依頼を積極的に受け付けています。AI/ML研究、ファッションテック、産学連携などのテーマで講演可能です。",
+    "collab.research":"共同研究","collab.research.d":"AI・機械学習・データマイニング領域での共同研究者を積極的に募集しています。一緒に面白いことをしましょう。",
+    "collab.speaking":"講演依頼","collab.speaking.d":"カンファレンス、ワークショップ、セミナー、イベントでの講演依頼を積極的に受け付けています。AI/ML研究、ファッションテック、産学連携などのテーマで講演可能です。",
     "collab.event":"イベント・学会の共催","collab.event.d":"学会やワークショップ、テック勉強会、業界イベントを一緒に企画・運営してくれる方を募集しています。新しいカンファレンスの立ち上げ、ハッカソン、異業種交流イベントなど、一緒に面白いことをやりましょう！",
+    "collab.mentoring":"メンタリング","collab.mentoring.d":"AI・機械学習の研究やキャリア、データサイエンスについてメンタリングを希望する学生を歓迎しています。学部生・大学院生・若手研究者の方、お気軽にご連絡ください。",
     "collab.contact":"お気軽にメールまたはLinkedInからご連絡ください。お待ちしております！",
     "collab.email":"お問い合わせ",
     "footer.visitors":"訪問者マップ","footer.update":"最終更新：2026年2月",
@@ -354,11 +356,11 @@ const TRANSLATIONS = {
 const TALKS = [
   { year:"Sep 2025", yearJa:"2025年9月", type:"invited", title:"WebDB Summer Workshop 2025", titleJa:"WebDB夏のワークショップ2025", desc:"\"Data Science for Interpreting Ambiguous Fashion\" — Hamamatsu, Japan", descJa:"「曖昧なファッションを解釈するためのデータサイエンス」— 浜松", link:"https://shoji-lab.github.io/%E7%99%BA%E8%A1%A8/2025/09/18/WebDB_present.html", image:"pics/presentation_photo.jpg" },
   { year:"Jun 2025", yearJa:"2025年6月", type:"invited", title:"Sorbonne University IMCDS — Guest Lecture in Tokyo (Organizer & Speaker)", titleJa:"ソルボンヌ大学 IMCDS — 東京招待講演（主催・講演）", desc:"Organized and presented a research lecture to visiting Sorbonne IMCDS Master's students on AI applications in fashion.", descJa:"ソルボンヌ大学IMCDSの来日学生に対し、ファッションにおけるAI応用に関する研究講演を主催・実施。", link:"https://www.linkedin.com/posts/master-imcds_imcds-artificialintelligence-machinelearning-activity-7336640518459731968-Cb20", image:"pics/sorbonne_lecture.jpg" },
-  { year:"2024", yearJa:"2024年", type:"invited", title:"INTERSECTION 2024", titleJa:"INTERSECTION 2024", desc:"\"Fashion Intelligence System: Fashion-Specific Ambiguous Expression Interpretation\" — Presented at INTERSECTION 2024 (LINE Yahoo! Group).", descJa:"「Fashion Intelligence System: ファッション特有の曖昧な表現解釈」— INTERSECTION 2024（LINEヤフーグループ）にて発表。", link:"https://www.youtube.com/watch?v=KPPt2ULldfg", image:"pics/hero_background.jpg" },
-  { year:"Dec 2023", yearJa:"2023年12月", type:"invited", title:"CCSE 2023 — Fashion Expression Interpretation", titleJa:"CCSE 2023 — ファッション表現解釈", desc:"\"A System for Interpreting Fashion-Specific Ambiguous Expressions Using Vision-Language Models\" — Conference on Computer Science for Enterprise.", descJa:"「画像言語モデルを用いたファッション特有の曖昧な表現を解釈するシステム」— CCSE 2023にて発表。", link:"https://ccse.jp/2023/speakers/", image:null },
+  { year:"2024", yearJa:"2024年", type:"award", title:"INTERSECTION 2024", titleJa:"INTERSECTION 2024", desc:"\"Fashion Intelligence System: Fashion-Specific Ambiguous Expression Interpretation\" — Presented at INTERSECTION 2024 (LINE Yahoo! Group).", descJa:"「Fashion Intelligence System: ファッション特有の曖昧な表現解釈」— INTERSECTION 2024（LINEヤフーグループ）にて発表。", link:"https://www.youtube.com/watch?v=KPPt2ULldfg", image:"pics/hero_background.jpg" },
+  { year:"Dec 2023", yearJa:"2023年12月", type:"presentation", title:"CCSE 2023 — Fashion Expression Interpretation", titleJa:"CCSE 2023 — ファッション表現解釈", desc:"\"A System for Interpreting Fashion-Specific Ambiguous Expressions Using Vision-Language Models\" — Conference on Computer Science for Enterprise.", descJa:"「画像言語モデルを用いたファッション特有の曖昧な表現を解釈するシステム」— CCSE 2023にて発表。", link:"https://ccse.jp/2023/speakers/", image:null },
   { year:"Mar 2023", yearJa:"2023年3月", type:"invited", title:"AZEST Spark Labs — Fashion Intelligence System", titleJa:"AZEST Spark Labs — Fashion Intelligence System", desc:"\"Fashion Intelligence System\" — Presented AI-driven fashion interpretation technology to AZEST employees and industry professionals.", descJa:"「Fashion Intelligence System」— AZEST社員・業界関係者にAIファッション解釈技術を講演。", link:"https://www.azest.co.jp/sparklabs/lab-868/", image:"pics/azest_lab_2.png" },
-  { year:"Dec 2021", yearJa:"2021年12月", type:"invited", title:"CCSE 2021 — Presentation & Panel Discussion", titleJa:"CCSE 2021 — 発表・パネルディスカッション", desc:"Regular presentation: \"Discovery of Potential Customers Using External Domain Data.\" Panel discussion: \"Research Planning in Corporate Settings.\" — Conference on Computer Science for Enterprise.", descJa:"【発表】外部ドメインデータを活用した潜在顧客発見に向けた取り組み。【パネル】企業の研究における研究計画の作り方。— CCSE 2021。", link:"https://ccse.jp/2021/", image:null },
-  { year:"Oct 2019", yearJa:"2019年10月", type:"invited", title:"DeNA Tech Talk — Tennis SNS for 400 Users", titleJa:"DeNA全社テックトーク — テニス大会SNSの開発", desc:"\"How a New Graduate Engineer Developed a Tennis Tournament SNS Used by 400 People in One Month\" — Company-wide tech talk at DeNA.", descJa:"「新卒未経験エンジニアが1ヶ月で開発したテニス大会用のSNSを400人に使ってもらった話」— DeNA全社テックトーク。", link:null, image:null },
+  { year:"Dec 2021", yearJa:"2021年12月", type:"presentation", title:"CCSE 2021 — Presentation & Panel Discussion", titleJa:"CCSE 2021 — 発表・パネルディスカッション", desc:"Regular presentation: \"Discovery of Potential Customers Using External Domain Data.\" Panel discussion: \"Research Planning in Corporate Settings.\" — Conference on Computer Science for Enterprise.", descJa:"【発表】外部ドメインデータを活用した潜在顧客発見に向けた取り組み。【パネル】企業の研究における研究計画の作り方。— CCSE 2021。", link:"https://ccse.jp/2021/", image:null },
+  { year:"Oct 2019", yearJa:"2019年10月", type:"presentation", title:"DeNA Tech Talk — Tennis SNS for 400 Users", titleJa:"DeNA全社テックトーク — テニス大会SNSの開発", desc:"\"How a New Graduate Engineer Developed a Tennis Tournament SNS Used by 400 People in One Month\" — Company-wide tech talk at DeNA.", descJa:"「新卒未経験エンジニアが1ヶ月で開発したテニス大会用のSNSを400人に使ってもらった話」— DeNA全社テックトーク。", link:null, image:null },
   { year:"Sep 2019", yearJa:"2019年9月", type:"invited", title:"AZEST Inc. Tech Talk", titleJa:"AZEST株式会社 テックトーク", desc:"Technical presentation on machine learning engineering.", descJa:"機械学習エンジニアリングに関する技術講演。", link:null, image:"pics/azest_lab_1.jpeg" },
 ];
 

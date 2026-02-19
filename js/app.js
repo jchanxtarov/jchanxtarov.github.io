@@ -125,7 +125,7 @@ createApp({
     }
 
     function talkType(talk) {
-      const types = { invited: t.value["talks.invited"], conference: t.value["talks.conference"], workshop: t.value["talks.workshop"], domestic: t.value["talks.domestic"] };
+      const types = { invited: t.value["talks.invited"], award: t.value["talks.award"], presentation: t.value["talks.presentation"], conference: t.value["talks.conference"], workshop: t.value["talks.workshop"], domestic: t.value["talks.domestic"] };
       return types[talk.type] || talk.type;
     }
 
