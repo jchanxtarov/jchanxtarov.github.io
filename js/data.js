@@ -325,10 +325,10 @@ const TRANSLATIONS = {
       {year:"2024年12月",title:"Best Paper Award — CIE51",desc:"国際会議 Computers and Industrial Engineering にて受賞。"},
       {year:"2023年10月",title:"Outstanding Paper Award — APIEMS 2023",desc:"国際会議 Asia Pacific Industrial Engineering and Management Systems にて受賞。"},
       {year:"2023年2月",title:"最優秀賞 — 日科技連データ解析コンペティション",desc:"2023年度データ解析コンペティション JIMA部会にて最優秀賞を受賞。"},
-      {year:"2023年6月",title:"全国大会優秀賞 — 人工知能学会",desc:"Fashion画像検索に関する研究で受賞。"},
+      {year:"2023年6月",title:"全国大会優秀賞 — 人工知能学会",desc:"ファッション画像検索に関する研究で受賞。"},
       {year:"2022年2月",title:"最優秀社員賞 グランプリ — ZOZOグループ",desc:"1,700名以上の中から上位5名に選出。研究成果とリーダーシップが評価されました。"},
       {year:"2019年2月",title:"技能賞 — 日科技連データ解析コンペティション",desc:"2019年度データ解析コンペティション JIMA部会にて受賞。"},
-      {year:"2019年3月",title:"最優秀学生賞（首席卒業）— 早稲田大学大学院 経営システム工学専攻",desc:"修士課程をGPA 3.95で首席卒業。"},
+      {year:"2019年3月",title:"最優秀学生賞（首席卒業）— 早稲田大学大学院 経営システム工学専攻",desc:"GPA 3.95で首席卒業。"},
       {year:"2018年5月",title:"優秀賞 — 日本経営工学会 春季学生発表大会",desc:"2018年春季学生発表大会にて受賞。"},
       {year:"2017年2月",title:"技能賞 — 日科技連データ解析コンペティション",desc:"2017年度データ解析コンペティション JIMA部会にて受賞。"},
       {year:"2017年5月",title:"優秀学生発表賞 — 日本経営工学会 春季大会",desc:"2017年春季大会にて受賞。"}
