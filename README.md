@@ -177,7 +177,7 @@ Uncomment the GA4 block in `index.html` `<head>` and replace `GA_MEASUREMENT_ID`
 ### Visitor Tracking (MapMyVisitors)
 
 The visitor map widget is embedded in the footer of `index.html`. Statistics are available at:
-https://mapmyvisitors.com/web/1c2n5
+https://mapmyvisitors.com/web/1c2n6
 
 To change the widget, update the `src` attribute of the `#mapmyvisitors` script tag in the footer.
 
