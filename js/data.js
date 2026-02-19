@@ -143,8 +143,8 @@ const TRANSLATIONS = {
     "hero.stat.pubs":"Publications","hero.stat.cit":"Citations",
     // About
     "about.title":"About",
-    "about.p1":"I am a machine learning researcher and engineer with a Ph.D. in Industrial Engineering and 8+ years of professional experience. I specialize in translating business objectives into practical AI solutions, with deep expertise in <strong>recommender systems</strong>, <strong>explainable AI</strong>, <strong>computer vision</strong>, <strong>large language models</strong>, and <strong>business data analytics &amp; visualization</strong>. I am particularly interested in <strong>explainable AI for interpreting AI decision-making</strong> and <strong>leveraging AI to make sense of ambiguous, open-ended problems where no single definitive answer exists</strong> (Data &times; AI &times; Ambiguity). I am also passionate about education, serving as a Part-time Lecturer at Sophia University and a Visiting Research Fellow at Waseda University.",
-    "about.p2":"As Director at <a href='https://research.zozo.com/' target='_blank'>ZOZO Research</a>, I lead the ML R&amp;D group, driving service development and industry-academia research collaboration. Blessed with wonderful team members and collaborators, I have published 50+ papers at top-tier conferences including WWW, ICLR, IJCAI, EMNLP, and CVPR, and my work has been featured in 100+ media outlets.",
+    "about.p1":"I specialize in translating business objectives into practical AI solutions, with deep expertise in <strong>recommender systems</strong>, <strong>explainable AI</strong>, <strong>computer vision</strong>, <strong>large language models</strong>, and <strong>business data analytics &amp; visualization</strong>. I am particularly interested in <strong>explainable AI for interpreting AI decision-making</strong> and <strong>leveraging AI to make sense of ambiguous, open-ended problems where no single definitive answer exists</strong> (Data &times; AI &times; Ambiguity).",
+    "about.p2":"As Director at <a href='https://research.zozo.com/' target='_blank'>ZOZO Research</a>, I lead the ML R&amp;D group, driving service development and industry-academia research collaboration. Blessed with wonderful team members and collaborators, I have published numerous papers and my work has been featured in many media outlets.",
     "about.p3":"I am also passionate about education and mentoring, serving as a Part-time Lecturer at <a href='https://www.sophia.ac.jp/en/' target='_blank'>Sophia University</a> and a Visiting Research Fellow at <a href='https://www.waseda.jp/top/en/' target='_blank'>Waseda University</a>.",
     "about.interests":"Research Interests",
     // Publications
@@ -155,7 +155,6 @@ const TRANSLATIONS = {
     "news.title":"News",
     "news.items":[
       {date:"Feb 2026",text:'Launched my personal website to share research and explore collaboration opportunities with diverse researchers and creators.',isNew:true},
-      {date:"Feb 2026",text:'Promoted to Director of Deployment Department at ZOZO Research.',isNew:true},
       {date:"Feb 2026",text:'Two papers accepted at ICLR 2026 (top ML conference).',isNew:true},
       {date:"Sep 2025",text:'Paper accepted at <a href="https://zozonext.com/news/20251016_zozoresearch" target="_blank">EMNLP 2025</a>.',isNew:false},
       {date:"May 2025",text:'Joint research with CIT accepted at <a href="https://zozonext.com/news/20250526_zozoresearch" target="_blank">IJCAI 2025</a>.',isNew:false},
@@ -165,9 +164,7 @@ const TRANSLATIONS = {
       {date:"2025",text:'Paper accepted at RecSys 2025 (Late-Breaking Results).',isNew:false},
       {date:"2025",text:'Paper accepted at ICME 2025 (Oral).',isNew:false},
       {date:"Aug 2025",text:'Research featured in <a href="https://xtech.nikkei.com/atcl/nxt/mag/rob/18/012600001/00173/?P=3" target="_blank">Nikkei Robotics</a>.',isNew:false},
-      {date:"2024",text:'Received Best Employee Award at LINE Yahoo! Group (top 3 of 27,000+ employees).',isNew:false},
       {date:"Aug 2023",text:'Press release on <a href="https://www.waseda.jp/top/news/92745" target="_blank">Fashion AI research</a> (Waseda University × ZOZO Research).',isNew:false},
-      {date:"Jul 2023",text:'Started as Visiting Researcher at UC San Diego, Computer Science Department.',isNew:false},
       {date:"Jun 2023",text:'Research featured in <a href="https://hotozero.com/knowledge/fis/" target="_blank">"Hotozero" interview article</a>.',isNew:false},
       {date:"Dec 2022",text:'Research featured in <a href="https://www.nikkei.com/article/DGKKZO66764470S2A211C2TEB000/" target="_blank">Nikkei (日本経済新聞)</a>.',isNew:false},
       {date:"Dec 2022",text:'Research featured in <a href="https://www.fnn.jp/articles/-/452781" target="_blank">FNN (Fuji News Network)</a>.',isNew:false},
