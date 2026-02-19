@@ -170,6 +170,7 @@ const TRANSLATIONS = {
       {date:"Dec 2022",text:'Research featured in <a href="https://www.fnn.jp/articles/-/452781" target="_blank">FNN (Fuji News Network)</a>.',isNew:false},
       {date:"Nov 2022",text:'<a href="https://www.waseda.jp/top/news/85840" target="_blank">Press release</a> on Fashion Intelligence System (Waseda University × ZOZO Research).',isNew:false},
       {date:"Mar 2019",text:'Received Best Student Award (Top Graduate) from Waseda University, M.Eng. in Management Systems Engineering.',isNew:false},
+      {date:"2021",text:'A paper I supported writing received the <a href="https://www.jimanet.jp/information/awards/tokubetsu-jissen" target="_blank">JIMA Management Engineering Practice Award</a>: "Visualization of Customer Behavior Using Video Analytics at an Automobile Dealership" (<a href="https://www.azest.co.jp/news/info/news-355/" target="_blank">AZEST</a>).',isNew:false},
       {date:"May 2017",text:'Received <a href="https://www.jimanet.jp/information/awards/best-presentation-award" target="_blank">Best Presentation Award</a> at JIMA Spring Conference.',isNew:false},
       {date:"Apr 2017",text:'Dashboard exhibited at Tableau Conference On Tour Tokyo.',isNew:false},
       {date:"Nov 2016",text:'Attended Tableau Conference 2016 at Austin.',isNew:false}
@@ -284,6 +285,7 @@ const TRANSLATIONS = {
       {date:"2022年12月",text:'<a href="https://www.fnn.jp/articles/-/452781" target="_blank">FNN（フジニュースネットワーク）</a>に研究成果が掲載されました。',isNew:false},
       {date:"2022年11月",text:'<a href="https://www.waseda.jp/top/news/85840" target="_blank">Fashion Intelligence System</a>に関する研究成果が早稲田大学よりプレスリリースされました。',isNew:false},
       {date:"2019年3月",text:'早稲田大学大学院 経営システム工学専攻にて専攻賞（優秀学生賞・首席卒業）を受賞しました。',isNew:false},
+      {date:"2021年",text:'執筆を支援した論文が<a href="https://www.jimanet.jp/information/awards/tokubetsu-jissen" target="_blank">経営工学実践賞</a>を受賞しました。「自動車販売店における動画解析技術を用いた顧客行動の可視化と結果の活用」（<a href="https://www.azest.co.jp/news/info/news-355/" target="_blank">AZEST</a>）',isNew:false},
       {date:"2017年5月",text:'<a href="https://www.jimanet.jp/information/awards/best-presentation-award" target="_blank">日本経営工学会春季大会</a>にてBest Presentation Awardを受賞しました。',isNew:false},
       {date:"2017年4月",text:'Tableau Conference On Tour Tokyo にて、作成したダッシュボードが展示されました。',isNew:false},
       {date:"2016年11月",text:'Tableau Conference 2016 at Austin に参加しました。',isNew:false}
