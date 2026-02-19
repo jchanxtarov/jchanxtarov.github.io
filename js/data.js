@@ -136,7 +136,7 @@ const TRANSLATIONS = {
     "nav.about":"About","nav.publications":"Publications","nav.talks":"Talks","nav.experience":"Experience","nav.education":"Education","nav.teaching":"Teaching","nav.awards":"Awards","nav.media":"Media","nav.service":"Service","nav.projects":"Projects",
     // Hero
     "hero.greeting":"Hello, I'm",
-    "hero.affil1":"ZOZO Research (ZOZO NEXT, Inc.)",
+    "hero.title":"Director, ZOZO Research",
     "hero.affil2":"Visiting Research Fellow, Waseda University",
     "hero.affil3":"Part-time Lecturer, Sophia University",
     "hero.affil4":"Ph.D. in Engineering",
@@ -252,7 +252,7 @@ const TRANSLATIONS = {
   ja: {
     "nav.about":"概要","nav.publications":"論文","nav.talks":"講演","nav.experience":"職歴","nav.education":"学歴","nav.teaching":"教育","nav.awards":"受賞","nav.media":"メディア","nav.service":"学術活動","nav.projects":"プロジェクト",
     "hero.greeting":"はじめまして、",
-    "hero.affil1":"ZOZO研究所（株式会社ZOZO NEXT）",
+    "hero.title":"ZOZO研究所 ディレクター",
     "hero.affil2":"早稲田大学 招聘研究員",
     "hero.affil3":"上智大学 非常勤講師",
     "hero.affil4":"博士（工学）",
