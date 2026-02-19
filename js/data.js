@@ -232,7 +232,7 @@ const TRANSLATIONS = {
     // Projects
     "projects.title":"Non-Research Projects",
     "projects.tennis":"TaRO's CUP — Tennis Tournament & Community","projects.tennis.d":"Organizing tennis tournaments (TaRO's CUP, now in its 6th+ edition) and building a vibrant community for players of all levels. Partnering with sponsors like Paradiso and Bridgestone.",
-    "projects.nepal":"Nepal Japan Project","projects.nepal.d":"International volunteer project between Nepal and Japan (2015, 2016). Served as Project Leader in 2016, coordinating cross-cultural exchanges and community development initiatives.",
+    "projects.nepal":"Nepal Japan Project","projects.nepal.d":"International project between Nepal and Japan (2015, 2016). Served as Project Leader in 2016, coordinating cross-cultural exchanges and community development initiatives.",
     "projects.wedding":"Wedding Real-Time Quiz App","projects.wedding.d":"Developed a real-time quiz application for friends' weddings, supporting 100+ concurrent WebSocket connections. Used at 3 wedding events.",
     "projects.apps":"Personal Apps & Web Development","projects.apps.d":"Chat application, tennis tournament SNS, TaRO&Company website, and more. Full-stack development across Python, Ruby, Go, Kotlin, Swift, and modern web technologies.",
     // Collaboration
@@ -338,7 +338,7 @@ const TRANSLATIONS = {
     "service.title":"学術活動","service.reviewer":"査読者 / プログラム委員","service.details":"詳細","service.note":"複数年の実績を含む",
     "projects.title":"その他活動",
     "projects.tennis":"TaRO's CUP — テニス大会・コミュニティ運営","projects.tennis.d":"テニス大会（TaRO's CUP、第6回以上開催）の主催と活気あるコミュニティの構築。ParadisoやBridgestoneなどのスポンサーと連携し、あらゆるレベルのプレーヤーが参加できるイベントを運営しています。",
-    "projects.nepal":"Nepal Japan Project","projects.nepal.d":"日本とネパール間の国際ボランティアプロジェクト（2015年、2016年）。2016年はプロジェクトリーダーとして異文化交流・コミュニティ開発を推進。",
+    "projects.nepal":"Nepal Japan Project","projects.nepal.d":"日本とネパール間の国際プロジェクト（2015年、2016年）。2016年はプロジェクトリーダーとして異文化交流・コミュニティ開発を推進。",
     "projects.wedding":"結婚式リアルタイムクイズアプリ","projects.wedding.d":"友人の結婚式用リアルタイムクイズアプリを開発。WebSocketによる同時接続数100名以上に対応。計3回の結婚式で利用。",
     "projects.apps":"個人アプリ・Web開発","projects.apps.d":"チャットアプリ、テニス大会専用SNS、TaRO&Companyホームページなど。Python、Ruby、Go、Kotlin、Swift、モダンWeb技術を用いたフルスタック開発。",
     "news.showAll":"すべてのニュースを表示","news.showLess":"折りたたむ",
