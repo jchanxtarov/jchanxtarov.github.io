@@ -59,7 +59,6 @@
         </li>
       </ul>
       <div class="nav-actions">
-        <!-- <a href="#personal" class="btn-icon" aria-label="Personal Page" title="Personal Page"><i class="fas fa-home"></i></a> -->
         <button class="btn-icon" @click="toggleLang" aria-label="Toggle language"><span class="lang-label">{{ langLabel }}</span></button>
         <button class="btn-icon" @click="toggleTheme" aria-label="Toggle theme"><i :class="themeIcon"></i></button>
       </div>
@@ -77,7 +76,7 @@
         <div class="calendar-container">
           <div class="calendar-nav">
             <button class="calendar-nav-btn" @click="calPrevMonth" :disabled="!calCanGoPrev" aria-label="Previous month"><i class="fas fa-chevron-left"></i></button>
-            <h2>{{ calMonthName }} {{ calYear }}</h2>
+            <h2>{{ calDisplayDate }}</h2>
             <button class="calendar-nav-btn" @click="calNextMonth" :disabled="!calCanGoNext" aria-label="Next month"><i class="fas fa-chevron-right"></i></button>
           </div>
           <div class="calendar-grid">
@@ -90,9 +89,22 @@
             </div>
           </div>
           <div class="calendar-legend">
-            <div v-for="(info, key) in SPORT_TYPES" :key="key" class="legend-item">
+            <div v-for="(info, key) in SPORT_TYPES" :key="key" class="legend-item"
+                 :class="{ 'legend-item--interactive': key === 'tennis' }"
+                 @mouseenter="key === 'tennis' && (legendTooltipVisible = true)"
+                 @mouseleave="key === 'tennis' && (legendTooltipVisible = false)">
               <span class="legend-emoji">{{ info.emoji }}</span>
               <span>{{ info.label[lang] }}</span>
+              <div v-if="key === 'tennis'" v-show="legendTooltipVisible" class="legend-restring-tooltip">
+                <div class="legend-restring-header">
+                  <span>&#x1f9f5;</span>
+                  <span>{{ pt['tooltip.restring'] }}</span>
+                </div>
+                <div v-for="(rk, rkey) in RACKETS" :key="rkey" class="legend-restring-row">
+                  <span class="legend-restring-label">{{ rk.name[lang] }}</span>
+                  <span class="legend-restring-date">{{ lastRestringInfo(rkey) }}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -108,12 +120,12 @@
             <div class="tooltip-value">{{ activity.focus[lang] }}</div>
           </div>
           <div class="tooltip-field">
-            <div class="tooltip-label">{{ pt['tooltip.did'] }}</div>
-            <div class="tooltip-value">{{ activity.did[lang] }}</div>
-          </div>
-          <div class="tooltip-field">
             <div class="tooltip-label">{{ pt['tooltip.result'] }}</div>
             <div class="tooltip-value">{{ activity.result[lang] }}</div>
+          </div>
+          <div class="tooltip-field">
+            <div class="tooltip-label">{{ pt['tooltip.challenge'] }}</div>
+            <div class="tooltip-value">{{ activity.challenge[lang] }}</div>
           </div>
           <div class="tooltip-field">
             <div class="tooltip-label">{{ pt['tooltip.next'] }}</div>
@@ -121,9 +133,16 @@
           </div>
         </div>
       </div>
-      <div style="text-align:center;padding:0 0 60px">
-        <a href="#" @click.prevent="scrollToTop" style="font-size:13px">{{ pt['page.portfolio'] }} &rarr;</a>
-      </div>
+      <footer class="footer personal-footer">
+        <div class="container">
+          <div class="footer-content footer-content--with-personal">
+            <div class="footer-info">
+              <p>&copy; 2026 Ryotaro Shimizu. All rights reserved.</p>
+            </div>
+            <a href="#" @click.prevent="scrollToTop" class="footer-personal-link" aria-label="Academic Portfolio"><i class="fas fa-graduation-cap"></i></a>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <!-- ════════ Portfolio (default view) ════════ -->
@@ -621,11 +640,12 @@
   <!-- ════════ Footer ════════ -->
   <footer v-show="currentView === 'portfolio'" class="footer">
     <div class="container">
-      <div class="footer-content">
+      <div class="footer-content footer-content--with-personal">
         <div class="footer-info">
           <p>&copy; 2026 Ryotaro Shimizu. All rights reserved.</p>
           <p class="footer-update">{{ t['footer.update'] }}</p>
         </div>
+        <a href="#personal" class="footer-personal-link" aria-label="Personal Page"><i class="fas fa-home"></i></a>
       </div>
     </div>
   </footer>

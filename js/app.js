@@ -30,6 +30,7 @@ createApp({
     const calHoveredDate = ref(null);
     const calTooltipX = ref(0);
     const calTooltipY = ref(0);
+    const legendTooltipVisible = ref(false);
 
     // ── Computed ──
     const t = computed(() => TRANSLATIONS[lang.value] || TRANSLATIONS.en);
@@ -39,6 +40,10 @@ createApp({
 
     // ── Calendar Computed ──
     const calMonthName = computed(() => pt.value["calendar.months"][calMonth.value]);
+    const calDisplayDate = computed(() => {
+      if (lang.value === "ja") return calYear.value + "\u5E74" + calMonthName.value;
+      return calMonthName.value + " " + calYear.value;
+    });
     const calDayHeaders = computed(() => [
       pt.value["calendar.sun"], pt.value["calendar.mon"], pt.value["calendar.tue"],
       pt.value["calendar.wed"], pt.value["calendar.thu"], pt.value["calendar.fri"],
@@ -66,9 +71,17 @@ createApp({
       return days;
     });
     const calCanGoPrev = computed(() => !(calYear.value === 2026 && calMonth.value === 0));
+    const calMaxDate = computed(() => {
+      const now = new Date();
+      let maxY = now.getFullYear(), maxM = now.getMonth();
+      Object.keys(ACTIVITIES).forEach(d => {
+        const [y, m] = d.split("-").map(Number);
+        if (y * 12 + (m - 1) > maxY * 12 + maxM) { maxY = y; maxM = m - 1; }
+      });
+      return { year: maxY, month: maxM };
+    });
     const calCanGoNext = computed(() => {
-      const n = new Date();
-      return !(calYear.value === n.getFullYear() && calMonth.value === n.getMonth());
+      return !(calYear.value === calMaxDate.value.year && calMonth.value === calMaxDate.value.month);
     });
     const calTooltipActivities = computed(() => {
       if (!calHoveredDate.value) return [];
@@ -191,6 +204,21 @@ createApp({
       calHoveredDate.value = null;
     }
 
+    function lastRestringInfo(racketKey) {
+      let entry = null;
+      for (let i = RESTRING_HISTORY.length - 1; i >= 0; i--) {
+        if (RESTRING_HISTORY[i].racket === racketKey) {
+          entry = RESTRING_HISTORY[i];
+          break;
+        }
+      }
+      if (!entry) return "\u30fc";
+      const [y, m, d] = entry.date.split("-");
+      let dateStr;
+      dateStr = y + "/" + m + "/" + d;
+      return dateStr + "\uFF08" + entry.tension + "\uFF09";
+    }
+
     function scrollToSection(id) {
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -292,10 +320,11 @@ createApp({
       filteredPubs, displayedPubs, talks, displayedTalks, news, displayedNews, awards, displayedAwards, media, displayedMedia,
       toggleLang, toggleTheme, toggleMenu, closeMenu, scrollToTop, scrollToSection, setFilter, setSort,
       formatAuthors, talkTitle, talkDesc, talkType, talkYear, mediaTitle, pubDate, pubTypeLabel,
-      calYear, calMonth, calMonthName, calDayHeaders, calDays, calCanGoPrev, calCanGoNext,
+      calYear, calMonth, calMonthName, calDisplayDate, calDayHeaders, calDays, calCanGoPrev, calCanGoNext,
       calPrevMonth, calNextMonth, calShowTooltip, calHideTooltip,
       calHoveredDate, calTooltipActivities, calTooltipStyle,
-      SPORT_TYPES,
+      legendTooltipVisible, lastRestringInfo,
+      SPORT_TYPES, RACKETS,
     };
   }
 }).mount("#app");
