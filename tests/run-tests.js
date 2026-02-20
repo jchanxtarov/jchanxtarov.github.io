@@ -43,7 +43,7 @@ function testFileStructure() {
   log('\n📁 Testing File Structure...', 'cyan');
   
   const requiredFiles = [
-    'portfolio.html',
+    'index.html',
     'style.css',
     'js/app.js',
     'js/data.js',
@@ -114,7 +114,7 @@ function testPicsFolder() {
 function testHTMLContent() {
   log('\n📄 Testing HTML Content...', 'cyan');
   
-  const htmlPath = path.join(__dirname, '..', 'portfolio.html');
+  const htmlPath = path.join(__dirname, '..', 'index.html');
   const html = fs.readFileSync(htmlPath, 'utf-8');
   
   // Test DOCTYPE
@@ -530,7 +530,7 @@ function testContactSectionMobile() {
 function testImageReferences() {
   log('\n🖼️  Testing Image References...', 'cyan');
   
-  const htmlPath = path.join(__dirname, '..', 'portfolio.html');
+  const htmlPath = path.join(__dirname, '..', 'index.html');
   const html = fs.readFileSync(htmlPath, 'utf-8');
   
   // Extract image references

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryotaro Shimizu / Personal</title>
+  <meta name="description" content="Ryotaro Shimizu — Personal page and sports activity log.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="pics/favicon.png">
+  <link rel="apple-touch-icon" href="pics/favicon.png">
+  <link rel="stylesheet" href="personal.css">
+</head>
+<body>
+
+<div id="app">
+  <!-- ════════ Navigation ════════ -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="personal.html" class="nav-logo">RS</a>
+      <div class="nav-actions">
+        <a href="index.html" class="portfolio-nav-link">
+          <i class="fas fa-graduation-cap"></i>
+          <span>{{ t['page.portfolio'] }}</span>
+        </a>
+        <button class="btn-icon" @click="toggleLang" aria-label="Toggle language"><span style="font-size:12px;font-weight:700;letter-spacing:0.5px">{{ langLabel }}</span></button>
+        <button class="btn-icon" @click="toggleTheme" aria-label="Toggle theme"><i :class="themeIcon"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ════════ Header ════════ -->
+    <section class="personal-header">
+      <h1 class="personal-greeting">{{ t['page.greeting'] }}</h1>
+      <p class="personal-subtitle">{{ t['page.subtitle'] }}</p>
+    </section>
+
+    <!-- ════════ Calendar ════════ -->
+    <section class="calendar-section">
+      <div class="calendar-container">
+        <!-- Month Navigation -->
+        <div class="calendar-nav">
+          <button class="calendar-nav-btn" @click="prevMonth" :disabled="!canGoPrev" aria-label="Previous month">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <h2>{{ monthName }} {{ currentYear }}</h2>
+          <button class="calendar-nav-btn" @click="nextMonth" :disabled="!canGoNext" aria-label="Next month">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Day Headers + Calendar Grid -->
+        <div class="calendar-grid">
+          <div v-for="header in dayHeaders" :key="header" class="calendar-header-cell">{{ header }}</div>
+          <div v-for="(day, i) in calendarDays" :key="i"
+               class="calendar-cell"
+               :class="{ 'empty': !day.date, 'has-activity': day.activities.length > 0, 'is-today': day.isToday }"
+               @mouseenter="day.activities.length && showTooltip(day.date, $event)"
+               @mouseleave="hideTooltip()">
+            <span v-if="day.day" class="calendar-day-number">{{ day.day }}</span>
+            <div v-if="day.activities.length" class="calendar-emojis">
+              <span v-for="(a, j) in day.activities" :key="j">{{ a.emoji }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="calendar-legend">
+          <div v-for="(info, key) in SPORT_TYPES" :key="key" class="legend-item">
+            <span class="legend-emoji">{{ info.emoji }}</span>
+            <span>{{ info.label[lang] }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ════════ Tooltip ════════ -->
+  <div class="activity-tooltip" :class="{ visible: hoveredDate }" :style="tooltipStyle">
+    <div v-for="(activity, i) in tooltipActivities" :key="i" class="tooltip-activity">
+      <div class="tooltip-sport-header">
+        <span>{{ activity.emoji }}</span>
+        <span>{{ SPORT_TYPES[activity.sport].label[lang] }}</span>
+      </div>
+      <div class="tooltip-field">
+        <div class="tooltip-label">{{ t['tooltip.focus'] }}</div>
+        <div class="tooltip-value">{{ activity.focus[lang] }}</div>
+      </div>
+      <div class="tooltip-field">
+        <div class="tooltip-label">{{ t['tooltip.did'] }}</div>
+        <div class="tooltip-value">{{ activity.did[lang] }}</div>
+      </div>
+      <div class="tooltip-field">
+        <div class="tooltip-label">{{ t['tooltip.result'] }}</div>
+        <div class="tooltip-value">{{ activity.result[lang] }}</div>
+      </div>
+      <div class="tooltip-field">
+        <div class="tooltip-label">{{ t['tooltip.next'] }}</div>
+        <div class="tooltip-value">{{ activity.next[lang] }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════ Footer ════════ -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <p>&copy; 2026 Ryotaro Shimizu. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- Vue 3 CDN -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="js/personal-data.js"></script>
+<script src="js/personal-app.js"></script>
+</body>
+</html>
