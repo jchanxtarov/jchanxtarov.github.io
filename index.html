@@ -3,44 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ryotaro Shimizu / 清水良太郎</title>
-  <meta name="description" content="Ryotaro Shimizu — Director at ZOZO Research, Visiting Researcher at Waseda University, Part-time Lecturer at Sophia University. Ph.D. in Engineering.">
-  <meta name="keywords" content="Ryotaro Shimizu, 清水良太郎, ZOZO Research, machine learning, recommender systems, explainable AI, computer vision, LLM">
-  <meta property="og:title" content="Ryotaro Shimizu / 清水良太郎">
-  <meta property="og:description" content="Director at ZOZO Research | Visiting Researcher at Waseda Univ. | Part-time Lecturer at Sophia Univ. | Ph.D. in Engineering">
-  <meta property="og:type" content="profile">
-  <meta property="og:image" content="https://jchanxtarov.github.io/pics/og_image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="675">
-  <meta property="og:url" content="https://jchanxtarov.github.io/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://jchanxtarov.github.io/pics/og_image.jpg">
+  <title>Ryotaro Shimizu / Personal</title>
+  <meta name="description" content="Ryotaro Shimizu — Personal page and sports activity log.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" type="image/png" href="pics/favicon.png">
   <link rel="apple-touch-icon" href="pics/favicon.png">
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N9FZHL8EG3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-N9FZHL8EG3');
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org","@type":"Person","name":"Ryotaro Shimizu","alternateName":"清水良太郎",
-    "jobTitle":"Director, ZOZO Research",
-    "affiliation":[{"@type":"Organization","name":"ZOZO Research"},{"@type":"Organization","name":"Waseda University"},{"@type":"Organization","name":"Sophia University"}],
-    "alumniOf":{"@type":"Organization","name":"Waseda University"},
-    "sameAs":["https://scholar.google.co.jp/citations?user=imbW88cAAAAJ","https://www.linkedin.com/in/ryotaro-shimizu-5b60ab202","https://github.com/jchanxtarov"]
-  }
-  </script>
+  <link rel="stylesheet" href="personal.css">
 </head>
 <body>
 
@@ -48,521 +19,96 @@
   <!-- ════════ Navigation ════════ -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="nav-logo" @click.prevent="scrollToTop">RS</a>
-      <button class="nav-toggle" :class="{active:menuOpen}" @click="toggleMenu" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-menu" :class="{open:menuOpen}">
-        <li v-for="key in ['about','publications','talks','experience','education','teaching','awards','media','service','projects']" :key="key">
-          <a :href="'#'+key" @click.prevent="scrollToSection(key)">{{ t['nav.'+key] }}</a>
-        </li>
-      </ul>
+      <a href="index.html" class="nav-logo">RS</a>
       <div class="nav-actions">
-        <button class="btn-icon" @click="toggleLang" aria-label="Toggle language"><span class="lang-label">{{ langLabel }}</span></button>
+        <a href="portfolio.html" class="portfolio-nav-link">
+          <i class="fas fa-graduation-cap"></i>
+          <span>{{ t['page.portfolio'] }}</span>
+        </a>
+        <button class="btn-icon" @click="toggleLang" aria-label="Toggle language"><span style="font-size:12px;font-weight:700;letter-spacing:0.5px">{{ langLabel }}</span></button>
         <button class="btn-icon" @click="toggleTheme" aria-label="Toggle theme"><i :class="themeIcon"></i></button>
       </div>
     </div>
   </nav>
 
   <main>
-    <!-- ════════ Hero ════════ -->
-    <section class="hero" id="hero">
-      <div class="hero-bg" style="background-image:url('pics/hero_background.jpg')"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-container">
-        <div class="hero-content">
-          <div class="hero-greeting"><span class="greeting-icon">👋</span><span>{{ greeting }}</span></div>
-          <h1 class="hero-name">Ryotaro Shimizu</h1>
-          <p class="hero-name-ja">清水 良太郎</p>
-          <div class="hero-affiliations">
-            <span><i class="fas fa-building"></i> {{ t['hero.title'] }}</span>
-            <span><i class="fas fa-university"></i> {{ t['hero.affil2'] }}</span>
-            <span><i class="fas fa-chalkboard-teacher"></i> {{ t['hero.affil3'] }}</span>
-            <span><i class="fas fa-graduation-cap"></i> {{ t['hero.affil4'] }}</span>
-          </div>
-          <div class="hero-links">
-            <a href="https://scholar.google.co.jp/citations?user=imbW88cAAAAJ" target="_blank" rel="noopener" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-            <a href="https://www.linkedin.com/in/ryotaro-shimizu-5b60ab202" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/jchanxtarov" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.facebook.com/latataro/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.researchgate.net/profile/Ryotaro-Shimizu-2" target="_blank" rel="noopener" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
-
-          </div>
-        </div>
-      </div>
+    <!-- ════════ Header ════════ -->
+    <section class="personal-header">
+      <h1 class="personal-greeting">{{ t['page.greeting'] }}</h1>
+      <p class="personal-subtitle">{{ t['page.subtitle'] }}</p>
     </section>
 
-    <!-- ════════ About ════════ -->
-    <section class="section section-about" id="about">
-      <div class="about-bg" style="background-image:url('pics/presentation_photo.jpg')"></div>
-      <div class="about-overlay"></div>
-      <div class="container about-container">
-        <h2 class="section-title about-title">{{ t['about.title'] }}</h2>
-        <div class="about-card animate-in">
-          <div class="about-text">
-            <p v-html="t['about.p1']"></p>
-            <p v-html="t['about.p2']"></p>
-            <p v-if="t['about.p3']" v-html="t['about.p3']"></p>
-          </div>
-          <div class="research-interests">
-            <h3>{{ t['about.interests'] }}</h3>
-            <div class="interest-tags">
-              <span class="tag" v-for="tag in ['Recommender Systems','Explainable AI','Computer Vision','Vision-Language Models','Large Language Models','Data Mining','Fashion Intelligence','Business Analytics','Visualization']" :key="tag">{{ tag }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ News ════════ -->
-    <section class="section" id="news">
-      <div class="container">
-        <h2 class="section-title">{{ t['news.title'] }}</h2>
-        <div class="news-list">
-          <div v-for="(item,i) in displayedNews" :key="i" class="news-item animate-in">
-            <span class="news-date">{{ item.date }}</span>
-            <span v-if="item.isNew" class="news-badge new">New</span>
-            <p v-html="item.text"></p>
-          </div>
-        </div>
-        <div class="pub-actions">
-          <button v-if="!showAllNews && news.length > 4" class="pub-toggle-btn" @click="showAllNews = true">
-            {{ t['news.showAll'] || 'Show All' }} ({{ news.length }})
+    <!-- ════════ Calendar ════════ -->
+    <section class="calendar-section">
+      <div class="calendar-container">
+        <!-- Month Navigation -->
+        <div class="calendar-nav">
+          <button class="calendar-nav-btn" @click="prevMonth" :disabled="!canGoPrev" aria-label="Previous month">
+            <i class="fas fa-chevron-left"></i>
           </button>
-          <button v-if="showAllNews" class="pub-toggle-btn" @click="showAllNews = false">
-            {{ t['news.showLess'] || 'Show Less' }}
+          <h2>{{ monthName }} {{ currentYear }}</h2>
+          <button class="calendar-nav-btn" @click="nextMonth" :disabled="!canGoNext" aria-label="Next month">
+            <i class="fas fa-chevron-right"></i>
           </button>
         </div>
-      </div>
-    </section>
 
-    <!-- ════════ Publications ════════ -->
-    <section class="section section-alt" id="publications">
-      <div class="container">
-        <h2 class="section-title">{{ t['pub.title'] }}</h2>
-        <p class="section-subtitle">
-          {{ t['pub.subtitle'] }}
-          <a href="https://scholar.google.co.jp/citations?user=imbW88cAAAAJ" target="_blank">{{ t['pub.scholarLink'] }} <i class="fas fa-external-link-alt"></i></a>
-        </p>
-        <div class="pub-controls">
-          <div class="pub-filters">
-            <button v-for="f in ['all','conference','journal','workshop','preprint','domestic']" :key="f"
-              class="pub-filter" :class="{active:pubFilter===f}" @click="setFilter(f)">
-              {{ t['pub.filter.'+f] }}
-            </button>
-          </div>
-          <div class="pub-sort">
-            <span class="pub-sort-label"><i class="fas fa-sort"></i> {{ t['pub.sort'] }}:</span>
-            <button class="pub-sort-btn" :class="{active:pubSort==='year'}" @click="setSort('year')">
-              <i class="fas fa-calendar"></i> {{ t['pub.sort.year'] }}
-            </button>
-            <button class="pub-sort-btn" :class="{active:pubSort==='oldest'}" @click="setSort('oldest')">
-              <i class="fas fa-calendar"></i> {{ t['pub.sort.oldest'] }}
-            </button>
-          </div>
-        </div>
-        <div class="pub-list">
-          <div v-for="pub in displayedPubs" :key="pub.title+pub.venue" class="pub-card animate-in visible">
-            <div class="pub-card-header">
-              <h3 class="pub-title">
-                <a v-if="pub.links && pub.links.paper" :href="pub.links.paper" target="_blank" class="pub-title-link">{{ pub.title }} <i class="fas fa-external-link-alt" style="font-size:11px;opacity:0.5"></i></a>
-                <span v-else>{{ pub.title }}</span>
-              </h3>
-            </div>
-            <p class="pub-authors" v-html="formatAuthors(pub.authors)"></p>
-            <div class="pub-meta">
-              <span class="pub-venue">{{ pub.venue }}</span>
-              <span class="pub-year">{{ pubDate(pub) }}</span>
-              <span class="pub-type-badge" :class="pub.type">{{ pubTypeLabel(pub.type) }}</span>
+        <!-- Day Headers + Calendar Grid -->
+        <div class="calendar-grid">
+          <div v-for="header in dayHeaders" :key="header" class="calendar-header-cell">{{ header }}</div>
+          <div v-for="(day, i) in calendarDays" :key="i"
+               class="calendar-cell"
+               :class="{ 'empty': !day.date, 'has-activity': day.activities.length > 0, 'is-today': day.isToday }"
+               @mouseenter="day.activities.length && showTooltip(day.date, $event)"
+               @mouseleave="hideTooltip()">
+            <span v-if="day.day" class="calendar-day-number">{{ day.day }}</span>
+            <div v-if="day.activities.length" class="calendar-emojis">
+              <span v-for="(a, j) in day.activities" :key="j">{{ a.emoji }}</span>
             </div>
           </div>
         </div>
-        <div class="pub-actions">
-          <button v-if="!showAllPubs && filteredPubs.length > 5" class="pub-toggle-btn" @click="showAllPubs = true">
-            {{ t['pub.showAll'] }} ({{ filteredPubs.length }})
-          </button>
-          <button v-if="showAllPubs" class="pub-toggle-btn" @click="showAllPubs = false">
-            {{ t['pub.showLess'] }}
-          </button>
-        </div>
-        <p class="pub-note">{{ t['pub.note'] }}</p>
-      </div>
-    </section>
 
-    <!-- ════════ Talks ════════ -->
-    <section class="section" id="talks">
-      <div class="container">
-        <h2 class="section-title">{{ t['talks.title'] }}</h2>
-        <div class="talks-list">
-          <div v-for="talk in displayedTalks" :key="talk.title+talk.year" class="talk-item animate-in">
-            <div class="talk-meta">
-              <span class="talk-year">{{ talkYear(talk) }}</span>
-              <span class="talk-type" :class="talk.type">{{ talkType(talk) }}</span>
-              <span v-if="talk.award" class="talk-award"><i class="fas fa-trophy"></i> {{ talk.award }}</span>
-            </div>
-            <div class="talk-body">
-              <div class="talk-text">
-                <h3>
-                  <a v-if="talk.link" :href="talk.link" target="_blank">{{ talkTitle(talk) }} <i class="fas fa-external-link-alt" style="font-size:12px"></i></a>
-                  <span v-else>{{ talkTitle(talk) }}</span>
-                </h3>
-                <p class="talk-detail">{{ talkDesc(talk) }}</p>
-              </div>
-              <img v-if="talk.image" :src="talk.image" :alt="talk.title" class="talk-image" loading="lazy">
-            </div>
-          </div>
-        </div>
-        <div class="pub-actions">
-          <button v-if="!showAllTalks" class="pub-toggle-btn" @click="showAllTalks = true">
-            {{ t['talks.showAll'] || 'Show All' }} ({{ talks.length }})
-          </button>
-          <button v-if="showAllTalks" class="pub-toggle-btn" @click="showAllTalks = false">
-            {{ t['talks.showLess'] || 'Show Less' }}
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ Experience ════════ -->
-    <section class="section section-alt" id="experience">
-      <div class="container">
-        <h2 class="section-title">{{ t['exp.title'] }}</h2>
-        <div class="timeline">
-          <!-- Feb 2026 -->
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker current"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/zozonext.png" alt="ZOZO NEXT" class="timeline-logo"><h3><a href="https://zozonext.com/" target="_blank">ZOZO NEXT, Inc.</a> <span class="company-note">ZOZO Research</span></h3><span class="timeline-date">Feb 2026 – Present</span></div>
-              <p class="timeline-role">{{ t['exp.zozo.dir'] }}</p>
-              <p class="timeline-desc">{{ t['exp.zozo.dir.d'] }}</p>
-            </div>
-          </div>
-          <!-- Feb 2024 -->
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/zozonext.png" alt="ZOZO NEXT" class="timeline-logo"><h3><a href="https://zozonext.com/" target="_blank">ZOZO NEXT, Inc.</a> <span class="company-note">ZOZO Research</span></h3><span class="timeline-date">Feb 2024 – Feb 2026</span></div>
-              <p class="timeline-role">{{ t['exp.zozo.sm'] }}</p>
-              <p class="timeline-desc">{{ t['exp.zozo.sm.d'] }}</p>
-            </div>
-          </div>
-          <!-- Oct 2023 -->
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker current"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/waseda.png" alt="Waseda" class="timeline-logo"><h3><a href="https://www.waseda.jp/" target="_blank">{{ t['exp.waseda.dsi'] }}</a></h3><span class="timeline-date">Oct 2023 – Present</span></div>
-              <p class="timeline-role">{{ t['exp.waseda.dsi.r'] }}</p>
-              <p class="timeline-desc" v-html="t['exp.waseda.dsi.d']"></p>
-            </div>
-          </div>
-          <!-- Oct 2023 -->
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker current"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/sophia.png" alt="Sophia" class="timeline-logo"><h3><a href="https://www.sophia.ac.jp/" target="_blank">{{ t['exp.sophia'] }}</a></h3><span class="timeline-date">Oct 2023 – Present</span></div>
-              <p class="timeline-role">{{ t['exp.sophia.r'] }}</p>
-              <p class="timeline-desc">{{ t['exp.sophia.d'] }}</p>
-            </div>
-          </div>
-          <!-- Jul 2023 -->
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/ucsd.png" alt="UCSD" class="timeline-logo"><h3><a href="https://cse.ucsd.edu/" target="_blank">{{ t['exp.ucsd'] }}</a></h3><span class="timeline-date">Jul 2023 – Jul 2025</span></div>
-              <p class="timeline-role">{{ t['exp.ucsd.r'] }}</p>
-              <p class="timeline-desc" v-html="t['exp.ucsd.d']"></p>
-            </div>
-          </div>
-          <!-- Oct 2021 -->
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/zozonext.png" alt="ZOZO NEXT" class="timeline-logo"><h3><a href="https://zozonext.com/" target="_blank">ZOZO NEXT, Inc.</a> <span class="company-note">ZOZO Research</span></h3><span class="timeline-date">Oct 2021 – Jan 2024</span></div>
-              <p class="timeline-role">{{ t['exp.zozo.lead'] }}</p>
-              <p class="timeline-desc">{{ t['exp.zozo.lead.d'] }}</p>
-            </div>
-          </div>
-          <!-- Jan 2021 -->
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/zozo.png" alt="ZOZO" class="timeline-logo"><h3><a href="https://corp.zozo.com/" target="_blank">ZOZO, Inc.</a> <span class="company-note">ZOZO Research</span></h3><span class="timeline-date">Jan 2021 – Sep 2021</span></div>
-              <p class="timeline-role">{{ t['exp.zozo.rs'] }}</p>
-            </div>
-          </div>
-          <!-- Apr 2019 -->
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/dena.png" alt="DeNA" class="timeline-logo"><h3><a href="https://dena.com/" target="_blank">{{ t['exp.dena'] }}</a></h3><span class="timeline-date">Apr 2019 – Dec 2020</span></div>
-              <p class="timeline-role">{{ t['exp.dena.r'] }}</p>
-              <p class="timeline-desc">{{ t['exp.dena.d'] }}</p>
-            </div>
-          </div>
-          <!-- Jul 2018 -->
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/toreta.png" alt="Toreta" class="timeline-logo"><h3><a href="https://toreta.in/" target="_blank">{{ t['exp.toreta'] }}</a></h3><span class="timeline-date">Jul 2018 – Mar 2019</span></div>
-              <p class="timeline-role">{{ t['exp.toreta.r'] }}</p>
-              <p class="timeline-desc">{{ t['exp.toreta.d'] }}</p>
-            </div>
-          </div>
-          <!-- Apr 2018 -->
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/startree.jpeg" alt="Startree" class="timeline-logo"><h3>{{ t['exp.startree'] }}</h3><span class="timeline-date">Apr 2018 – Mar 2019</span></div>
-              <p class="timeline-role">{{ t['exp.startree.r'] }}</p>
-              <p class="timeline-desc">{{ t['exp.startree.d'] }}</p>
-            </div>
-          </div>
-          <!-- Nov 2017 -->
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/pksha.png" alt="PKSHA" class="timeline-logo"><h3><a href="https://pkshatech.com/" target="_blank">{{ t['exp.pksha'] }}</a></h3><span class="timeline-date">Nov 2017 – Jun 2018</span></div>
-              <p class="timeline-role">{{ t['exp.pksha.r'] }}</p>
-              <p class="timeline-desc">{{ t['exp.pksha.d'] }}</p>
-            </div>
-          </div>
-          <!-- Nov 2015 -->
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/azest.png" alt="AZEST" class="timeline-logo"><h3><a href="https://www.azest.co.jp/" target="_blank">{{ t['exp.azest'] }}</a></h3><span class="timeline-date">Nov 2015 – Mar 2017</span></div>
-              <p class="timeline-role">{{ t['exp.azest.r'] }}</p>
-              <p class="timeline-desc">{{ t['exp.azest.d'] }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ Education ════════ -->
-    <section class="section" id="education">
-      <div class="container">
-        <h2 class="section-title">{{ t['edu.title'] }}</h2>
-        <div class="timeline">
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/waseda.png" alt="Waseda" class="timeline-logo"><h3><a href="https://www.waseda.jp/" target="_blank">{{ t['edu.waseda'] }}</a></h3><span class="timeline-date">2021 – 2023</span></div>
-              <p class="timeline-role">{{ t['edu.phd'] }}</p>
-              <ul class="timeline-highlights"><li v-for="h in t['edu.phd.h']" :key="h" v-html="h"></li></ul>
-            </div>
-          </div>
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/waseda.png" alt="Waseda" class="timeline-logo"><h3><a href="https://www.waseda.jp/" target="_blank">{{ t['edu.waseda'] }}</a></h3><span class="timeline-date">2017 – 2019</span></div>
-              <p class="timeline-role">{{ t['edu.ms'] }}</p>
-              <ul class="timeline-highlights"><li v-for="h in t['edu.ms.h']" :key="h" v-html="h"></li></ul>
-            </div>
-          </div>
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/waseda.png" alt="Waseda" class="timeline-logo"><h3><a href="https://www.waseda.jp/" target="_blank">{{ t['edu.waseda'] }}</a></h3><span class="timeline-date">2013 – 2017</span></div>
-              <p class="timeline-role">{{ t['edu.bs'] }}</p>
-            </div>
-          </div>
-          <div class="timeline-item animate-in">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-header"><img src="pics/logos/waseda.png" alt="Waseda" class="timeline-logo"><h3><a href="https://www.waseda.jp/school/gakuin/" target="_blank">{{ t['edu.waseda.hs'] }}</a></h3><span class="timeline-date">2010 – 2013</span></div>
-              <p class="timeline-role">{{ t['edu.hs'] }}</p>
-              <ul v-if="t['edu.hs.h']" class="timeline-highlights"><li v-for="h in t['edu.hs.h']" :key="h" v-html="h"></li></ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ Teaching ════════ -->
-    <section class="section section-alt" id="teaching">
-      <div class="container">
-        <h2 class="section-title">{{ t['teaching.title'] }}</h2>
-        <div class="teaching-grid">
-          <div class="teaching-card animate-in">
-            <div class="teaching-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-            <h3>{{ t['teaching.sophia'] }}</h3>
-            <p class="teaching-period">Apr 2023 – Present</p>
-            <p class="teaching-desc">{{ t['teaching.sophia.d'] }}</p>
-            <p class="teaching-desc">{{ t['teaching.sophia.note'] }}</p>
-            <p class="teaching-desc">{{ t['teaching.sophia.contact'] }}</p>
-          </div>
-          <div class="teaching-card animate-in">
-            <div class="teaching-icon"><i class="fas fa-user-graduate"></i></div>
-            <h3>{{ t['teaching.waseda'] }}</h3>
-            <p class="teaching-period">Oct 2023 – Present</p>
-            <p class="teaching-desc">{{ t['teaching.waseda.d'] }}</p>
-            <p class="teaching-desc">{{ t['teaching.waseda.note'] }}</p>
-          </div>
-        </div>
-        <div class="teaching-message animate-in">
-          <div class="teaching-message-icon"><i class="fas fa-paper-plane"></i></div>
-          <p v-html="t['teaching.studentMsg']"></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ Awards ════════ -->
-    <section class="section" id="awards">
-      <div class="container">
-        <h2 class="section-title">{{ t['awards.title'] }}</h2>
-        <div class="awards-list">
-          <div v-for="a in displayedAwards" :key="a.title" class="award-item animate-in">
-            <span class="award-year">{{ a.year }}</span>
-            <div class="award-content"><h3>{{ a.title }}</h3><p>{{ a.desc }}</p></div>
-          </div>
-        </div>
-        <div class="pub-actions">
-          <button v-if="!showAllAwards && awards.length > 3" class="pub-toggle-btn" @click="showAllAwards = true">
-            {{ t['awards.showAll'] || 'Show All' }} ({{ awards.length }})
-          </button>
-          <button v-if="showAllAwards" class="pub-toggle-btn" @click="showAllAwards = false">
-            {{ t['awards.showLess'] || 'Show Less' }}
-          </button>
-        </div>
-        <!-- Awards photo removed per user request (unnatural positioning) -->
-      </div>
-    </section>
-
-    <!-- ════════ Media ════════ -->
-    <section class="section section-alt" id="media">
-      <div class="container">
-        <h2 class="section-title">{{ t['media.title'] }}</h2>
-        <p class="section-subtitle">{{ t['media.subtitle'] }}</p>
-        <div class="media-grid">
-          <a v-for="m in displayedMedia" :key="m.url" :href="m.url" target="_blank" class="media-card animate-in" :class="{featured: m.category === 'featured'}">
-            <span class="media-source">{{ m.source }}</span>
-            <p>{{ mediaTitle(m) }}</p>
-            <span class="media-date">{{ m.date }}</span>
-          </a>
-          <div class="media-card media-more animate-in"><p>{{ t['media.more'] }}</p></div>
-        </div>
-        <div class="pub-actions">
-          <button v-if="!showAllMedia && media.length > 4" class="pub-toggle-btn" @click="showAllMedia = true">
-            {{ t['media.showAll'] || 'Show All' }} ({{ media.length }})
-          </button>
-          <button v-if="showAllMedia" class="pub-toggle-btn" @click="showAllMedia = false">
-            {{ t['media.showLess'] || 'Show Less' }}
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ Service ════════ -->
-    <section class="section" id="service">
-      <div class="container">
-        <h2 class="section-title">{{ t['service.title'] }}</h2>
-        <div class="service-content animate-in">
-          <div class="service-category">
-            <h3>{{ t['service.reviewer'] }}</h3>
-            <div class="service-tags">
-              <span class="service-tag">ICLR</span>
-              <span class="service-tag">The Web Conference (WWW)</span>
-              <span class="service-tag">RecSys</span>
-              <span class="service-tag">CVPR Workshop</span>
-              <a href="https://www.ipsj.or.jp/english/jip/index.html" target="_blank" class="service-tag">Journal of Information Processing (IPSJ)</a>
-            </div>
-            <p class="service-note">* {{ t['service.note'] }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ Projects ════════ -->
-    <section class="section section-alt" id="projects">
-      <div class="container">
-        <h2 class="section-title">{{ t['projects.title'] }}</h2>
-        <div class="projects-grid">
-          <div class="project-card animate-in">
-            <img src="pics/tennis_tournament.jpg" alt="Tennis tournament" class="project-image" loading="lazy">
-            <div class="project-body">
-              <h3><i class="fas fa-table-tennis-paddle-ball" style="color:#a8d65b;margin-right:8px"></i>{{ t['projects.tennis'] }}</h3>
-              <p>{{ t['projects.tennis.d'] }}</p>
-              <div class="project-tags"><span>Community Building</span><span>Event Management</span><span>Sports</span></div>
-            </div>
-          </div>
-          <a href="https://www.it.mgmt.waseda.ac.jp/subject/subject07.html" target="_blank" class="project-card animate-in" style="text-decoration:none;color:inherit">
-            <img src="pics/nepal_amazon.jpg" alt="Nepal Japan Project" class="project-image" loading="lazy">
-            <div class="project-body">
-              <h3><i class="fas fa-globe-asia" style="color:#34c759;margin-right:8px"></i>{{ t['projects.nepal'] }} <i class="fas fa-external-link-alt" style="font-size:11px;opacity:0.4"></i></h3>
-              <p>{{ t['projects.nepal.d'] }}</p>
-              <div class="project-tags"><span>Volunteer</span><span>International</span><span>Leadership</span></div>
-            </div>
-          </a>
-          <div class="project-card animate-in">
-            <img src="pics/wedding_app_pic.jpg" alt="Wedding Quiz App" class="project-image" loading="lazy" style="filter: blur(1.5px)">
-            <div class="project-body">
-              <h3><i class="fas fa-mobile-alt" style="color:#ff9500;margin-right:8px"></i>{{ t['projects.wedding'] }}</h3>
-              <p>{{ t['projects.wedding.d'] }}</p>
-              <div class="project-tags"><span>Real-time</span><span>WebSocket</span><span>100+ Users</span></div>
-            </div>
-          </div>
-          <div class="project-card animate-in">
-            <img src="pics/taros_cup_app.jpg" alt="TaRO's CUP" class="project-image" loading="lazy">
-            <div class="project-body">
-              <h3><i class="fas fa-code" style="color:var(--accent);margin-right:8px"></i>{{ t['projects.apps'] }}</h3>
-              <p>{{ t['projects.apps.d'] }}</p>
-              <div class="project-tags"><span>Python</span><span>Ruby</span><span>Go</span><span>Kotlin</span><span>Swift</span><span>AWS</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ Collaboration ════════ -->
-    <section class="section collaboration" id="collaboration">
-      <div class="container">
-        <div class="collab-content">
-          <h2 class="collab-title">{{ t['collab.title'] }}</h2>
-          <p class="collab-subtitle">{{ t['collab.subtitle'] }}</p>
-          <div class="collab-grid">
-            <div class="collab-card animate-in">
-              <div class="collab-icon"><i class="fas fa-microphone-alt"></i></div>
-              <h3>{{ t['collab.speaking'] }}</h3>
-              <p>{{ t['collab.speaking.d'] }}</p>
-            </div>
-            <div class="collab-card animate-in">
-              <div class="collab-icon"><i class="fas fa-flask"></i></div>
-              <h3>{{ t['collab.research'] }}</h3>
-              <p>{{ t['collab.research.d'] }}</p>
-            </div>
-            <div class="collab-card animate-in">
-              <div class="collab-icon"><i class="fas fa-calendar-alt"></i></div>
-              <h3>{{ t['collab.event'] }}</h3>
-              <p>{{ t['collab.event.d'] }}</p>
-            </div>
-            <div class="collab-card animate-in">
-              <div class="collab-icon"><i class="fas fa-user-graduate"></i></div>
-              <h3>{{ t['collab.mentoring'] }}</h3>
-              <p>{{ t['collab.mentoring.d'] }}</p>
-            </div>
-          </div>
-          <div class="collab-contact animate-in">
-            <p>{{ t['collab.contact'] }}</p>
-            <div class="collab-links">
-              <a href="https://www.linkedin.com/in/ryotaro-shimizu-5b60ab202" target="_blank" class="collab-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-              <a href="https://www.facebook.com/latataro/" target="_blank" class="collab-btn"><i class="fab fa-facebook"></i> Facebook</a>
-              <a href="mailto:roy.taro.shimizu@gmail.com" class="collab-btn primary"><i class="fas fa-envelope"></i> roy.taro.shimizu [at] gmail.com</a>
-            </div>
+        <!-- Legend -->
+        <div class="calendar-legend">
+          <div v-for="(info, key) in SPORT_TYPES" :key="key" class="legend-item">
+            <span class="legend-emoji">{{ info.emoji }}</span>
+            <span>{{ info.label[lang] }}</span>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- ════════ Tooltip ════════ -->
+  <div class="activity-tooltip" :class="{ visible: hoveredDate }" :style="tooltipStyle">
+    <div v-for="(activity, i) in tooltipActivities" :key="i" class="tooltip-activity">
+      <div class="tooltip-sport-header">
+        <span>{{ activity.emoji }}</span>
+        <span>{{ SPORT_TYPES[activity.sport].label[lang] }}</span>
+      </div>
+      <div class="tooltip-field">
+        <div class="tooltip-label">{{ t['tooltip.focus'] }}</div>
+        <div class="tooltip-value">{{ activity.focus[lang] }}</div>
+      </div>
+      <div class="tooltip-field">
+        <div class="tooltip-label">{{ t['tooltip.did'] }}</div>
+        <div class="tooltip-value">{{ activity.did[lang] }}</div>
+      </div>
+      <div class="tooltip-field">
+        <div class="tooltip-label">{{ t['tooltip.result'] }}</div>
+        <div class="tooltip-value">{{ activity.result[lang] }}</div>
+      </div>
+      <div class="tooltip-field">
+        <div class="tooltip-label">{{ t['tooltip.next'] }}</div>
+        <div class="tooltip-value">{{ activity.next[lang] }}</div>
+      </div>
+    </div>
+  </div>
+
   <!-- ════════ Footer ════════ -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-info">
-          <p>&copy; 2026 Ryotaro Shimizu. All rights reserved.</p>
-          <p class="footer-update">{{ t['footer.update'] }}</p>
-        </div>
+    <div class="footer-content">
+      <div class="footer-info">
+        <p>&copy; 2026 Ryotaro Shimizu. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -570,7 +116,7 @@
 
 <!-- Vue 3 CDN -->
 <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-<script src="js/data.js"></script>
-<script src="js/app.js"></script>
+<script src="js/personal-data.js"></script>
+<script src="js/personal-app.js"></script>
 </body>
 </html>
