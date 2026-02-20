@@ -59,7 +59,6 @@
         </li>
       </ul>
       <div class="nav-actions">
-        <!-- <a href="#personal" class="btn-icon" aria-label="Personal Page" title="Personal Page"><i class="fas fa-home"></i></a> -->
         <button class="btn-icon" @click="toggleLang" aria-label="Toggle language"><span class="lang-label">{{ langLabel }}</span></button>
         <button class="btn-icon" @click="toggleTheme" aria-label="Toggle theme"><i :class="themeIcon"></i></button>
       </div>
@@ -621,11 +620,12 @@
   <!-- ════════ Footer ════════ -->
   <footer v-show="currentView === 'portfolio'" class="footer">
     <div class="container">
-      <div class="footer-content">
+      <div class="footer-content footer-content--with-personal">
         <div class="footer-info">
           <p>&copy; 2026 Ryotaro Shimizu. All rights reserved.</p>
           <p class="footer-update">{{ t['footer.update'] }}</p>
         </div>
+        <a href="#personal" class="footer-personal-link" aria-label="Personal Page"><i class="fas fa-home"></i></a>
       </div>
     </div>
   </footer>
