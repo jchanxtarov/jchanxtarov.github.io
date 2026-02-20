@@ -119,12 +119,17 @@ img {
   font-size: 18px;
   color: var(--text-primary);
   letter-spacing: -0.5px;
+  flex-shrink: 0;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
   gap: 4px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  justify-content: center;
 }
 
 .nav-menu a {
@@ -147,6 +152,7 @@ img {
   display: flex;
   gap: 8px;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .btn-icon {
@@ -155,6 +161,7 @@ img {
   color: var(--text-secondary);
   cursor: pointer;
   width: 36px;
+  min-width: 36px;
   height: 36px;
   border-radius: 10px;
   display: flex;

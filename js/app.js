@@ -15,10 +15,70 @@ createApp({
     const showAllNews = ref(false);
     const publications = ref([...PUBLICATIONS]);
 
+    // ── View Routing (hash-based) ──
+    const currentView = ref(window.location.hash === '#personal' ? 'personal' : 'portfolio');
+
+    function onHashChange() {
+      currentView.value = window.location.hash === '#personal' ? 'personal' : 'portfolio';
+      window.scrollTo({ top: 0 });
+    }
+
+    // ── Personal Calendar State ──
+    const calNow = new Date();
+    const calYear = ref(calNow.getFullYear());
+    const calMonth = ref(calNow.getMonth());
+    const calHoveredDate = ref(null);
+    const calTooltipX = ref(0);
+    const calTooltipY = ref(0);
+
     // ── Computed ──
     const t = computed(() => TRANSLATIONS[lang.value] || TRANSLATIONS.en);
+    const pt = computed(() => PERSONAL_TRANSLATIONS[lang.value] || PERSONAL_TRANSLATIONS.en);
     const langLabel = computed(() => lang.value === "en" ? "JP" : "EN");
     const themeIcon = computed(() => theme.value === "dark" ? "fas fa-sun" : "fas fa-moon");
+
+    // ── Calendar Computed ──
+    const calMonthName = computed(() => pt.value["calendar.months"][calMonth.value]);
+    const calDayHeaders = computed(() => [
+      pt.value["calendar.sun"], pt.value["calendar.mon"], pt.value["calendar.tue"],
+      pt.value["calendar.wed"], pt.value["calendar.thu"], pt.value["calendar.fri"],
+      pt.value["calendar.sat"]
+    ]);
+    const calDays = computed(() => {
+      const year = calYear.value;
+      const month = calMonth.value;
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const days = [];
+      for (let i = 0; i < firstDay; i++) {
+        days.push({ date: null, day: null, activities: [] });
+      }
+      const today = new Date();
+      for (let d = 1; d <= daysInMonth; d++) {
+        const dateStr = year + "-" + String(month + 1).padStart(2, "0") + "-" + String(d).padStart(2, "0");
+        days.push({
+          date: dateStr,
+          day: d,
+          activities: ACTIVITIES[dateStr] || [],
+          isToday: today.getFullYear() === year && today.getMonth() === month && today.getDate() === d
+        });
+      }
+      return days;
+    });
+    const calCanGoPrev = computed(() => !(calYear.value === 2026 && calMonth.value === 0));
+    const calCanGoNext = computed(() => {
+      const n = new Date();
+      return !(calYear.value === n.getFullYear() && calMonth.value === n.getMonth());
+    });
+    const calTooltipActivities = computed(() => {
+      if (!calHoveredDate.value) return [];
+      return ACTIVITIES[calHoveredDate.value] || [];
+    });
+    const calTooltipStyle = computed(() => ({
+      left: calTooltipX.value + "px",
+      bottom: (window.innerHeight - calTooltipY.value) + "px",
+      transform: "translateX(-50%)"
+    }));
 
     const greeting = computed(() => {
       const hour = new Date().getHours();
@@ -94,8 +154,41 @@ createApp({
     }
 
     function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      history.replaceState(null, '', window.location.pathname);
+      if (currentView.value === 'personal') {
+        currentView.value = 'portfolio';
+        history.replaceState(null, '', window.location.pathname);
+        window.scrollTo({ top: 0 });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        history.replaceState(null, '', window.location.pathname);
+      }
+    }
+
+    // ── Calendar Methods ──
+    function calPrevMonth() {
+      if (!calCanGoPrev.value) return;
+      if (calMonth.value === 0) { calMonth.value = 11; calYear.value--; }
+      else { calMonth.value--; }
+    }
+    function calNextMonth() {
+      if (!calCanGoNext.value) return;
+      if (calMonth.value === 11) { calMonth.value = 0; calYear.value++; }
+      else { calMonth.value++; }
+    }
+    function calShowTooltip(dateStr, event) {
+      if (!ACTIVITIES[dateStr]) return;
+      calHoveredDate.value = dateStr;
+      const rect = event.currentTarget.getBoundingClientRect();
+      const vw = window.innerWidth;
+      let x = rect.left + rect.width / 2;
+      let y = rect.top - 8;
+      if (x + 180 > vw) x = vw - 200;
+      if (x - 140 < 0) x = 160;
+      calTooltipX.value = x;
+      calTooltipY.value = y;
+    }
+    function calHideTooltip() {
+      calHoveredDate.value = null;
     }
 
     function scrollToSection(id) {
@@ -188,17 +281,21 @@ createApp({
     onMounted(() => {
       initScrollAnimations();
       initActiveNav();
-      // Re-observe after Vue renders
       setTimeout(initScrollAnimations, 500);
+      window.addEventListener('hashchange', onHashChange);
     });
 
     return {
       lang, theme, menuOpen, pubFilter, pubSort, showAllPubs, showAllTalks, showAllAwards, showAllMedia, showAllNews,
-      publications, greeting,
-      t, langLabel, themeIcon,
+      publications, greeting, currentView,
+      t, pt, langLabel, themeIcon,
       filteredPubs, displayedPubs, talks, displayedTalks, news, displayedNews, awards, displayedAwards, media, displayedMedia,
       toggleLang, toggleTheme, toggleMenu, closeMenu, scrollToTop, scrollToSection, setFilter, setSort,
       formatAuthors, talkTitle, talkDesc, talkType, talkYear, mediaTitle, pubDate, pubTypeLabel,
+      calYear, calMonth, calMonthName, calDayHeaders, calDays, calCanGoPrev, calCanGoNext,
+      calPrevMonth, calNextMonth, calShowTooltip, calHideTooltip,
+      calHoveredDate, calTooltipActivities, calTooltipStyle,
+      SPORT_TYPES,
     };
   }
 }).mount("#app");

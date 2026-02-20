@@ -667,10 +667,74 @@ function printSummary() {
 }
 
 // Run all tests
+function testNavActionsOverflow() {
+  log('\n🔧 Testing Nav Actions Overflow Prevention...', 'cyan');
+
+  const cssPath = path.join(__dirname, '..', 'style.css');
+  const css = fs.readFileSync(cssPath, 'utf-8');
+
+  // .nav-logo should have flex-shrink: 0
+  const navLogoBlock = css.match(/\.nav-logo\s*\{[^}]*\}/s);
+  if (assert(navLogoBlock, 'CSS should have .nav-logo rule')) {
+    const rule = navLogoBlock[0];
+    if (assert(rule.includes('flex-shrink: 0') || rule.includes('flex-shrink:0'), '.nav-logo should have flex-shrink: 0')) {
+      log('  ✓ .nav-logo has flex-shrink: 0', 'green');
+    } else {
+      log('  ✗ .nav-logo missing flex-shrink: 0 (logo may shrink on narrow viewports)', 'red');
+    }
+  } else {
+    log('  ✗ .nav-logo rule not found', 'red');
+  }
+
+  // .nav-actions should have flex-shrink: 0
+  const navActionsBlock = css.match(/\.nav-actions\s*\{[^}]*\}/s);
+  if (assert(navActionsBlock, 'CSS should have .nav-actions rule')) {
+    const rule = navActionsBlock[0];
+    if (assert(rule.includes('flex-shrink: 0') || rule.includes('flex-shrink:0'), '.nav-actions should have flex-shrink: 0')) {
+      log('  ✓ .nav-actions has flex-shrink: 0', 'green');
+    } else {
+      log('  ✗ .nav-actions missing flex-shrink: 0 (icons may be cut off on narrow viewports)', 'red');
+    }
+  } else {
+    log('  ✗ .nav-actions rule not found', 'red');
+  }
+
+  // .nav-menu should have overflow: hidden and min-width: 0 so it absorbs compression
+  const navMenuBlock = css.match(/\.nav-menu\s*\{[^}]*\}/s);
+  if (assert(navMenuBlock, 'CSS should have .nav-menu rule')) {
+    const rule = navMenuBlock[0];
+    if (assert(rule.includes('overflow: hidden') || rule.includes('overflow:hidden'), '.nav-menu should have overflow: hidden')) {
+      log('  ✓ .nav-menu has overflow: hidden', 'green');
+    } else {
+      log('  ✗ .nav-menu missing overflow: hidden (menu may push icons off screen)', 'red');
+    }
+    if (assert(rule.includes('min-width: 0') || rule.includes('min-width:0'), '.nav-menu should have min-width: 0')) {
+      log('  ✓ .nav-menu has min-width: 0', 'green');
+    } else {
+      log('  ✗ .nav-menu missing min-width: 0', 'red');
+    }
+  } else {
+    log('  ✗ .nav-menu rule not found', 'red');
+  }
+
+  // .btn-icon should have min-width to prevent shrinking
+  const btnIconBlock = css.match(/\.btn-icon\s*\{[^}]*\}/s);
+  if (assert(btnIconBlock, 'CSS should have .btn-icon rule')) {
+    const rule = btnIconBlock[0];
+    if (assert(rule.includes('min-width'), '.btn-icon should have min-width to prevent shrinking')) {
+      log('  ✓ .btn-icon has min-width', 'green');
+    } else {
+      log('  ✗ .btn-icon missing min-width (buttons may shrink on narrow viewports)', 'red');
+    }
+  } else {
+    log('  ✗ .btn-icon rule not found', 'red');
+  }
+}
+
 function runAllTests() {
   log('\n🧪 Starting Test Suite for Ryotaro Shimizu Website...', 'cyan');
   log('='.repeat(60), 'blue');
-  
+
   try {
     testFileStructure();
     testDataFolder();
@@ -681,6 +745,7 @@ function runAllTests() {
     testImageReferences();
     testNewsItemLayout();
     testContactSectionMobile();
+    testNavActionsOverflow();
     testPublicationSorting();
     testTranslationCompleteness();
     testDateSortOrder();
