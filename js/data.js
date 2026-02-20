@@ -401,17 +401,33 @@ const TALKS = [
 
 // ===== Media Data =====
 const MEDIA = [
+  // 2026
+  { source:"ZOZO NEXT", title:"Two papers accepted at ICLR 2026", titleJa:"ICLR 2026に2本の論文が採択", url:"https://zozonext.com/news/20260217_zozoresearch", date:"Feb 2026" },
+  // 2025
+  { source:"ZOZO NEXT", title:"ZOZO Research paper accepted at EMNLP 2025", titleJa:"ZOZO研究所の論文がEMNLP 2025に採択", url:"https://zozonext.com/news/20251016_zozoresearch", date:"Oct 2025" },
   { source:"日経Robotics", title:"Easier addition/removal of tasks in neural networks — new regularization by Tokyo Science Univ. & ZOZO", titleJa:"ニューラルネットへのタスクの追加・削除が容易に、東京科学大やZOZOの新正則化技術", url:"https://xtech.nikkei.com/atcl/nxt/mag/rob/18/012600001/00173/?P=3", date:"Aug 2025" },
-  { source:"日本経済新聞", title:"AI provides fashion advice for ambiguous questions — ZOZO & Waseda", titleJa:"「カジュアルな装いとは？」AIがファッション助言　ZOZO系・早大　曖昧な質問も対応", url:"https://www.nikkei.com/article/DGKKZO66764470S2A211C2TEB000/", date:"Dec 2022" },
+  { source:"ZOZO NEXT", title:"Joint research with CIT accepted at IJCAI 2025", titleJa:"千葉工業大学との共同研究がIJCAI 2025に採択", url:"https://zozonext.com/news/20250526_zozoresearch", date:"May 2025" },
+  { source:"日本ネット経済新聞", title:"ZOZO Research presents new AI methods — joint research with CIT accepted at IJCAI 2025", titleJa:"ZOZO研究所、AI分野で新手法発表 千葉工大との共同研究が「IJCAI 2025」で論文採択", url:"https://netkeizai.com/articles/detail/14647", date:"May 2025" },
   { source:"ZOZO NEXT", title:"ZOZO Research paper accepted at The Web Conference 2025", titleJa:"ZOZO研究所の論文がThe Web Conference 2025に採択", url:"https://zozonext.com/news/20250203_zozoresearch", date:"Feb 2025" },
   { source:"ZOZO NEXT", title:"Two papers accepted at ICLR 2025", titleJa:"ICLR 2025に2本の論文が採択", url:"https://zozonext.com/news/20250217_zozoresearch", date:"Feb 2025" },
-  { source:"ZOZO NEXT", title:"Joint research with CIT accepted at IJCAI 2025", titleJa:"千葉工業大学との共同研究がIJCAI 2025に採択", url:"https://zozonext.com/news/20250526_zozoresearch", date:"May 2025" },
-  { source:"ZOZO NEXT", title:"ZOZO Research paper accepted at EMNLP 2025", titleJa:"ZOZO研究所の論文がEMNLP 2025に採択", url:"https://zozonext.com/news/20251016_zozoresearch", date:"Oct 2025" },
-  { source:"ZOZO NEXT", title:"AI interpreting individual fashion item characteristics", titleJa:"個々のファッションアイテムの特徴に着目した曖昧なファッション表現を自動解釈するAI技術を開発", url:"https://zozonext.com/news/20230808_zozoresearch", date:"Aug 2023" },
-  { source:"Waseda Univ.", title:"AI That Interprets Fashion Items — Waseda × ZOZO Research", titleJa:"ファッションアイテムまで解釈するAI — 早稲田大学×ZOZO研究所", url:"https://www.waseda.jp/top/news/92745", date:"Aug 2023" },
-  { source:"PR Times", title:"AI technology to automatically interpret ambiguous fashion expressions", titleJa:"曖昧なファッションの表現をAIが自動で解釈する技術を開発", url:"https://prtimes.jp/main/html/rd/p/000000100.000096287.html", date:"Nov 2022" },
-  { source:"FNN", title:"AI that understands ambiguous fashion expressions", titleJa:"曖昧なファッション表現を理解するAI", url:"https://www.fnn.jp/articles/-/452781", date:"Dec 2022" },
+  // 2024
   { source:"ZOZO NEXT", title:"ZOZO Research paper accepted at ICLR 2024", titleJa:"ZOZO研究所の論文がICLR 2024に採択", url:"https://zozonext.com/news/20240214_zozoresearch", date:"Feb 2024" },
+  // 2023
+  { source:"ZOZO NEXT", title:"AI interpreting individual fashion item characteristics", titleJa:"個々のファッションアイテムの特徴に着目した曖昧なファッション表現を自動解釈するAI技術を開発", url:"https://zozonext.com/news/20230808_zozoresearch", date:"Aug 2023" },
+  { source:"AISmiley", title:"Waseda & ZOZO Research develop AI to interpret ambiguous fashion at item level", titleJa:"早大とZOZO研究所、曖昧なファッションの表現をAIで解釈する技術を開発。アイテムごとで質問の回答が可能に", url:"https://aismiley.co.jp/ai_news/waseda-zozo-partial-visual-semantic-embedding/", date:"Aug 2023" },
+  { source:"Waseda Univ.", title:"AI That Interprets Fashion Items — Waseda × ZOZO Research", titleJa:"ファッションアイテムまで解釈するAI — 早稲田大学×ZOZO研究所", url:"https://www.waseda.jp/top/news/92745", date:"Aug 2023" },
+  // 2022
+  { source:"日本経済新聞", title:"AI provides fashion advice for ambiguous questions — ZOZO & Waseda", titleJa:"「カジュアルな装いとは？」AIがファッション助言　ZOZO系・早大　曖昧な質問も対応", url:"https://www.nikkei.com/article/DGKKZO66764470S2A211C2TEB000/", date:"Dec 2022" },
+  { source:"日経クロステック", title:"Waseda & ZOZO Research develop new AI for fashion analysis and advice", titleJa:"早大とZOZO研、AIがファッションを解析してアドバイスする新技術", url:"https://xtech.nikkei.com/atcl/nxt/news/18/14221/", date:"Dec 2022" },
+  { source:"AISmiley", title:"ZOZO NEXT & Waseda develop AI to interpret ambiguous fashion expressions", titleJa:"ZOZO NEXTと早大大学院 曖昧なファッションの表現をAIが自動で解釈する技術を開発", url:"https://aismiley.co.jp/ai_news/zozo-waseda-fashionintelligencesystem/", date:"Dec 2022" },
+  { source:"FNN", title:"AI that understands ambiguous fashion expressions", titleJa:"曖昧なファッション表現を理解するAI", url:"https://www.fnn.jp/articles/-/452781", date:"Dec 2022" },
+  { source:"大学ジャーナルオンライン", title:"AI proposes outfits from ambiguous fashion images — Waseda & ZOZO Research", titleJa:"曖昧なファッションのイメージから服装を提案するAI 早稲田大学・ZOZO研究所が開発", url:"https://univ-journal.jp/197343/", date:"Nov 2022" },
+  { source:"ネットショップ担当者フォーラム", title:"ZOZO develops AI to interpret ambiguous fashion expressions", titleJa:"ZOZO、曖昧なファッションの表現をAIが自動で解釈する技術を開発", url:"https://netshop.impress.co.jp/node/10377", date:"Nov 2022" },
+  { source:"Digital Shift Times", title:"ZOZO & Waseda develop AI to interpret ambiguous fashion expressions", titleJa:"ZOZOと早稲田大学、AIが曖昧なファッションの表現を自動で解釈する技術を開発", url:"https://digital-shift.jp/flash_news/FN221124_1", date:"Nov 2022" },
+  { source:"AI Market", title:"ZOZO & Waseda co-develop Fashion Intelligence System", titleJa:"ZOZO、曖昧なファッションの表現についてAIが自動で解釈する「Fashion Intelligence System」を早大と共同開発", url:"https://ai-market.jp/news/zozo-wasedauniversity-fashionintelligencesystem/", date:"Nov 2022" },
+  { source:"Waseda Univ.", title:"AI interprets ambiguous fashion expressions — Waseda × ZOZO Research", titleJa:"曖昧なファッションの表現をAIで解釈", url:"https://www.waseda.jp/top/news/85840", date:"Nov 2022" },
+  { source:"PR Times", title:"AI technology to automatically interpret ambiguous fashion expressions", titleJa:"曖昧なファッションの表現をAIが自動で解釈する技術を開発", url:"https://prtimes.jp/main/html/rd/p/000000100.000096287.html", date:"Nov 2022" },
+  // Interviews & Blog
   { source:"ほとゼロ", title:"Interview: Understanding Fashion Intelligence System — with Prof. Goto & Shimizu", titleJa:"インタビュー：曖昧なファッション表現に対するAIの回答 — 後藤教授・清水良太郎", url:"https://hotozero.com/knowledge/fis/", date:"Jun 2023", category:"interview" },
   { source:"ZOZO Tech Note", title:"Interview: Research Scientist at ZOZO Research", titleJa:"インタビュー：ZOZO研究所の研究者としての歩み", url:"https://technote.zozo.com/n/n8d261b1d4785", date:"2023", category:"interview" },
   { source:"ZOZO Tech Blog", title:"Tech blog on Wantedly — ZOZO Engineering", titleJa:"ZOZOテクノロジーズ テックブログ", url:"https://www.wantedly.com/companies/zozo-tech/post_articles/336169", date:"Sep 2021", category:"blog" },
