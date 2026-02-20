@@ -1565,32 +1565,6 @@ img {
   gap: 16px;
 }
 
-.footer-content--with-personal {
-  position: relative;
-}
-
-.footer-personal-link {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  color: var(--text-tertiary);
-  font-size: 13px;
-  opacity: 0.4;
-  transition: all var(--transition);
-}
-
-.footer-personal-link:hover {
-  opacity: 1;
-  color: var(--accent);
-  background: var(--accent-light);
-}
-
 .footer-map h3 {
   font-size: 14px;
   font-weight: 600;
