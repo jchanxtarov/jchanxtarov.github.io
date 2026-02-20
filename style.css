@@ -1069,7 +1069,7 @@ img {
   transition: all var(--transition);
   display: grid;
   grid-template-rows: subgrid;
-  grid-row: span 5;
+  grid-row: span 6;
 }
 
 .teaching-card:hover {
