@@ -228,7 +228,7 @@ const TRANSLATIONS = {
     "edu.title":"Education",
     "edu.waseda":"Waseda University","edu.waseda.hs":"Waseda University Senior High School",
     "edu.phd":"Ph.D. in Engineering (Industrial & Management Systems Engineering)","edu.phd.h":["Early graduation","Inaugural recipient of the <a href='https://corp.zozo.com/news/20180914-5649/' target='_blank'>ZOZO Working Professional Doctoral Program</a>","Advisor: <a href='https://www.it.mgmt.waseda.ac.jp/index.html' target='_blank'>Prof. Masayuki Goto</a>","Research: Recommender systems, explainable AI, fashion intelligence"],
-    "edu.ms":"Master of Engineering (Management Systems Engineering)","edu.ms.h":["Best Student Award (Top Graduate)","Advisor: <a href='https://www.it.mgmt.waseda.ac.jp/index.html' target='_blank'>Prof. Masayuki Goto</a>","Research: Purchase behavior analysis model on EC sites considering questionnaire data; Integrated analysis model for multi-function credit card usage history data","Collaborative research with ZOZO, Inc., Odakyu Electric Railway, and Japan Weather Association"],
+    "edu.ms":"Master of Engineering (Management Systems Engineering)","edu.ms.h":["Best Student Award (Top Graduate)","Advisor: <a href='https://www.it.mgmt.waseda.ac.jp/index.html' target='_blank'>Prof. Masayuki Goto</a>","Research 1: Purchase behavior analysis model on EC sites considering questionnaire data","Research 2: Integrated analysis model for multi-function credit card usage history data","Collaborative research with ZOZO, Inc., Odakyu Electric Railway, and Japan Weather Association"],
     "edu.bs":"B.S. in Management Systems Engineering, School of Creative Science and Engineering",
     "edu.hs":"General Course","edu.hs.h":["<a href='https://www.waseda.jp/school/shs/campus/tennis/' target='_blank'>Tennis Club</a> (Currently serving as OB Association Assistant Secretary)"],
     // Teaching
@@ -340,7 +340,7 @@ const TRANSLATIONS = {
     "edu.title":"学歴",
     "edu.waseda":"早稲田大学","edu.waseda.hs":"早稲田大学高等学院",
     "edu.phd":"博士（工学）創造理工学研究科 経営システム工学専攻","edu.phd.h":["早期卒業","<a href='https://corp.zozo.com/news/20180914-5649/' target='_blank'>ZOZO 社会人ドクター制度</a>（第一号）","指導教員：<a href='https://www.it.mgmt.waseda.ac.jp/index.html' target='_blank'>後藤正幸教授</a>","研究テーマ：機械学習に基づく消費インテリジェンスの獲得とビジネス応用"],
-    "edu.ms":"修士（工学）創造理工学研究科 経営システム工学専攻","edu.ms.h":["首席卒業","指導教員：<a href='https://www.it.mgmt.waseda.ac.jp/index.html' target='_blank'>後藤正幸教授</a>","研究テーマ：ECサイトにおけるアンケートデータを考慮した購買行動分析モデルの提案、クレジットとポイントを併用可能な多機能クレジットカードにおける利用履歴データの統合分析モデルの提案","株式会社ZOZO、株式会社小田急電鉄、一般財団法人日本気象協会との共同研究"],
+    "edu.ms":"修士（工学）創造理工学研究科 経営システム工学専攻","edu.ms.h":["首席卒業","指導教員：<a href='https://www.it.mgmt.waseda.ac.jp/index.html' target='_blank'>後藤正幸教授</a>","研究テーマ1：ECサイトにおけるアンケートデータを考慮した購買行動分析モデルの提案","研究テーマ2：クレジットとポイントを併用可能な多機能クレジットカードにおける利用履歴データの統合分析モデルの提案","株式会社ZOZO、株式会社小田急電鉄、一般財団法人日本気象協会との共同研究"],
     "edu.bs":"学士（工学）創造理工学部 経営システム工学科",
     "edu.hs":"普通科","edu.hs.h":["<a href='https://www.waseda.jp/school/shs/campus/tennis/' target='_blank'>硬式庭球部</a>（現在、OB会幹事見習い）"],
     "teaching.title":"教育活動",
