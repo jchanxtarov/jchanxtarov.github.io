@@ -731,6 +731,101 @@ function testNavActionsOverflow() {
   }
 }
 
+function testTooltipViewportClamping() {
+  log('\n📱 Testing Tooltip Viewport Clamping (narrow-screen overflow prevention)...', 'cyan');
+
+  const cssPath = path.join(__dirname, '..', 'personal.css');
+  const css = fs.readFileSync(cssPath, 'utf-8');
+  const appPath = path.join(__dirname, '..', 'js', 'app.js');
+  const app = fs.readFileSync(appPath, 'utf-8');
+
+  // 1. Activity tooltip should use max-width with viewport clamping
+  const activityTooltipBlock = css.match(/\.activity-tooltip\s*\{[^}]*\}/s);
+  if (assert(activityTooltipBlock, 'personal.css should have .activity-tooltip rule')) {
+    log('  ✓ .activity-tooltip rule exists', 'green');
+    const rule = activityTooltipBlock[0];
+    const hasViewportClamp = rule.includes('100vw') || rule.includes('calc(100vw');
+    if (assert(hasViewportClamp, '.activity-tooltip max-width should be clamped to viewport')) {
+      log('  ✓ .activity-tooltip max-width is viewport-clamped', 'green');
+    } else {
+      log('  ✗ .activity-tooltip max-width is not viewport-clamped (may overflow on narrow screens)', 'red');
+    }
+  } else {
+    log('  ✗ .activity-tooltip rule not found in personal.css', 'red');
+  }
+
+  // 2. Legend restring tooltip should use position: fixed (not absolute)
+  const legendTooltipBlock = css.match(/\.legend-restring-tooltip\s*\{[^}]*\}/s);
+  if (assert(legendTooltipBlock, 'personal.css should have .legend-restring-tooltip rule')) {
+    log('  ✓ .legend-restring-tooltip rule exists', 'green');
+    const rule = legendTooltipBlock[0];
+    const hasFixed = rule.includes('position: fixed') || rule.includes('position:fixed');
+    if (assert(hasFixed, '.legend-restring-tooltip should use position: fixed for viewport-relative positioning')) {
+      log('  ✓ .legend-restring-tooltip uses position: fixed', 'green');
+    } else {
+      log('  ✗ .legend-restring-tooltip does not use position: fixed (may overflow on narrow screens)', 'red');
+    }
+    const hasAbsolute = rule.includes('position: absolute') || rule.includes('position:absolute');
+    if (assert(!hasAbsolute, '.legend-restring-tooltip should NOT use position: absolute')) {
+      log('  ✓ .legend-restring-tooltip does not use position: absolute', 'green');
+    } else {
+      log('  ✗ .legend-restring-tooltip still uses position: absolute (causes overflow)', 'red');
+    }
+    const hasCenterTransform = rule.includes('translateX(-50%)');
+    if (assert(!hasCenterTransform, '.legend-restring-tooltip should NOT use translateX(-50%) (JS handles positioning)')) {
+      log('  ✓ .legend-restring-tooltip does not use translateX(-50%)', 'green');
+    } else {
+      log('  ✗ .legend-restring-tooltip uses translateX(-50%) which causes overflow on narrow screens', 'red');
+    }
+  } else {
+    log('  ✗ .legend-restring-tooltip rule not found in personal.css', 'red');
+  }
+
+  // 3. calShowTooltip should use Math.max/Math.min for viewport clamping
+  const hasCalClamping = app.includes('calShowTooltip') && app.includes('Math.max') && app.includes('Math.min');
+  if (assert(hasCalClamping, 'calShowTooltip should use Math.max/Math.min for viewport clamping')) {
+    log('  ✓ calShowTooltip uses Math.max/Math.min for viewport clamping', 'green');
+  } else {
+    log('  ✗ calShowTooltip does not properly clamp tooltip position to viewport', 'red');
+  }
+
+  // 4. calTooltipStyle should NOT use translateX(-50%) (positions directly with left/top)
+  const tooltipStyleMatch = app.match(/calTooltipStyle\s*=\s*computed\(\s*\(\)\s*=>\s*\(\{[^}]*\}\)/s);
+  if (assert(tooltipStyleMatch, 'calTooltipStyle computed should exist')) {
+    const styleCode = tooltipStyleMatch[0];
+    const usesTranslateX = styleCode.includes('translateX');
+    if (assert(!usesTranslateX, 'calTooltipStyle should NOT use translateX (direct left/top positioning)')) {
+      log('  ✓ calTooltipStyle uses direct left/top positioning (no translateX)', 'green');
+    } else {
+      log('  ✗ calTooltipStyle uses translateX which causes overflow on narrow screens', 'red');
+    }
+    const usesTop = styleCode.includes('top:') || styleCode.includes('top :');
+    if (assert(usesTop, 'calTooltipStyle should use top positioning (not bottom)')) {
+      log('  ✓ calTooltipStyle uses top positioning', 'green');
+    } else {
+      log('  ✗ calTooltipStyle does not use top positioning', 'red');
+    }
+  } else {
+    log('  ✗ calTooltipStyle computed not found', 'red');
+  }
+
+  // 5. showLegendTooltip function should exist with viewport clamping
+  const hasLegendFn = app.includes('function showLegendTooltip');
+  if (assert(hasLegendFn, 'showLegendTooltip function should exist for JS-based legend tooltip positioning')) {
+    log('  ✓ showLegendTooltip function exists', 'green');
+  } else {
+    log('  ✗ showLegendTooltip function not found (legend tooltip may overflow)', 'red');
+  }
+
+  // 6. legendTooltipStyle computed should exist
+  const hasLegendStyle = app.includes('legendTooltipStyle');
+  if (assert(hasLegendStyle, 'legendTooltipStyle computed should exist for positioning')) {
+    log('  ✓ legendTooltipStyle computed exists', 'green');
+  } else {
+    log('  ✗ legendTooltipStyle computed not found', 'red');
+  }
+}
+
 function runAllTests() {
   log('\n🧪 Starting Test Suite for Ryotaro Shimizu Website...', 'cyan');
   log('='.repeat(60), 'blue');
@@ -746,6 +841,7 @@ function runAllTests() {
     testNewsItemLayout();
     testContactSectionMobile();
     testNavActionsOverflow();
+    testTooltipViewportClamping();
     testPublicationSorting();
     testTranslationCompleteness();
     testDateSortOrder();

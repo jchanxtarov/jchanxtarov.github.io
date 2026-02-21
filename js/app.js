@@ -30,7 +30,10 @@ createApp({
     const calHoveredDate = ref(null);
     const calTooltipX = ref(0);
     const calTooltipY = ref(0);
+    let calHideTimer = null;
     const legendTooltipVisible = ref(false);
+    const legendTooltipX = ref(0);
+    const legendTooltipY = ref(0);
 
     // ── Computed ──
     const t = computed(() => TRANSLATIONS[lang.value] || TRANSLATIONS.en);
@@ -89,8 +92,7 @@ createApp({
     });
     const calTooltipStyle = computed(() => ({
       left: calTooltipX.value + "px",
-      bottom: (window.innerHeight - calTooltipY.value) + "px",
-      transform: "translateX(-50%)"
+      top: calTooltipY.value + "px"
     }));
 
     const greeting = computed(() => {
@@ -190,19 +192,59 @@ createApp({
     }
     function calShowTooltip(dateStr, event) {
       if (!ACTIVITIES[dateStr]) return;
+      if (calHideTimer) { clearTimeout(calHideTimer); calHideTimer = null; }
       calHoveredDate.value = dateStr;
-      const rect = event.currentTarget.getBoundingClientRect();
-      const vw = window.innerWidth;
-      let x = rect.left + rect.width / 2;
-      let y = rect.top - 8;
-      if (x + 180 > vw) x = vw - 200;
-      if (x - 140 < 0) x = 160;
-      calTooltipX.value = x;
-      calTooltipY.value = y;
+      const cellRect = event.currentTarget.getBoundingClientRect();
+      nextTick(() => {
+        const tooltip = document.querySelector('.activity-tooltip');
+        if (!tooltip) return;
+        const tw = tooltip.offsetWidth;
+        const th = tooltip.offsetHeight;
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        const margin = 8;
+        let x = cellRect.left + cellRect.width / 2 - tw / 2;
+        x = Math.max(margin, Math.min(vw - tw - margin, x));
+        let y = cellRect.top - th - 8;
+        if (y < margin) { y = cellRect.bottom + 8; }
+        if (y + th > vh - margin) { y = vh - th - margin; }
+        calTooltipX.value = x;
+        calTooltipY.value = y;
+      });
     }
     function calHideTooltip() {
+      calHideTimer = setTimeout(() => { calHoveredDate.value = null; }, 100);
+    }
+    function calTooltipEnter() {
+      if (calHideTimer) { clearTimeout(calHideTimer); calHideTimer = null; }
+    }
+    function calTooltipLeave() {
       calHoveredDate.value = null;
     }
+
+    function showLegendTooltip(event) {
+      legendTooltipVisible.value = true;
+      const parentRect = event.currentTarget.getBoundingClientRect();
+      nextTick(() => {
+        const tooltip = document.querySelector('.legend-restring-tooltip');
+        if (!tooltip) return;
+        const tw = tooltip.offsetWidth;
+        const th = tooltip.offsetHeight;
+        const vw = window.innerWidth;
+        const margin = 8;
+        let x = parentRect.left + parentRect.width / 2 - tw / 2;
+        x = Math.max(margin, Math.min(vw - tw - margin, x));
+        let y = parentRect.top - th - 10;
+        if (y < margin) { y = parentRect.bottom + 10; }
+        legendTooltipX.value = x;
+        legendTooltipY.value = y;
+      });
+    }
+
+    const legendTooltipStyle = computed(() => ({
+      left: legendTooltipX.value + "px",
+      top: legendTooltipY.value + "px"
+    }));
 
     function lastRestringInfo(racketKey) {
       let entry = null;
@@ -322,8 +364,8 @@ createApp({
       formatAuthors, talkTitle, talkDesc, talkType, talkYear, mediaTitle, pubDate, pubTypeLabel,
       calYear, calMonth, calMonthName, calDisplayDate, calDayHeaders, calDays, calCanGoPrev, calCanGoNext,
       calPrevMonth, calNextMonth, calShowTooltip, calHideTooltip,
-      calHoveredDate, calTooltipActivities, calTooltipStyle,
-      legendTooltipVisible, lastRestringInfo,
+      calHoveredDate, calTooltipActivities, calTooltipStyle, calTooltipEnter, calTooltipLeave,
+      legendTooltipVisible, legendTooltipStyle, showLegendTooltip, lastRestringInfo,
       SPORT_TYPES, RACKETS,
     };
   }
