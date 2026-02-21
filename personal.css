@@ -40,6 +40,8 @@
   --tag-text: #f5f5f7;
 }
 
+[v-cloak] { display: none; }
+
 /* ===== Reset & Base ===== */
 *, *::before, *::after {
   margin: 0;

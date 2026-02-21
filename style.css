@@ -47,6 +47,8 @@
   --highlight-bg: linear-gradient(135deg, #1a1a2e 0%, #1c1c1e 100%);
 }
 
+[v-cloak] { display: none; }
+
 /* ===== Reset & Base ===== */
 *, *::before, *::after {
   margin: 0;
