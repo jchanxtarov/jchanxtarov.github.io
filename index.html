@@ -57,6 +57,8 @@ window.__hideLoader = function() {
     var remaining = Math.max(0, 2000 - elapsed);
     setTimeout(function() {
       loader.classList.add('hidden');
+      var app = document.getElementById('app');
+      if (app) app.classList.add('fade-in');
       setTimeout(function() { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 300);
     }, remaining);
   }

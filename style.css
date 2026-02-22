@@ -49,6 +49,14 @@
 
 [v-cloak] { display: none; }
 
+#app {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+#app.fade-in {
+  opacity: 1;
+}
+
 #page-loader {
   position: fixed;
   top: 0;
