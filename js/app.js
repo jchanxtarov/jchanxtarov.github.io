@@ -353,15 +353,7 @@ createApp({
       initActiveNav();
       setTimeout(initScrollAnimations, 500);
       window.addEventListener('hashchange', onHashChange);
-      const loader = document.getElementById('page-loader');
-      if (loader) {
-        const elapsed = Date.now() - (window.__loaderStart || 0);
-        const remaining = Math.max(0, 1500 - elapsed);
-        setTimeout(() => {
-          loader.classList.add('hidden');
-          setTimeout(() => loader.remove(), 300);
-        }, remaining);
-      }
+      if (window.__hideLoader) window.__hideLoader();
     });
 
     return {

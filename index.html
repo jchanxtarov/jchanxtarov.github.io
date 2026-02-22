@@ -48,7 +48,21 @@
 <div id="page-loader">
   <img src="pics/rs_volley_loader.gif" alt="Loading...">
 </div>
-<script>window.__loaderStart = Date.now();</script>
+<script>
+window.__loaderStart = Date.now();
+window.__hideLoader = function() {
+  var loader = document.getElementById('page-loader');
+  if (loader && !loader.classList.contains('hidden')) {
+    var elapsed = Date.now() - (window.__loaderStart || 0);
+    var remaining = Math.max(0, 2000 - elapsed);
+    setTimeout(function() {
+      loader.classList.add('hidden');
+      setTimeout(function() { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 300);
+    }, remaining);
+  }
+};
+window.addEventListener('load', function() { window.__hideLoader(); });
+</script>
 
 <div id="app" v-cloak>
   <!-- ════════ Navigation ════════ -->
