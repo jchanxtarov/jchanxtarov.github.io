@@ -19,7 +19,7 @@ const RESTRING_HISTORY = [
 ];
 
 // ===== Sports Activity Data =====
-// Thu = Tennis, Sat/Sun = Swimming (through 2026-02-21)
+// Thu = Tennis, Sat/Sun = Swimming (through 2026-02-23)
 const ACTIVITIES = {
   // January 2026
   "2026-01-01": [
@@ -168,6 +168,18 @@ const ACTIVITIES = {
     }
   ],
   "2026-02-21": [
+    { sport:"swimming", emoji:"\ud83c\udfca",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    }
+  ],
+  "2026-02-22": [
+    { sport:"swimming", emoji:"\ud83c\udfca",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    }
+  ],
+  "2026-02-23": [
     { sport:"swimming", emoji:"\ud83c\udfca",
       focus:{ ja:"\u30fc", en:"\u30fc" },
       result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
