@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jchanxtarov.github.io/sitemap.xml
