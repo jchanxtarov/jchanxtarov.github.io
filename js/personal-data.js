@@ -189,6 +189,17 @@ const ACTIVITIES = {
     { sport:"tournament", emoji:"\ud83c\udfc6",
       focus:{ ja:"\u30fc", en:"\u30fc" },
       result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    },
+    { sport:"swimming", emoji:"\ud83c\udfca",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    }
+  ],
+  // March 2026
+  "2026-03-01": [
+    { sport:"swimming", emoji:"\ud83c\udfca",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
     }
   ],
   // April 2026
