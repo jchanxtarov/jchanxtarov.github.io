@@ -185,6 +185,12 @@ const ACTIVITIES = {
       result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
     }
   ],
+  "2026-02-27": [
+    { sport:"tennis", emoji:"\ud83c\udfbe",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    }
+  ],
   "2026-02-28": [
     { sport:"tournament", emoji:"\ud83c\udfc6",
       focus:{ ja:"\u30fc", en:"\u30fc" },
