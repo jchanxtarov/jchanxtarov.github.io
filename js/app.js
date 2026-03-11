@@ -349,6 +349,8 @@ createApp({
 
     // ── Lifecycle ──
     onMounted(() => {
+      const pre = document.getElementById('prerender');
+      if (pre) pre.remove();
       initScrollAnimations();
       initActiveNav();
       setTimeout(initScrollAnimations, 500);

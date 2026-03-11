@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="ja" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -112,6 +112,43 @@ window.__hideLoader = function() {
 };
 window.addEventListener('load', function() { window.__hideLoader(); });
 </script>
+
+<!-- Static Japanese content for SEO (hidden once Vue mounts) -->
+<div id="prerender">
+  <div style="max-width:800px;margin:0 auto;padding:2rem;font-family:sans-serif">
+    <h1>清水良太郎（研究者・エンジニア）</h1>
+    <p><strong>清水良太郎</strong>（しみず りょうたろう）は、AI・機械学習を専門とする研究者です。ZOZO Research ディレクター、早稲田大学 客員研究員、上智大学 非常勤講師。博士（工学）。同名の俳優とは別人です。</p>
+    <p>推薦システム、説明可能AI、コンピュータビジョン、大規模言語モデル（LLM）を専門とし、KDD、WWW、ICLR、IJCAI、EMNLP等のトップ国際会議に多数の論文が採択されています。</p>
+    <h2>受賞歴</h2>
+    <ul>
+      <li>年間最優秀社員賞 準グランプリ — ZOZOグループ（2025年）</li>
+      <li>Best Paper Award — CIE51（2024年）</li>
+      <li>最優秀賞 テクノロジー部門 — INTERSECTION 2024 LINEヤフーグループ（2024年）</li>
+      <li>年間最優秀社員賞 グランプリ — ZOZOグループ（2023年）</li>
+      <li>全国大会優秀賞 — 人工知能学会（2023年）</li>
+    </ul>
+    <h2>主要論文</h2>
+    <ul>
+      <li>On Fairness of Task Arithmetic — ICLR 2026</li>
+      <li>Disentangling Likes and Dislikes in Personalized Generative Explainable Recommendation — WWW 2025</li>
+      <li>Explaining Black-box Model Predictions via Two-level Nested Feature Attributions — IJCAI 2025</li>
+      <li>An Ambiguity-Aware Fashion Retrieval Net — KDD 2024</li>
+    </ul>
+    <h2>職歴</h2>
+    <ul>
+      <li>ディレクター — ZOZO Research（2024年〜）</li>
+      <li>客員研究員 — カリフォルニア大学サンディエゴ校（2024年〜）</li>
+      <li>非常勤講師 — 上智大学（2023年〜）</li>
+      <li>客員研究員 — 早稲田大学（2019年〜）</li>
+    </ul>
+    <h2>学歴</h2>
+    <ul>
+      <li>博士（工学）— 早稲田大学（2024年）</li>
+      <li>修士（工学）— 早稲田大学 経営システム工学専攻（2019年）首席</li>
+    </ul>
+    <p>研究分野：推薦システム、説明可能AI、コンピュータビジョン、大規模言語モデル、ファッションテック</p>
+  </div>
+</div>
 
 <div id="app" v-cloak>
   <!-- ════════ Navigation ════════ -->
