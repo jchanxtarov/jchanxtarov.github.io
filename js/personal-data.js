@@ -254,6 +254,12 @@ const ACTIVITIES = {
       result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
     }
   ],
+  "2026-03-18": [
+    { sport:"swimming", emoji:"🏊",
+      focus:{ ja:"ー", en:"ー" },
+      result:{ ja:"ー", en:"ー" }, challenge:{ ja:"ー", en:"ー" }, next:{ ja:"ー", en:"ー" }
+    }
+  ],
   // April 2026
   "2026-04-12": [
     { sport:"tournament", emoji:"\ud83c\udfc6",
