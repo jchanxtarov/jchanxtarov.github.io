@@ -107,7 +107,7 @@ const PUBLICATIONS = [
   { title:"顧客の嗜好と商品画像特徴量の関係性を推定する新たな潜在クラスモデルの提案", authors:["土屋希琳","清水良太郎","後藤正幸"], venue:"SITA 2023", year:2023, date:"Nov 2023", type:"domestic", citations:0, links:{} },
   { title:"画像言語モデルに基づく曖昧なファッション特有の表現を解釈するシステム", authors:["清水良太郎","斎藤侑輝","後藤正幸"], venue:"CCSE 2023", year:2023, date:"Dec 2023", type:"domestic", citations:0, links:{} },
   // ── 2022 ──
-  { title:"Fashion Intelligence System: An Outfit Interpretation Utilizing Images and Rich Abstract Tags", authors:["Ryotaro Shimizu","Yuki Saito","Megumi Matsutani","Masayuki Goto"], venue:"Expert Systems with Applications", year:2022, date:"Nov 2022", type:"journal", citations:24, links:{} },
+  { title:"Fashion Intelligence System: An Outfit Interpretation Utilizing Images and Rich Abstract Tags", authors:["Ryotaro Shimizu","Yuki Saito","Megumi Matsutani","Masayuki Goto"], venue:"Expert Systems with Applications", year:2022, date:"Nov 2022", type:"journal", citations:25, links:{} },
   { title:"複数の施策を対象とした処置効果推定手法に関する一考察", authors:["坪井優樹","阪井優太","清水良太郎","後藤正幸"], venue:"情報処理学会 第84回全国大会", year:2022, date:"Mar 2022", type:"domestic", citations:0, links:{} },
   { title:"Conditional StyleGAN2-adaによるユーザの属性情報を考慮した高評価画像の生成に関する研究", authors:["大池樹","清水良太郎","山下遥"], venue:"情報処理学会 第84回全国大会", year:2022, date:"Mar 2022", type:"domestic", citations:0, links:{} },
   { title:"ユーザの多様性を考慮したクラスタワイズ型機械学習モデルの提案とその解釈方法に関する研究", authors:["三池可奈","清水良太郎","山下遥"], venue:"情報処理学会 第84回全国大会", year:2022, date:"Mar 2022", type:"domestic", citations:0, links:{} },
