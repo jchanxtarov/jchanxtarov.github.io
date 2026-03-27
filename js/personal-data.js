@@ -260,6 +260,30 @@ const ACTIVITIES = {
       result:{ ja:"ー", en:"ー" }, challenge:{ ja:"ー", en:"ー" }, next:{ ja:"ー", en:"ー" }
     }
   ],
+  "2026-03-21": [
+    { sport:"swimming", emoji:"\ud83c\udfca",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    }
+  ],
+  "2026-03-24": [
+    { sport:"swimming", emoji:"\ud83c\udfca",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    }
+  ],
+  "2026-03-25": [
+    { sport:"swimming", emoji:"\ud83c\udfca",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    }
+  ],
+  "2026-03-29": [
+    { sport:"tennis", emoji:"\ud83c\udfbe",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    }
+  ],
   // April 2026
   "2026-04-12": [
     { sport:"tournament", emoji:"\ud83c\udfc6",
