@@ -3,6 +3,7 @@
 // Run: python scripts/build-data.py
 const PUBLICATIONS = [
   // ── 2026 ──
+  { title:"ZoRRO: A Zero-Weight Personalized Recommender System for Scalable News Recommendation", authors:["Johannes Kruse","Ryotaro Shimizu","Kasper Lindskow","Jon Tofteskov","Michael Riis Andersen","Julian McAuley","Jes Frellsen"], venue:"SIGIR", year:2026, date:"Apr 2026", type:"conference", citations:0, links:{paper:"https://openreview.net/forum?id=mkMpySMUdw"} },
   { title:"On Fairness of Task Arithmetic: The Role of Task Vectors", authors:["Laura Gomezjurado Gonzalez","Hiroki Naganuma","Kotaro Yoshida","Takafumi Horie","Yuji Naraki","Ryotaro Shimizu"], venue:"ICLR", year:2026, date:"May 2026", type:"conference", citations:0, links:{paper:"https://openreview.net/forum?id=B19MBDrvlM"} },
   { title:"DisTaC: Conditioning Task Vectors via Distillation for Robust Model Merging", authors:["Kotaro Yoshida","Yuji Naraki","Takafumi Horie","Ryotaro Shimizu","Ioannis Mitliagkas","Hiroki Naganuma"], venue:"ICLR", year:2026, date:"May 2026", type:"conference", citations:0, links:{paper:"https://arxiv.org/abs/2508.01148"} },
   { title:"Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback", authors:["Yuki Hirakawa","Takashi Wada","Ryotaro Shimizu","Takuya Furusawa","Yuki Saito","Ryosuke Araki","Tianwei Chen","Fan Mo","Yoshimitsu Aoki"], venue:"arXiv", year:2026, date:"Mar 2026", type:"preprint", citations:0, links:{paper:"https://arxiv.org/abs/2603.13057"} },
