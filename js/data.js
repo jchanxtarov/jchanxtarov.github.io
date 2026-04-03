@@ -26,6 +26,8 @@ const PUBLICATIONS = [
   { title:"Fashionability-Enhancing Outfit Image Editing with Conditional Diffusion Models", authors:["Qice Qin","Yuki Hirakawa","Ryotaro Shimizu","Takuya Furusawa","Edgar Simo-Serra"], venue:"WACV 2025 Workshop", year:2025, date:"Mar 2025", type:"workshop", citations:0, links:{} },
   { title:"曖昧なファッション表現を扱う画像検索のための一般投稿データ対応法の検討", authors:["堀田南","清水良太郎","平川優伎","後藤正幸"], venue:"MIRU 2025", year:2025, date:"Jul 2025", type:"domestic", citations:0, links:{} },
   { title:"衣服のサイズを考慮した着用画像生成の検討", authors:["古澤拓也","清水良太郎","和田崇史"], venue:"MIRU 2025", year:2025, date:"Jul 2025", type:"domestic", citations:0, links:{} },
+  { title:"置換不変ニューラルネットワークによる集合データマッチングのための全身画像を用いた事前学習", authors:["秦淇策","清水良太郎","平川優伎","シモセラ・エドガー"], venue:"MIRU 2025", year:2025, date:"Jul 2025", type:"domestic", citations:0, links:{} },
+  { title:"Masked Language Prompting for Data Augmentation in Few-shot Style Recognition", authors:["Yuki Hirakawa","Ryotaro Shimizu"], venue:"MIRU 2025", year:2025, date:"Jul 2025", type:"domestic", citations:0, links:{} },
   // ── 2024 ──
   { title:"LLMOverTab: Tabular Data Augmentation with Language Model-Driven Oversampling", authors:["Tokimasa Isomura","Ryotaro Shimizu","Masayuki Goto"], venue:"Expert Systems with Applications", year:2024, date:"Nov 2024", type:"journal", citations:6, links:{} },
   { title:"Effectiveness Verification Framework for Coupon Distribution Marketing Measure Considering Users' Potential Purchase Intentions", authors:["Akiko Yoneda","Ryotaro Shimizu","Shion Sakurai","Makoto Kawata","Haruka Yamashita","Masayuki Goto"], venue:"Cogent Engineering", year:2024, date:"Jan 2024", type:"journal", citations:0, links:{paper:"https://www.tandfonline.com/doi/full/10.1080/23311916.2024.2307718"} },
@@ -130,8 +132,6 @@ const PUBLICATIONS = [
   { title:"画像言語参照プロンプトを適用したSegment Anything ModelによるFew-shotセグメンテーションモデル", authors:["櫻井洸介","清水良太郎","後藤正幸"], venue:"JSAI 2025", year:2025, date:"May 2025", type:"domestic", citations:0, links:{} },
   { title:"深度情報を用いた画像識別における解釈性向上に関する一考察", authors:["更家嘉介","清水良太郎","後藤正幸"], venue:"JSAI 2025", year:2025, date:"May 2025", type:"domestic", citations:0, links:{} },
   { title:"増分クラスに対する動的対応と柔軟性を有する継続学習モデルの提案", authors:["堀田南","小笠原のりこ","宮島健悟","清水良太郎","後藤正幸"], venue:"JSAI 2025", year:2025, date:"May 2025", type:"domestic", citations:0, links:{} },
-  { title:"置換不変ニューラルネットワークによる集合データマッチングのための全身画像を用いた事前学習", authors:["秦淇策","清水良太郎","平川優伎","シモセラ・エドガー"], venue:"MIRU 2025", year:2025, date:"Jul 2025", type:"domestic", citations:0, links:{} },
-  { title:"Masked Language Prompting for Data Augmentation in Few-shot Style Recognition", authors:["Yuki Hirakawa","Ryotaro Shimizu"], venue:"MIRU 2025", year:2025, date:"Jul 2025", type:"domestic", citations:0, links:{} },
 ];
 
 // ===== Translations =====
@@ -209,14 +209,14 @@ const TRANSLATIONS = {
       {year:"2024",title:"Best Employee Award — LINE Yahoo! Group",desc:"Top 3 of 27,000+ employees. Recognized for outstanding research contributions."},
       {year:"2024",title:"Most Excellent Award, Technology Division — INTERSECTION 2024",desc:"Awarded the top prize in the Technology Division at INTERSECTION 2024 (ZOZO NEXT tech event)."},
       {year:"2024",title:"Semi Grand Prix — Souzo no Naname Ue Award 2024",desc:"Semi Grand Prix at the company-wide creative innovation award."},
-      {year:"2023",title:"Most Excellent Award — JUSE Data Analysis Competition",desc:"Awarded the top prize at the 2023 JUSE (Union of Japanese Scientists and Engineers) Data Analysis Competition."},
       {year:"Jun 2023",title:"Outstanding Paper Award — JSAI Annual Conference",desc:"Awarded for research on Fashion Intelligence System at the Japanese Society for Artificial Intelligence."},
+      {year:"2023",title:"Most Excellent Award — JUSE Data Analysis Competition",desc:"Awarded the top prize at the 2023 JUSE (Union of Japanese Scientists and Engineers) Data Analysis Competition."},
       {year:"2022",title:"Grand Prix, Best Employee Award — ZOZO Group",desc:"Top 5 of 1,700+ employees. Highest recognition for research impact and leadership."},
-      {year:"2019",title:"Technical Skills Award — JUSE Data Analysis Competition",desc:"JIMA Division award at the 2019 JUSE (Union of Japanese Scientists and Engineers) Data Analysis Competition."},
       {year:"Mar 2019",title:"Best Student Award — Waseda University, Management Systems Engineering",desc:"Graduated top of class from Master's program with GPA 3.95."},
+      {year:"2019",title:"Technical Skills Award — JUSE Data Analysis Competition",desc:"JIMA Division award at the 2019 JUSE (Union of Japanese Scientists and Engineers) Data Analysis Competition."},
       {year:"May 2018",title:"Outstanding Student Presentation Award — JIMA Spring Conference",desc:"Japan Industrial Management Association Spring 2018 Student Presentation Competition."},
-      {year:"2017",title:"Technical Skills Award — JUSE Data Analysis Competition",desc:"JIMA Division award at the 2017 JUSE (Union of Japanese Scientists and Engineers) Data Analysis Competition."},
-      {year:"May 2017",title:"Outstanding Student Presentation Award — JIMA Spring Conference",desc:"Japan Industrial Management Association Spring 2017 Conference."}
+      {year:"May 2017",title:"Outstanding Student Presentation Award — JIMA Spring Conference",desc:"Japan Industrial Management Association Spring 2017 Conference."},
+      {year:"2017",title:"Technical Skills Award — JUSE Data Analysis Competition",desc:"JIMA Division award at the 2017 JUSE (Union of Japanese Scientists and Engineers) Data Analysis Competition."}
     ],
     // Media
     "media.title":"Media Coverage","media.subtitle":"Research featured in 100+ media outlets. Selected highlights below.",
@@ -306,14 +306,14 @@ const TRANSLATIONS = {
       {year:"2024年",title:"最優秀社員賞 — LINEヤフーグループ",desc:"27,000名以上の社員の中から上位3名に選出。卓越した研究貢献が評価されました。"},
       {year:"2024年",title:"最優秀賞 テクノロジー部門 — INTERSECTION 2024",desc:"INTERSECTION 2024（ZOZO NEXTテックイベント）のテクノロジー部門で最優秀賞を受賞。"},
       {year:"2024年",title:"準グランプリ — ソウゾウのナナメウエアワード 2024",desc:"全社クリエイティブイノベーションアワードにて準グランプリを受賞。"},
-      {year:"2023年",title:"最優秀賞 — 日科技連データ解析コンペティション",desc:"2023年度データ解析コンペティションにて最優秀賞を受賞。"},
       {year:"2023年6月",title:"全国大会優秀賞 — 人工知能学会",desc:"Fashion Intelligence Systemに関する研究で受賞。"},
+      {year:"2023年",title:"最優秀賞 — 日科技連データ解析コンペティション",desc:"2023年度データ解析コンペティションにて最優秀賞を受賞。"},
       {year:"2022年",title:"最優秀社員賞 グランプリ — ZOZOグループ",desc:"1,700名以上の中から上位5名に選出。研究成果とリーダーシップが評価されました。"},
-      {year:"2019年",title:"技能賞 — 日科技連データ解析コンペティション",desc:"2019年度データ解析コンペティション 日本経営工学会部会にて受賞。"},
       {year:"2019年3月",title:"最優秀学生賞（首席卒業）— 早稲田大学大学院 経営システム工学専攻",desc:"修士課程をGPA 3.95で首席卒業。"},
+      {year:"2019年",title:"技能賞 — 日科技連データ解析コンペティション",desc:"2019年度データ解析コンペティション 日本経営工学会部会にて受賞。"},
       {year:"2018年5月",title:"優秀賞 — 日本経営工学会 春季学生発表大会",desc:"2018年春季学生発表大会にて受賞。"},
-      {year:"2017年",title:"技能賞 — 日科技連データ解析コンペティション",desc:"2017年度データ解析コンペティション 日本経営工学会部会にて受賞。"},
-      {year:"2017年5月",title:"優秀学生発表賞 — 日本経営工学会 春季大会",desc:"2017年春季大会にて受賞。"}
+      {year:"2017年5月",title:"優秀学生発表賞 — 日本経営工学会 春季大会",desc:"2017年春季大会にて受賞。"},
+      {year:"2017年",title:"技能賞 — 日科技連データ解析コンペティション",desc:"2017年度データ解析コンペティション 日本経営工学会部会にて受賞。"}
     ],
     "media.title":"メディア掲載","media.subtitle":"研究成果が100件以上のメディアで取り上げられています。主な掲載先は以下の通りです。",
     "media.more":"その他、主要テックメディア等100件以上に掲載...",
