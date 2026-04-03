@@ -289,10 +289,10 @@ const ACTIVITIES = {
     }
   ],
   // April 2026
-  "2026-04-03": [
+  "2026-04-02": [
     { sport:"tennis", emoji:"\ud83c\udfbe",
       focus:{ ja:"\u30fc", en:"\u30fc" },
-      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30b9\u30d4\u30f3\u30b5\u30fc\u30d6\u306e\u30ad\u30ec\u304c\u60aa\u304f\u3001\u30b9\u30a4\u30f3\u30b0\u30b9\u30d4\u30fc\u30c9\u3084\u4f53\u306e\u958b\u304d\u5177\u5408\u306b\u554f\u984c\u304c\u3042\u308a\u305d\u3046\u3002\u6b21\u56de\u306f\u30da\u30fc\u30b9\u306e\u901f\u3044\u30b5\u30fc\u30d6\u3060\u3051\u3067\u306a\u304f\u3001\u7de9\u6025\u3092\u3064\u3051\u3066\u3044\u304d\u305f\u3044\u3002", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
     }
   ],
   "2026-04-04": [
