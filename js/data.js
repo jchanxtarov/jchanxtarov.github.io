@@ -186,6 +186,7 @@ const TRANSLATIONS = {
     // News
     "news.title":"News",
     "news.items":[
+      {date:"Apr 2026",text:'Organizing <a href="https://layerx.connpass.com/event/388018/" target="_blank">Corporate R&D Meetup (ZOZO × Mercari × LayerX)</a> on bridging research and production.',isNew:true},
       {date:"Apr 2026",text:'Paper published at <a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>.',isNew:true},
       {date:"Feb 2026",text:'Launched my personal website to share research and explore collaboration opportunities with diverse researchers and creators.',isNew:false},
       {date:"Feb 2026",text:'Two papers accepted at <a href="https://iclr.cc/" target="_blank">ICLR 2026</a>.',isNew:false},
@@ -302,6 +303,7 @@ const TRANSLATIONS = {
     "pub.sort":"並び順","pub.sort.year":"新しい順","pub.sort.oldest":"古い順",
     "news.title":"ニュース",
     "news.items":[
+      {date:"2026年4月",text:'<a href="https://layerx.connpass.com/event/388018/" target="_blank">【ZOZO x Mercari x LayerX】企業R&D勉強会</a>を企画しました。',isNew:true},
       {date:"2026年4月",text:'<a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>に1本の論文が掲載されました。',isNew:true},
       {date:"2026年2月",text:'ホームページを開設しました。様々な分野の研究者やクリエイターの方々とのコラボレーション機会を探すことを目的としています。',isNew:false},
       {date:"2026年2月",text:'<a href="https://iclr.cc/" target="_blank">ICLR 2026</a>に2本の論文が採択されました。',isNew:false},
