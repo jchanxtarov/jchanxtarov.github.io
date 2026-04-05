@@ -3,7 +3,8 @@
 // Run: python scripts/build-data.py
 const PUBLICATIONS = [
   // ── 2026 ──
-  { title:"ZoRRO: A Zero-Weight Personalized Recommender System for Scalable News Recommendation", authors:["Johannes Kruse","Ryotaro Shimizu","Kasper Lindskow","Jon Tofteskov","Michael Riis Andersen","Julian McAuley","Jes Frellsen"], venue:"SIGIR", year:2026, date:"Apr 2026", type:"conference", citations:0, links:{paper:"https://openreview.net/forum?id=mkMpySMUdw"} },
+  { title:"ZoRRO: A Zero-Weight Personalized Recommender System for Scalable News Recommendation", authors:["Johannes Kruse","Ryotaro Shimizu","Kasper Lindskow","Jon Tofteskov","Michael Riis Andersen","Julian McAuley","Jes Frellsen"], venue:"SIGIR", year:2026, date:"Jul 2026", type:"conference", citations:0, links:{paper:"https://openreview.net/forum?id=mkMpySMUdw"} },
+  { title:"Preliminary Study of an Evaluation Benchmark for Vision–Language Models in the Fashion E-Commerce", authors:["Ryotaro Shimizu","Sai Htaungkham","Shion Sakurai","Yuki Shimizu"], venue:"SIGIR", year:2026, date:"Jul 2026", type:"conference", citations:0, links:{} },
   { title:"On Fairness of Task Arithmetic: The Role of Task Vectors", authors:["Laura Gomezjurado Gonzalez","Hiroki Naganuma","Kotaro Yoshida","Takafumi Horie","Yuji Naraki","Ryotaro Shimizu"], venue:"ICLR", year:2026, date:"May 2026", type:"conference", citations:0, links:{paper:"https://openreview.net/forum?id=B19MBDrvlM"} },
   { title:"DisTaC: Conditioning Task Vectors via Distillation for Robust Model Merging", authors:["Kotaro Yoshida","Yuji Naraki","Takafumi Horie","Ryotaro Shimizu","Ioannis Mitliagkas","Hiroki Naganuma"], venue:"ICLR", year:2026, date:"May 2026", type:"conference", citations:0, links:{paper:"https://arxiv.org/abs/2508.01148"} },
   { title:"Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback", authors:["Yuki Hirakawa","Takashi Wada","Ryotaro Shimizu","Takuya Furusawa","Yuki Saito","Ryosuke Araki","Tianwei Chen","Fan Mo","Yoshimitsu Aoki"], venue:"arXiv", year:2026, date:"Mar 2026", type:"preprint", citations:0, links:{paper:"https://arxiv.org/abs/2603.13057"} },
@@ -187,7 +188,7 @@ const TRANSLATIONS = {
     "news.title":"News",
     "news.items":[
       {date:"Apr 2026",text:'Co-organizing <a href="https://layerx.connpass.com/event/388018/" target="_blank">Corporate R&D Meetup</a> with Mercari, LayerX, and CyberAgent on bridging research and production.',isNew:true},
-      {date:"Apr 2026",text:'Paper published at <a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>.',isNew:true},
+      {date:"Apr 2026",text:'Two papers accepted at <a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>.',isNew:true},
       {date:"Feb 2026",text:'Launched my personal website to share research and explore collaboration opportunities with diverse researchers and creators.',isNew:false},
       {date:"Feb 2026",text:'Two papers accepted at <a href="https://iclr.cc/" target="_blank">ICLR 2026</a>.',isNew:false},
       {date:"Oct 2025",text:'Paper accepted at <a href="https://colmweb.org/2025/" target="_blank">COLM 2025</a>.',isNew:false},
@@ -304,7 +305,7 @@ const TRANSLATIONS = {
     "news.title":"ニュース",
     "news.items":[
       {date:"2026年4月",text:'Mercari・LayerX・CyberAgentと共同で<a href="https://layerx.connpass.com/event/388018/" target="_blank">企業R&D勉強会</a>を企画しました。',isNew:true},
-      {date:"2026年4月",text:'<a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>に1本の論文が掲載されました。',isNew:true},
+      {date:"2026年4月",text:'<a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>に2本の論文が採択されました。',isNew:true},
       {date:"2026年2月",text:'ホームページを開設しました。様々な分野の研究者やクリエイターの方々とのコラボレーション機会を探すことを目的としています。',isNew:false},
       {date:"2026年2月",text:'<a href="https://iclr.cc/" target="_blank">ICLR 2026</a>に2本の論文が採択されました。',isNew:false},
       {date:"2025年10月",text:'<a href="https://colmweb.org/2025/" target="_blank">COLM 2025</a>に論文が採択されました。',isNew:false},
