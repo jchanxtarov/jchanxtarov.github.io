@@ -274,7 +274,7 @@ createApp({
 
     function formatAuthors(authors) {
       return authors.map(a => {
-        const isMe = a.includes("Shimizu") || a.includes("清水良太郎");
+        const isMe = a === "Ryotaro Shimizu" || a.includes("清水良太郎");
         return isMe ? `<span class="me">${a}</span>` : a;
       }).join(", ");
     }
