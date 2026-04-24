@@ -187,7 +187,7 @@ const TRANSLATIONS = {
     // News
     "news.title":"News",
     "news.items":[
-      {date:"Apr 2026",text:'Co-organizing <a href="https://layerx.connpass.com/event/388018/" target="_blank">Corporate R&D Meetup</a> with Mercari, LayerX, and CyberAgent on bridging research and production.',isNew:true},
+      {date:"Apr 2026",text:'Co-organized and spoke at <a href="https://layerx.connpass.com/event/388018/" target="_blank">Corporate R&D Meetup</a> with Mercari, LayerX, and CyberAgent on bridging research and production.',isNew:true},
       {date:"Apr 2026",text:'Two papers accepted at <a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>.',isNew:true},
       {date:"Feb 2026",text:'Launched my personal website to share research and explore collaboration opportunities with diverse researchers and creators.',isNew:false},
       {date:"Feb 2026",text:'Two papers accepted at <a href="https://iclr.cc/" target="_blank">ICLR 2026</a>.',isNew:false},
@@ -304,7 +304,7 @@ const TRANSLATIONS = {
     "pub.sort":"並び順","pub.sort.year":"新しい順","pub.sort.oldest":"古い順",
     "news.title":"ニュース",
     "news.items":[
-      {date:"2026年4月",text:'Mercari・LayerX・CyberAgentと共同で<a href="https://layerx.connpass.com/event/388018/" target="_blank">企業R&D勉強会</a>を企画しました。',isNew:true},
+      {date:"2026年4月",text:'Mercari・LayerX・CyberAgentと共同で<a href="https://layerx.connpass.com/event/388018/" target="_blank">企業R&D勉強会</a>を企画・登壇しました。',isNew:true},
       {date:"2026年4月",text:'<a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>に2本の論文が採択されました。',isNew:true},
       {date:"2026年2月",text:'ホームページを開設しました。様々な分野の研究者やクリエイターの方々とのコラボレーション機会を探すことを目的としています。',isNew:false},
       {date:"2026年2月",text:'<a href="https://iclr.cc/" target="_blank">ICLR 2026</a>に2本の論文が採択されました。',isNew:false},
@@ -397,7 +397,7 @@ const TRANSLATIONS = {
 
 // ===== Talks Data =====
 const TALKS = [
-  { year:"Apr 2026", yearJa:"2026年4月", type:"presentation", title:"Corporate R&D Meetup (ZOZO × Mercari × LayerX × CyberAgent)", titleJa:"【ZOZO x Mercari x LayerX x CyberAgent】企業R&D勉強会", desc:"\"The Steady, Essential Work of Delivering Research to the Entire Company — Building a Fashion-Specific VLM Benchmark\" — Co-organized with Mercari, LayerX, and CyberAgent. Tokyo.", descJa:"「研究を全社に届けるための地道で大事な仕事 ― ファッション特化VLMベンチマークの構築」— Mercari・LayerX・CyberAgentと共同主催。東京。", link:"https://layerx.connpass.com/event/388018/", image:null },
+  { year:"Apr 2026", yearJa:"2026年4月", type:"presentation", title:"Corporate R&D Meetup (ZOZO × Mercari × LayerX × CyberAgent)", titleJa:"【ZOZO x Mercari x LayerX x CyberAgent】企業R&D勉強会", desc:"\"The Steady, Essential Work of Delivering Research to the Entire Company — Building a Fashion-Specific VLM Benchmark\" — Co-organized with Mercari, LayerX, and CyberAgent. Tokyo.", descJa:"「研究を全社に届けるための地道で大事な仕事 ― ファッション特化VLMベンチマークの構築」— Mercari・LayerX・CyberAgentと共同主催。東京。", link:"https://layerx.connpass.com/event/388018/", image:"pics/20260424_layerx.jpg" },
   { year:"Sep 2025", yearJa:"2025年9月", type:"invited", title:"WebDB Summer Workshop 2025", titleJa:"WebDB夏のワークショップ2025", desc:"\"Data Science for Interpreting Ambiguous Fashion\" — Hamamatsu, Japan", descJa:"「曖昧なファッションを解釈するためのデータサイエンス」— 浜松", link:"https://shoji-lab.github.io/%E7%99%BA%E8%A1%A8/2025/09/18/WebDB_present.html", image:"pics/presentation_photo.jpg" },
   { year:"Jun 2025", yearJa:"2025年6月", type:"invited", title:"Sorbonne University IMCDS — Guest Lecture in Tokyo (Organizer & Speaker)", titleJa:"ソルボンヌ大学 IMCDS — 東京招待講演（主催・講演）", desc:"Organized and presented a research lecture to visiting Sorbonne IMCDS Master's students on AI applications in fashion.", descJa:"ソルボンヌ大学IMCDSの来日学生に対し、ファッションにおけるAI応用に関する研究講演を主催・実施。", link:"https://www.linkedin.com/posts/master-imcds_imcds-artificialintelligence-machinelearning-activity-7336640518459731968-Cb20", image:"pics/sorbonne_lecture.jpg" },
   { year:"2024", yearJa:"2024年", type:"award", title:"INTERSECTION 2024", titleJa:"INTERSECTION 2024", desc:"\"Fashion Intelligence System: Fashion-Specific Ambiguous Expression Interpretation\" — Presented at INTERSECTION 2024 (LINE Yahoo! Group).", descJa:"「Fashion Intelligence System: ファッション特有の曖昧な表現解釈」— INTERSECTION 2024（LINEヤフーグループ）にて発表。", link:"https://www.youtube.com/watch?v=KPPt2ULldfg", image:"pics/hero_background.jpg" },
