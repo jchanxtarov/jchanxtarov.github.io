@@ -218,7 +218,7 @@ const TRANSLATIONS = {
     "talks.domesticDesc":"Presentations at Japanese domestic conferences. Best Research Award at JSAI 2023.",
     // Experience
     "exp.title":"Professional Experience",
-    "exp.zozo.dir":"Director, Deployment Department","exp.zozo.dir.d":"Launched and leading a department dedicated to researching and developing AI technologies specialized for ZOZO's services and deploying them into production systems.",
+    "exp.zozo.dir":"Director, Deployment Department","exp.zozo.dir.d":"Launched and leading a department dedicated to researching and developing AI technologies specialized for ZOZO's services and deploying them into production systems. Appointed as the youngest department director in the group.",
     "exp.zozo.sm":"Senior Manager / Lead Research Scientist","exp.zozo.sm.d":"Led a 10+ member ML research team. Published at top conferences (WWW, ICLR, IJCAI, EMNLP).",
     "exp.zozo.lead":"Lead Research Scientist","exp.zozo.lead.d":"Led applied ML research on fashion intelligence, recommender systems, and explainable AI. Spearheaded collaborative research with universities and industry partners.",
     "exp.zozo.rs":"Research Scientist","exp.zozo.rs.d":"Also engaged in data science and ML engineering for business applications, including building AutoML pipelines with Vertex AI and leading cross-company data utilization projects within the group.",
@@ -333,7 +333,7 @@ const TRANSLATIONS = {
     "talks.wsDesc":"主要なコンピュータビジョン・機械学習カンファレンスでのワークショップ発表。",
     "talks.domesticDesc":"国内学会での発表。JSAI 2023にて研究賞受賞。",
     "exp.title":"職歴",
-    "exp.zozo.dir":"ディレクター、デプロイメント部","exp.zozo.dir.d":"ZOZOのサービスに特化したAI技術を研究・開発し、プロダクションシステムにデプロイする部門の立ち上げを担当。",
+    "exp.zozo.dir":"ディレクター、デプロイメント部","exp.zozo.dir.d":"ZOZOのサービスに特化したAI技術を研究・開発し、プロダクションシステムにデプロイする部門の立ち上げを担当。グループ最年少で部長に就任。",
     "exp.zozo.sm":"マネージャー / リードリサーチサイエンティスト","exp.zozo.sm.d":"10名以上のML研究チームを率いる。WWW、ICLR、IJCAI、EMNLPなどトップ国際会議で論文発表。",
     "exp.zozo.lead":"リードリサーチサイエンティスト","exp.zozo.lead.d":"ファッションインテリジェンス、推薦システム、説明可能AIの応用ML研究を主導。大学・企業との共同研究を推進。",
     "exp.zozo.rs":"リサーチサイエンティスト","exp.zozo.rs.d":"研究活動に加え、Vertex AIによるAutoMLパイプラインの構築や、グループ企業間の連携によるデータ利活用推進プロジェクトなど、事業課題に直結するデータサイエンス・MLエンジニアリング業務に従事。",
