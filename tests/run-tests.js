@@ -361,6 +361,24 @@ function testPublicationSorting() {
   }
 }
 
+function testVenueNotation() {
+  log('\n🏷️  Testing Venue Notation...', 'cyan');
+
+  const sandbox = loadDataFile();
+  const pubs = sandbox.PUBLICATIONS;
+  if (!assert(Array.isArray(pubs) && pubs.length > 0, 'PUBLICATIONS should be a non-empty array')) {
+    return;
+  }
+
+  const YEAR_RE = /\b(19|20)\d{2}年?度?/;
+  const offenders = pubs.filter(p => p.venue && YEAR_RE.test(p.venue));
+  if (assert(offenders.length === 0, 'Venue must not contain a year (year/date columns track the year)')) {
+    log(`  ✓ No publication venues contain a year token`, 'green');
+  } else {
+    offenders.forEach(p => log(`    ✗ "${p.venue}" — ${p.title.slice(0,60)}`, 'red'));
+  }
+}
+
 function testTranslationCompleteness() {
   log('\n🌐 Testing Translation Completeness...', 'cyan');
 
@@ -843,6 +861,7 @@ function runAllTests() {
     testNavActionsOverflow();
     testTooltipViewportClamping();
     testPublicationSorting();
+    testVenueNotation();
     testTranslationCompleteness();
     testDateSortOrder();
   } catch (error) {
