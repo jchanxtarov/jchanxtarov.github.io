@@ -271,6 +271,7 @@ const TRANSLATIONS = {
     "projects.nepal":"Nepal Japan Project","projects.nepal.d":"International project between Nepal and Japan (2015, 2016). Served as Project Leader in 2016, coordinating cross-cultural exchanges and community development initiatives.",
     "projects.wedding":"Wedding Real-Time Quiz App","projects.wedding.d":"Developed a real-time quiz application for friends' weddings, supporting 100+ concurrent WebSocket connections. Used at 3 wedding events.",
     "projects.apps":"Personal Apps & Web Development","projects.apps.d":"Chat application, tennis tournament SNS, TaRO&Company website, and more. Full-stack development across Python, Ruby, Go, Kotlin, Swift, and modern web technologies.",
+    "projects.aisi":"Japan AI Safety Institute","projects.aisi.d":"Contributing to <a href='https://aisi.go.jp/' target='_blank'>Japan AISI</a> with a focus on risks arising from human–AI dialog.",
     // Collaboration
     "news.showAll":"Show All News","news.showLess":"Show Less",
     "talks.showAll":"Show All Talks & Presentations","talks.showLess":"Show Less",
@@ -380,6 +381,7 @@ const TRANSLATIONS = {
     "projects.nepal":"Nepal Japan Project","projects.nepal.d":"日本とネパール間の国際プロジェクト（2015年、2016年）。2016年はプロジェクトリーダーとして異文化交流・コミュニティ開発を推進。",
     "projects.wedding":"結婚式リアルタイムクイズアプリ","projects.wedding.d":"友人の結婚式用リアルタイムクイズアプリを開発。WebSocketによる同時接続数100名以上に対応。計3回の結婚式で利用。",
     "projects.apps":"個人アプリ・Web開発","projects.apps.d":"チャットアプリ、テニス大会専用SNS、TaRO&Companyホームページなど。Python、Ruby、Go、Kotlin、Swift、モダンWeb技術を用いたフルスタック開発。",
+    "projects.aisi":"Japan AI Safety Institute","projects.aisi.d":"<a href='https://aisi.go.jp/' target='_blank'>Japan AISI</a> にて「AIとの対話によるリスク」をテーマに活動。",
     "news.showAll":"すべてのニュースを表示","news.showLess":"折りたたむ",
     "talks.showAll":"すべての講演・発表を表示","talks.showLess":"折りたたむ",
     "awards.showAll":"すべての受賞歴を表示","awards.showLess":"折りたたむ",
