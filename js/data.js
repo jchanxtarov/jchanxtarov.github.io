@@ -415,6 +415,7 @@ const TALKS = [
 // ===== Media Data =====
 const MEDIA = [
   // 2026
+  { source:"ZOZO NEXT", title:"ZOZO Research paper accepted at SIGIR 2026", titleJa:"ZOZO研究所の論文がSIGIR 2026に採択", url:"https://zozonext.com/news/20260520_zozoresearch", date:"May 2026" },
   { source:"ZOZO NEXT", title:"Two papers accepted at ICLR 2026", titleJa:"ICLR 2026に2本の論文が採択", url:"https://zozonext.com/news/20260217_zozoresearch", date:"Feb 2026" },
   // 2025
   { source:"ZOZO NEXT", title:"ZOZO Research paper accepted at EMNLP 2025", titleJa:"ZOZO研究所の論文がEMNLP 2025に採択", url:"https://zozonext.com/news/20251016_zozoresearch", date:"Oct 2025" },
