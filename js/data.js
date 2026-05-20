@@ -87,6 +87,8 @@ const PUBLICATIONS = [
   { title:"On permutation-invariant neural networks", authors:["Masanari Kimura","Ryotaro Shimizu","Yuki Hirakawa","Ryosuke Goto","Yuki Saito"], venue:"arXiv", year:2024, date:"Mar 2024", type:"preprint", citations:0, links:{paper:"https://arxiv.org/abs/2403.17410"} },
   // ── Preprints (arXiv) ──
   { title:"Transferring Visual Explainability of Self-Explaining Models to Prediction-Only Models without Additional Training", authors:["Yuya Yoshikawa","Ryotaro Shimizu","Takahiro Kawashima","Yuki Saito"], venue:"arXiv", year:2025, date:"Jul 2025", type:"preprint", citations:0, links:{paper:"https://arxiv.org/abs/2507.04380"} },
+  // ── Preprints (arXiv) ──
+  { title:"MultiEmo-Bench: Multi-label Visual Emotion Analysis for Multi-modal Large Language Models", authors:["Tianwei Chen","Takuya Furusawa","Yuki Hirakawa","Ryotaro Shimizu","Mo Fan","Takashi Wada"], venue:"arXiv", year:2026, date:"May 2026", type:"preprint", citations:0, links:{paper:"https://arxiv.org/abs/2605.14635"} },
   // ── 2023 ──
   { title:"Partial Visual-Semantic Embedding: Fine-Grained Outfit Image Representation with Massive Volumes of Tags via Angular-Based Contrastive Learning", authors:["Ryotaro Shimizu","Takuma Nakamura","Masayuki Goto"], venue:"Knowledge-Based Systems", year:2023, date:"Oct 2023", type:"journal", citations:8, links:{} },
   { title:"Multiple Treatment Effect Estimation for Business Analytics Using Observational Data", authors:["Yuki Tsuboi","Yuta Sakai","Ryotaro Shimizu","Masayuki Goto"], venue:"Cogent Engineering", year:2023, date:"Dec 2023", type:"journal", citations:4, links:{paper:"https://www.tandfonline.com/doi/full/10.1080/23311916.2023.2300557"} },
