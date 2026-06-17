@@ -424,6 +424,7 @@ const TALKS = [
 
 // ===== Media Data =====
 const MEDIA = [
+  { source:"ZOZO TECH BLOG", title:"JSAI 2026 Sponsorship and Participation Report", titleJa:"2026年度 人工知能学会全国大会（JSAI2026）協賛&参加レポート", url:"https://techblog.zozo.com/entry/jsai2026", date:"Jun 2026" },
   // 2026
   { source:"ZOZO NEXT", title:"ZOZO Research paper accepted at SIGIR 2026", titleJa:"ZOZO研究所の論文がSIGIR 2026に採択", url:"https://zozonext.com/news/20260520_zozoresearch", date:"May 2026" },
   { source:"ZOZO NEXT", title:"Two papers accepted at ICLR 2026", titleJa:"ICLR 2026に2本の論文が採択", url:"https://zozonext.com/news/20260217_zozoresearch", date:"Feb 2026" },
