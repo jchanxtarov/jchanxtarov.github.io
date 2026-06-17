@@ -253,7 +253,7 @@ const TRANSLATIONS = {
     // Awards
     "awards.title":"Awards & Honors",
     "awards.items":[
-      {year:"Jun 2026",title:"Good Practice Selected by Students (GP) — Sophia University",desc:"Selected by the FD Committee based on the Fall 2025 university course survey. Course: \"Practice of Data Science and Artificial Intelligence\" (Center for General Education, 31–100 enrollees category). This corresponds to roughly the top 1% of eligible courses."},
+      {year:"Jun 2026",title:"Good Practice Selected by Students (GP) — Sophia University",desc:"Selected by the FD Committee based on the Fall 2025 university course survey. One of only 36 awarded courses out of 2,000+ eligible courses across the university (roughly top 1%). Course: \"Practice of Data Science and Artificial Intelligence\" (Center for General Education, 31–100 enrollees category)."},
       {year:"Apr 2025",title:"Runner-up, Annual Best Employee Award — ZOZO Group",desc:"Selected as top 10 of 1,700+ employees through multiple rounds of selection including presentations to all executives."},
       {year:"Dec 2024",title:"Best Paper Award — CIE51",desc:"International Conference on Computers and Industrial Engineering."},
       {year:"Nov 2024",title:"Most Excellent Award, Technology Division — INTERSECTION 2024 (LINE Yahoo! Group)",desc:"Awarded the top prize in the Technology Division at INTERSECTION 2024 (LINE Yahoo! Group) through multiple rounds of review including presentations to executives across group companies. Selected as one of 3 from 27,000+ employees."},
@@ -368,7 +368,7 @@ const TRANSLATIONS = {
     "teaching.studentMsg":"これまでに授業や研究指導、<a href='https://ut-base.info/circles/122' target='_blank'>HAIT</a>メンタリングなどで関わった学生の皆さんへ — キャリアや研究で悩みがあれば、いつでも気軽に連絡してください。時間が経っていても関係ありません。<strong>いつでもお待ちしています。</strong>",
     "awards.title":"受賞歴",
     "awards.items":[
-      {year:"2026年6月",title:"学生が選ぶGood Practice（GP）— 上智大学",desc:"2025年度秋学期 大学授業アンケートに基づきFD委員会により選出。担当科目「データサイエンスと人工知能の実践」（基盤教育センター、受講者31〜100名区分）。これは選考対象科目の上位約1%に相当する。"},
+      {year:"2026年6月",title:"学生が選ぶGood Practice（GP）— 上智大学",desc:"2025年度秋学期 大学授業アンケートに基づきFD委員会により選出。2,000以上の選考対象科目から表彰された36科目の1つ（上位約1%）。担当科目「データサイエンスと人工知能の実践」（基盤教育センター、受講者31〜100名区分）。"},
       {year:"2025年4月",title:"年間最優秀社員賞 準グランプリ — ZOZOグループ",desc:"全役員へのプレゼン審査を含む複数回の選考を経て、1,700名以上の社員の中から上位10名に選出。"},
       {year:"2024年12月",title:"Best Paper Award — CIE51",desc:"国際会議 Computers and Industrial Engineering にて受賞。"},
       {year:"2024年11月",title:"最優秀賞 テクノロジー部門 — INTERSECTION 2024（LINEヤフーグループ）",desc:"グループ各社の役員へのプレゼン審査を含む複数回の審査を経て、INTERSECTION 2024（LINEヤフーグループ）のテクノロジー部門で最優秀賞を受賞（27,000名以上の社員の中から3名に選出）。"},
