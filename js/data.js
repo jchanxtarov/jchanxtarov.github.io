@@ -192,7 +192,7 @@ const TRANSLATIONS = {
     // News
     "news.title":"News",
     "news.items":[
-      {date:"Jun 2026",text:'My course "Practice of Data Science and Artificial Intelligence" (Fall 2025) was selected for the "Good Practice Selected by Students" (GP) award by Sophia University's FD Committee.',isNew:true},
+      {date:"Jun 2026",text:'My course "Practice of Data Science and Artificial Intelligence" (Fall 2025) was selected for the "Good Practice Selected by Students" (GP) award by the Sophia University FD Committee.',isNew:true},
       {date:"Apr 2026",text:'Co-organized and spoke at <a href="https://layerx.connpass.com/event/388018/" target="_blank">Corporate R&D Meetup</a> with Mercari, LayerX, and CyberAgent on bridging research and production.',isNew:true},
       {date:"Apr 2026",text:'Two papers accepted at <a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>.',isNew:true},
       {date:"Feb 2026",text:'Launched my personal website to share research and explore collaboration opportunities with diverse researchers and creators.',isNew:false},
