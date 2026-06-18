@@ -57,10 +57,10 @@ const PUBLICATIONS = [
   { title:"置換不変ニューラルネットワークによる集合データマッチングのための全身画像を用いた事前学習", authors:["秦淇策","清水良太郎","平川優伎","シモセラ・エドガー"], venue:"MIRU", year:2025, date:"Jul 2025", type:"domestic", citations:0, links:{} },
   { title:"Masked Language Prompting for Data Augmentation in Few-shot Style Recognition", authors:["Yuki Hirakawa","Ryotaro Shimizu"], venue:"MIRU", year:2025, date:"Jul 2025", type:"domestic", citations:0, links:{} },
   // ── 2024 ──
-  { title:"LLMOverTab: Tabular Data Augmentation with Language Model-Driven Oversampling", authors:["Tokimasa Isomura","Ryotaro Shimizu","Masayuki Goto"], venue:"Expert Systems with Applications", year:2024, date:"Nov 2024", type:"journal", citations:10, links:{} },
+  { title:"LLMOverTab: Tabular Data Augmentation with Language Model-Driven Oversampling", authors:["Tokimasa Isomura","Ryotaro Shimizu","Masayuki Goto"], venue:"Expert Systems with Applications", year:2024, date:"Nov 2024", type:"journal", citations:9, links:{} },
   { title:"Effectiveness Verification Framework for Coupon Distribution Marketing Measure Considering Users' Potential Purchase Intentions", authors:["Akiko Yoneda","Ryotaro Shimizu","Shion Sakurai","Makoto Kawata","Haruka Yamashita","Masayuki Goto"], venue:"Cogent Engineering", year:2024, date:"Jan 2024", type:"journal", citations:2, links:{paper:"https://www.tandfonline.com/doi/full/10.1080/23311916.2024.2307718"} },
   { title:"Optimizing FT-Transformer: Sparse Attention for Improved Performance and Interpretability", authors:["Tokimasa Isomura","Ryotaro Shimizu","Masayuki Goto"], venue:"Industrial Engineering and Management Systems", year:2024, date:"Jun 2024", type:"journal", citations:8, links:{} },
-  { title:"An Empirical Analysis of GPT-4V's Performance on Fashion Aesthetic Evaluation", authors:["Yuki Hirakawa","Takashi Wada","Kazuya Morishita","Ryotaro Shimizu","Takuya Furusawa","Sai Htaung Kham","Yuki Saito"], venue:"SIGGRAPH Asia Technical Communications", year:2024, date:"Dec 2024", type:"workshop", citations:6, links:{} },
+  { title:"An Empirical Analysis of GPT-4V's Performance on Fashion Aesthetic Evaluation", authors:["Yuki Hirakawa","Takashi Wada","Kazuya Morishita","Ryotaro Shimizu","Takuya Furusawa","Sai Htaung Kham","Yuki Saito"], venue:"SIGGRAPH Asia Technical Communications", year:2024, date:"Dec 2024", type:"workshop", citations:5, links:{} },
   { title:"A Fashion Item Recommendation Model in Hyperbolic Space", authors:["Ryotaro Shimizu","Yu Wang","Masanari Kimura","Yuki Hirakawa","Takashi Wada","Yuki Saito","Julian McAuley"], venue:"CVPR Workshop", year:2024, date:"Jun 2024", type:"workshop", citations:0, links:{} },
   { title:"Attributed Synthetic Data Generation for Zero-shot Image Classification", authors:["Shijian Wang","Linxin Song","Ryotaro Shimizu","Masayuki Goto","Hanqian Wu"], venue:"CVPR Workshop", year:2024, date:"Jun 2024", type:"workshop", citations:0, links:{} },
   { title:"大規模視覚言語モデルを用いた「似合う」の自動評価法", authors:["平川優伎","森下和哉","和田崇史","清水良太郎","古澤拓也","Sai Htaung Kham","斎藤侑輝"], venue:"MIRU", year:2024, date:"Jul 2024", type:"domestic", citations:0, links:{} },
@@ -135,7 +135,7 @@ const PUBLICATIONS = [
   { title:"Recommendation Item Selection Algorithm Considering the Recommendation Region in the Embedding Space", authors:["Tomoki Amano","Ryotaro Shimizu","Masayuki Goto"], venue:"APIEMS", year:2022, date:"Dec 2022", type:"conference", citations:0, links:{} },
   { title:"An Efficient Path Search Algorithm for Explainable Recommendation Based on Knowledge Graph and Reinforcement Learning", authors:["Guanyu Yang","Ryotaro Shimizu","Ayako Yamagiwa","Masayuki Goto"], venue:"APIEMS", year:2022, date:"Dec 2022", type:"conference", citations:0, links:{} },
   // ── 2021 ──
-  { title:"An Explainable Recommendation Framework Based on an Improved Knowledge Graph Attention Network with Massive Volumes of Side Information", authors:["Ryotaro Shimizu","Megumi Matsutani","Masayuki Goto"], venue:"Knowledge-Based Systems", year:2021, date:"Dec 2021", type:"journal", citations:83, links:{} },
+  { title:"An Explainable Recommendation Framework Based on an Improved Knowledge Graph Attention Network with Massive Volumes of Side Information", authors:["Ryotaro Shimizu","Megumi Matsutani","Masayuki Goto"], venue:"Knowledge-Based Systems", year:2021, date:"Dec 2021", type:"journal", citations:82, links:{} },
   { title:"A Latent Class Analysis for Item Demand Based on Temperature Difference and Store Characteristics", authors:["Yuto Seko","Ryotaro Shimizu","Gendo Kumoi","Tomohiro Yoshikai","Masayuki Goto"], venue:"Industrial Engineering & Management Systems", year:2021, type:"journal", citations:3, links:{} },
   { title:"ファッション系ECサイトにおける多様な補助情報を有したグラフ構造の学習アルゴリズムに関する一考察", authors:["清水良太郎","松谷恵","後藤正幸"], venue:"日本経営工学会 春季大会", year:2021, date:"May 2021", type:"domestic", citations:0, links:{} },
   { title:"仮想通貨取引データに対する敵対的生成ネットワークを用いた分類性能向上手法の検討", authors:["楊冠宇","清水良太郎","雲居玄道","後藤正幸"], venue:"日本経営工学会 春季大会", year:2021, date:"May 2021", type:"domestic", citations:0, links:{} },
@@ -253,7 +253,7 @@ const TRANSLATIONS = {
     // Awards
     "awards.title":"Awards & Honors",
     "awards.items":[
-      {year:"Jun 2026",title:"Good Practice Selected by Students (GP) — Sophia University",desc:"Selected by the FD Committee based on the Fall 2025 university course survey. Selected from 2,000+ eligible courses across the university, placing roughly in the top 1%. Course: \"Practice of Data Science and Artificial Intelligence\" (Center for General Education, 31–100 enrollees category)."},
+      {year:"Jun 2026",title:"Good Practice Selected by Students (GP) — Sophia University",desc:"Selected by the FD Committee based on the Fall 2025 university course survey. Selected from 2,300+ eligible courses across the university, placing roughly in the top 1%. Course: \"Practice of Data Science and Artificial Intelligence\"."},
       {year:"Apr 2025",title:"Runner-up, Annual Best Employee Award — ZOZO Group",desc:"Selected as top 10 of 1,700+ employees through multiple rounds of selection including presentations to all executives."},
       {year:"Dec 2024",title:"Best Paper Award — CIE51",desc:"International Conference on Computers and Industrial Engineering."},
       {year:"Nov 2024",title:"Most Excellent Award, Technology Division — INTERSECTION 2024 (LINE Yahoo! Group)",desc:"Awarded the top prize in the Technology Division at INTERSECTION 2024 (LINE Yahoo! Group) through multiple rounds of review including presentations to executives across group companies. Selected as one of 3 from 27,000+ employees."},
@@ -368,7 +368,7 @@ const TRANSLATIONS = {
     "teaching.studentMsg":"これまでに授業や研究指導、<a href='https://ut-base.info/circles/122' target='_blank'>HAIT</a>メンタリングなどで関わった学生の皆さんへ — キャリアや研究で悩みがあれば、いつでも気軽に連絡してください。時間が経っていても関係ありません。<strong>いつでもお待ちしています。</strong>",
     "awards.title":"受賞歴",
     "awards.items":[
-      {year:"2026年6月",title:"学生が選ぶGood Practice（GP）— 上智大学",desc:"2025年度秋学期 大学授業アンケートに基づきFD委員会により選出。2,000以上の選考対象科目の中から表彰され、上位約1%に相当する。担当科目「データサイエンスと人工知能の実践」（基盤教育センター、受講者31〜100名区分）。"},
+      {year:"2026年6月",title:"学生が選ぶGood Practice（GP）— 上智大学",desc:"2025年度秋学期 大学授業アンケートに基づきFD委員会により選出。2,300以上の選考対象科目の中から表彰され、上位約1%に相当する。担当科目「データサイエンスと人工知能の実践」。"},
       {year:"2025年4月",title:"年間最優秀社員賞 準グランプリ — ZOZOグループ",desc:"全役員へのプレゼン審査を含む複数回の選考を経て、1,700名以上の社員の中から上位10名に選出。"},
       {year:"2024年12月",title:"Best Paper Award — CIE51",desc:"国際会議 Computers and Industrial Engineering にて受賞。"},
       {year:"2024年11月",title:"最優秀賞 テクノロジー部門 — INTERSECTION 2024（LINEヤフーグループ）",desc:"グループ各社の役員へのプレゼン審査を含む複数回の審査を経て、INTERSECTION 2024（LINEヤフーグループ）のテクノロジー部門で最優秀賞を受賞（27,000名以上の社員の中から3名に選出）。"},
