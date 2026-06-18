@@ -147,7 +147,7 @@ createApp({
     const awards = computed(() => t.value["awards.items"] || []);
     const displayedAwards = computed(() => showAllAwards.value ? awards.value : awards.value.slice(0, 3));
     const media = computed(() => MEDIA);
-    const displayedMedia = computed(() => showAllMedia.value ? media.value : media.value.slice(0, 4));
+    const displayedMedia = computed(() => showAllMedia.value ? media.value : media.value.slice(0, 5));
 
     // ── Methods ──
     function toggleLang() {
