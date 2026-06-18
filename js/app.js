@@ -143,7 +143,7 @@ createApp({
     const talks = computed(() => TALKS);
     const displayedTalks = computed(() => showAllTalks.value ? talks.value : talks.value.slice(0, 3));
     const news = computed(() => t.value["news.items"] || []);
-    const displayedNews = computed(() => showAllNews.value ? news.value : news.value.slice(0, 4));
+    const displayedNews = computed(() => showAllNews.value ? news.value : news.value.slice(0, 5));
     const awards = computed(() => t.value["awards.items"] || []);
     const displayedAwards = computed(() => showAllAwards.value ? awards.value : awards.value.slice(0, 3));
     const media = computed(() => MEDIA);
