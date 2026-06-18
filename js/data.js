@@ -192,10 +192,10 @@ const TRANSLATIONS = {
     // News
     "news.title":"News",
     "news.items":[
-      {date:"Jun 2026",text:'Paper accepted at ECCV 2026.',isNew:true},
       {date:"Jun 2026",text:'My course "Practice of Data Science and Artificial Intelligence" (Fall 2025) was selected for the "Good Practice Selected by Students" (GP) award by the Sophia University FD Committee.',isNew:true},
-      {date:"Apr 2026",text:'Co-organized and spoke at <a href="https://layerx.connpass.com/event/388018/" target="_blank">Corporate R&D Meetup</a> with Mercari, LayerX, and CyberAgent on bridging research and production.',isNew:true},
-      {date:"Apr 2026",text:'Two papers accepted at <a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>.',isNew:true},
+      {date:"Jun 2026",text:'Paper accepted at ECCV 2026.',isNew:true},
+      {date:"Apr 2026",text:'Co-organized and spoke at <a href="https://layerx.connpass.com/event/388018/" target="_blank">Corporate R&D Meetup</a> with Mercari, LayerX, and CyberAgent on bridging research and production.',isNew:false},
+      {date:"Apr 2026",text:'Two papers accepted at <a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>.',isNew:false},
       {date:"Feb 2026",text:'Launched my personal website to share research and explore collaboration opportunities with diverse researchers and creators.',isNew:false},
       {date:"Feb 2026",text:'Two papers accepted at <a href="https://iclr.cc/" target="_blank">ICLR 2026</a>.',isNew:false},
       {date:"Oct 2025",text:'Paper accepted at <a href="https://colmweb.org/2025/" target="_blank">COLM 2025</a>.',isNew:false},
@@ -313,10 +313,10 @@ const TRANSLATIONS = {
     "pub.sort":"並び順","pub.sort.year":"新しい順","pub.sort.oldest":"古い順",
     "news.title":"ニュース",
     "news.items":[
-      {date:"2026年6月",text:'ECCV 2026に1本の論文が採択されました。',isNew:true},
       {date:"2026年6月",text:'上智大学にて2025年度秋学期担当科目「データサイエンスと人工知能の実践」が「学生が選ぶGood Practice」（GP）に選出されました。',isNew:true},
-      {date:"2026年4月",text:'Mercari・LayerX・CyberAgentと共同で<a href="https://layerx.connpass.com/event/388018/" target="_blank">企業R&D勉強会</a>を企画・登壇しました。',isNew:true},
-      {date:"2026年4月",text:'<a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>に2本の論文が採択されました。',isNew:true},
+      {date:"2026年6月",text:'ECCV 2026に1本の論文が採択されました。',isNew:true},
+      {date:"2026年4月",text:'Mercari・LayerX・CyberAgentと共同で<a href="https://layerx.connpass.com/event/388018/" target="_blank">企業R&D勉強会</a>を企画・登壇しました。',isNew:false},
+      {date:"2026年4月",text:'<a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>に2本の論文が採択されました。',isNew:false},
       {date:"2026年2月",text:'ホームページを開設しました。様々な分野の研究者やクリエイターの方々とのコラボレーション機会を探すことを目的としています。',isNew:false},
       {date:"2026年2月",text:'<a href="https://iclr.cc/" target="_blank">ICLR 2026</a>に2本の論文が採択されました。',isNew:false},
       {date:"2025年10月",text:'<a href="https://colmweb.org/2025/" target="_blank">COLM 2025</a>に論文が採択されました。',isNew:false},
