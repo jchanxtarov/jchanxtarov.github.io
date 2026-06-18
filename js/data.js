@@ -8,7 +8,7 @@ const PUBLICATIONS = [
   { title:"On Fairness of Task Arithmetic: The Role of Task Vectors", authors:["Laura Gomezjurado Gonzalez","Hiroki Naganuma","Kotaro Yoshida","Takafumi Horie","Yuji Naraki","Ryotaro Shimizu"], venue:"ICLR", year:2026, date:"May 2026", type:"conference", citations:0, links:{paper:"https://openreview.net/forum?id=B19MBDrvlM"} },
   { title:"DisTaC: Conditioning Task Vectors via Distillation for Robust Model Merging", authors:["Kotaro Yoshida","Yuji Naraki","Takafumi Horie","Ryotaro Shimizu","Ioannis Mitliagkas","Hiroki Naganuma"], venue:"ICLR", year:2026, date:"May 2026", type:"conference", citations:0, links:{paper:"https://arxiv.org/abs/2508.01148"} },
   { title:"Vision and Language Reference for a Segment Anything Model for Few-Shot Segmentation", authors:["Kosuke Sakurai","Ryotaro Shimizu","Masayuki Goto"], venue:"Journal of Imaging", year:2026, date:"Mar 2026", type:"journal", citations:0, links:{paper:"https://doi.org/10.3390/jimaging12040143"} },
-  { title:"Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback", authors:["Yuki Hirakawa","Takashi Wada","Ryotaro Shimizu","Takuya Furusawa","Yuki Saito","Ryosuke Araki","Tianwei Chen","Fan Mo","Yoshimitsu Aoki"], venue:"arXiv", year:2026, date:"Mar 2026", type:"preprint", citations:0, links:{paper:"https://arxiv.org/abs/2603.13057"} },
+  { title:"Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback", authors:["Yuki Hirakawa","Takashi Wada","Ryotaro Shimizu","Takuya Furusawa","Yuki Saito","Ryosuke Araki","Tianwei Chen","Fan Mo","Yoshimitsu Aoki"], venue:"ECCV", year:2026, date:"Sep 2026", type:"conference", citations:0, links:{paper:"https://arxiv.org/abs/2603.13057"} },
   { title:"Optimizing pre-training for multi-label classification via generalized target-aware source data selection", authors:["Kanyu Miyoshi","Ryotaro Shimizu","Linxin Song","Masayuki Goto"], venue:"Neurocomputing", year:2026, date:"Mar 2026", type:"journal", citations:0, links:{paper:"https://www.sciencedirect.com/science/article/pii/S0925231226008027"} },
   { title:"Masked Language Prompting for Generative Data Augmentation in Few-shot Fashion Style Recognition", authors:["Yuki Hirakawa","Ryotaro Shimizu"], venue:"CVPR Workshop", year:2026, date:"Jun 2026", type:"workshop", citations:0, links:{paper:"https://arxiv.org/abs/2504.19455"} },
   { title:"事業利用を目的としたファッション領域における視覚言語モデルの評価ベンチマークの設計と初期検討", authors:["サイ タウンカン","清水悠揮","桜井詩音","冨田勇人","佐々木北都","戸塚将","久保利彩","森本陽菜","川田心","宮園太貴","清水良太郎"], venue:"JSAI", year:2026, date:"Jun 2026", type:"domestic", citations:0, links:{} },
@@ -192,6 +192,7 @@ const TRANSLATIONS = {
     // News
     "news.title":"News",
     "news.items":[
+      {date:"Jun 2026",text:'Paper accepted at ECCV 2026.',isNew:true},
       {date:"Jun 2026",text:'My course "Practice of Data Science and Artificial Intelligence" (Fall 2025) was selected for the "Good Practice Selected by Students" (GP) award by the Sophia University FD Committee.',isNew:true},
       {date:"Apr 2026",text:'Co-organized and spoke at <a href="https://layerx.connpass.com/event/388018/" target="_blank">Corporate R&D Meetup</a> with Mercari, LayerX, and CyberAgent on bridging research and production.',isNew:true},
       {date:"Apr 2026",text:'Two papers accepted at <a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>.',isNew:true},
@@ -312,6 +313,7 @@ const TRANSLATIONS = {
     "pub.sort":"並び順","pub.sort.year":"新しい順","pub.sort.oldest":"古い順",
     "news.title":"ニュース",
     "news.items":[
+      {date:"2026年6月",text:'ECCV 2026に1本の論文が採択されました。',isNew:true},
       {date:"2026年6月",text:'上智大学にて2025年度秋学期担当科目「データサイエンスと人工知能の実践」が「学生が選ぶGood Practice」（GP）に選出されました。',isNew:true},
       {date:"2026年4月",text:'Mercari・LayerX・CyberAgentと共同で<a href="https://layerx.connpass.com/event/388018/" target="_blank">企業R&D勉強会</a>を企画・登壇しました。',isNew:true},
       {date:"2026年4月",text:'<a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>に2本の論文が採択されました。',isNew:true},
