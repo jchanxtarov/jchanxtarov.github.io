@@ -192,7 +192,7 @@ const TRANSLATIONS = {
     // News
     "news.title":"News",
     "news.items":[
-      {date:"Jun 2026",text:'My course "Practice of Data Science and Artificial Intelligence" (Fall 2025) was selected for the "Good Practice Selected by Students" (GP) award by the Sophia University FD Committee.',isNew:true},
+      {date:"Jun 2026",text:'My course "Practice of Data Science and Artificial Intelligence" (Fall 2025) was selected for the <a href="https://www.fd-sophia.jp/activity/survey/good_practice_260622_02.html" target="_blank">"Good Practice Selected by Students" (GP)</a> award by the Sophia University FD Committee.',isNew:true},
       {date:"Jun 2026",text:'Paper accepted at ECCV 2026.',isNew:true},
       {date:"May 2026",text:'Runner-up at a local ward tennis tournament.',isNew:false},
       {date:"Apr 2026",text:'Co-organized and spoke at <a href="https://layerx.connpass.com/event/388018/" target="_blank">Corporate R&D Meetup</a> with Mercari, LayerX, and CyberAgent on bridging research and production.',isNew:false},
@@ -314,7 +314,7 @@ const TRANSLATIONS = {
     "pub.sort":"並び順","pub.sort.year":"新しい順","pub.sort.oldest":"古い順",
     "news.title":"ニュース",
     "news.items":[
-      {date:"2026年6月",text:'上智大学にて2025年度秋学期担当科目「データサイエンスと人工知能の実践」が「学生が選ぶGood Practice」（GP）に選出されました。',isNew:true},
+      {date:"2026年6月",text:'上智大学にて2025年度秋学期担当科目「データサイエンスと人工知能の実践」が<a href="https://www.fd-sophia.jp/activity/survey/good_practice_260622_02.html" target="_blank">「学生が選ぶGood Practice」（GP）</a>に選出されました。',isNew:true},
       {date:"2026年6月",text:'ECCV 2026に1本の論文が採択されました。',isNew:true},
       {date:"2026年5月",text:'区民テニス大会で準優勝しました。',isNew:false},
       {date:"2026年4月",text:'Mercari・LayerX・CyberAgentと共同で<a href="https://layerx.connpass.com/event/388018/" target="_blank">企業R&D勉強会</a>を企画・登壇しました。',isNew:false},
@@ -428,6 +428,7 @@ const TALKS = [
 
 // ===== Media Data =====
 const MEDIA = [
+  { source:"Sophia University FD", title:"Good Practice Selected by Students — Fall 2025 Awards Ceremony", titleJa:"2025年度秋学期 「学生が選ぶGood Practice」表彰式が開催されました", url:"https://www.fd-sophia.jp/activity/survey/good_practice_260622_02.html", date:"Jun 2026" },
   { source:"ZOZO TECH BLOG", title:"JSAI 2026 Sponsorship and Participation Report", titleJa:"2026年度 人工知能学会全国大会（JSAI2026）協賛&参加レポート", url:"https://techblog.zozo.com/entry/jsai2026", date:"Jun 2026" },
   // 2026
   { source:"ZOZO NEXT", title:"ZOZO Research paper accepted at SIGIR 2026", titleJa:"ZOZO研究所の論文がSIGIR 2026に採択", url:"https://zozonext.com/news/20260520_zozoresearch", date:"May 2026" },
