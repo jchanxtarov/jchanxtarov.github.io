@@ -181,7 +181,7 @@ const TRANSLATIONS = {
     "hero.stat.pubs":"Publications","hero.stat.cit":"Citations",
     // About
     "about.title":"About",
-    "about.p1":"I specialize in translating business objectives into practical AI solutions. Recently, I have been particularly focused on <strong>improving productivity through AI in operations and workflows</strong> and on <strong>AI Safety</strong> for building trustworthy AI systems. As a foundation, I have research and development experience across a broad range of areas including <strong>explainable AI</strong>, <strong>large language models</strong>, <strong>recommender systems</strong>, and <strong>data analytics</strong>. I have a consistent interest in untangling ambiguous, open-ended problems with data and AI (Data &times; AI &times; Ambiguity).",
+    "about.p1":"I specialize in translating business objectives into practical AI solutions. Recently, I have been particularly focused on <strong>improving productivity through AI in operations and workflows</strong> and on <strong>AI Safety</strong> for building trustworthy AI systems. As a foundation, I have research and development experience across a broad range of areas including <strong>recommender and search systems</strong>, <strong>explainable AI</strong>, <strong>large language models</strong>, and <strong>business data analytics</strong>. I have a consistent interest in untangling ambiguous, open-ended problems with data and AI (Data &times; AI &times; Ambiguity).",
     "about.p2":"As Director at <a href='https://research.zozo.com/' target='_blank'>ZOZO Research</a>, I lead the ML R&amp;D group, driving service development and industry-academia research collaboration. Blessed with wonderful team members and collaborators, I have published numerous papers and my work has been featured in many media outlets.",
     "about.p3":"I am also passionate about education and mentoring, serving as a Part-time Lecturer at <a href='https://www.sophia.ac.jp/en/' target='_blank'>Sophia University</a> and a Visiting Research Fellow at <a href='https://www.waseda.jp/top/en/' target='_blank'>Waseda University</a>.",
     "about.interests":"Research Interests",
@@ -305,7 +305,7 @@ const TRANSLATIONS = {
     "hero.affil4":"博士（工学）",
     "hero.stat.pubs":"論文数","hero.stat.cit":"被引用数",
     "about.title":"概要",
-    "about.p1":"ビジネス目標を実用的なAIソリューションに変換することを専門としています。近年は特に、<strong>業務やワークフローへのAI活用による生産性向上</strong>と、信頼できるAIシステムを実現するための<strong>AI Safety</strong>に注力しています。その基盤として、<strong>説明可能なAI</strong>、<strong>大規模言語モデル</strong>、<strong>推薦システム</strong>、<strong>データ分析</strong>など、幅広い領域での研究開発の経験を持っています。答えが1つに定まらない曖昧な問題を、データとAIによってわかりやすくほぐしていくこと（データ &times; AI &times; 曖昧な問題）に一貫して関心を持っています。",
+    "about.p1":"ビジネス目標を実用的なAIソリューションに変換することを専門としています。近年は特に、<strong>業務やワークフローへのAI活用による生産性向上</strong>と、信頼できるAIシステムを実現するための<strong>AI Safety</strong>に注力しています。その基盤として、<strong>推薦・検索システム</strong>、<strong>説明可能なAI</strong>、<strong>大規模言語モデル</strong>、<strong>ビジネスデータ分析</strong>など、幅広い領域での研究開発の経験を持っています。答えが1つに定まらない曖昧な問題を、データとAIによってわかりやすくほぐしていくこと（データ &times; AI &times; 曖昧な問題）に一貫して関心を持っています。",
     "about.p2":"<a href='https://research.zozo.com/' target='_blank'>ZOZO研究所</a>のディレクターとして、ML R&amp;Dグループを率い、サービス開発や産学連携の研究を推進しています。素敵なメンバーや共同研究者に恵まれ、多数の論文を発表し、多数のメディアに取り上げられています。",
     "about.p3":"教育やメンタリングにも強い情熱を持ち、<a href='https://www.sophia.ac.jp/' target='_blank'>上智大学</a>の非常勤講師および<a href='https://www.waseda.jp/' target='_blank'>早稲田大学</a>の招聘研究員としての活動にも携わっています。",
     "about.interests":"研究分野",
