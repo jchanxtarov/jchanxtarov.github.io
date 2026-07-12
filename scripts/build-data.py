@@ -23,11 +23,30 @@ preprint), then 2023, 2022, …, with section comments emitted on year change.
 
 import csv
 import os
+from datetime import date
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
 DATA_DIR = os.path.join(ROOT_DIR, "data")
 OUTPUT = os.path.join(ROOT_DIR, "js", "data.js")
+
+MONTH_MAP = {
+    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
+    "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12,
+}
+
+
+def is_future(date_str):
+    """Return True if 'Mon YYYY' date_str refers to a month that has not yet started."""
+    if not date_str or not date_str.strip():
+        return False
+    parts = date_str.strip().split()
+    if len(parts) == 2 and parts[0] in MONTH_MAP:
+        m = MONTH_MAP[parts[0]]
+        y = int(parts[1])
+        today = date.today()
+        return (y, m) > (today.year, today.month)
+    return False
 
 
 def read_csv(filename):
@@ -55,6 +74,8 @@ def build_publications(rows):
     #    with no header (e.g. a 2026 preprint nested inside the 2026 block);
     #  - consecutive preprints with different years each get their own header.
     for row in rows:
+        if is_future(row.get("date", "")):
+            continue
         year = int(row["year"])
         if year != current_year:
             current_year = year
