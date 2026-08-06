@@ -268,6 +268,24 @@ function testJavaScriptContent() {
   } else {
     log('  ✗ localStorage is not used', 'red');
   }
+
+  // Test that formatAuthors bold-highlights the author regardless of trailing asterisks
+  const isMeMatch = app.match(/const\s+isMe\s*=\s*(.+)/);
+  if (isMeMatch) {
+    const isMeExpr = isMeMatch[1];
+    const stripsAsterisks = isMeExpr.includes('replace') && isMeExpr.includes('*');
+    if (assert(stripsAsterisks, 'formatAuthors isMe check should strip trailing asterisks before comparing')) {
+      log('  ✓ formatAuthors strips trailing asterisks before bold-highlighting author', 'green');
+    } else {
+      log('  ✗ formatAuthors does not strip trailing asterisks — "Ryotaro Shimizu*" will not be bolded', 'red');
+    }
+    const coversChinese = isMeExpr.includes('清水良太郎');
+    if (assert(coversChinese, 'formatAuthors isMe check should cover "清水良太郎"')) {
+      log('  ✓ formatAuthors bold-highlights "清水良太郎"', 'green');
+    } else {
+      log('  ✗ formatAuthors does not cover "清水良太郎"', 'red');
+    }
+  }
 }
 
 function loadDataFile() {
