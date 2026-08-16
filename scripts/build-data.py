@@ -74,7 +74,8 @@ def build_publications(rows):
     #    with no header (e.g. a 2026 preprint nested inside the 2026 block);
     #  - consecutive preprints with different years each get their own header.
     for row in rows:
-        if is_future(row.get("date", "")):
+        force = (row.get("force_public") or "").strip().lower() in ("1", "true", "yes")
+        if not force and is_future(row.get("date", "")):
             continue
         year = int(row["year"])
         if year != current_year:
