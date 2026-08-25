@@ -433,6 +433,8 @@ const TALKS = [
 
 // ===== Media Data =====
 const MEDIA = [
+  { source:"ZOZO TECH BLOG", title:"MIRU 2026 Participation Report", titleJa:"MIRU2026参加レポート", url:"https://techblog.zozo.com/entry/miru2026", date:"Aug 2026" },
+  { source:"ZOZO TECH BLOG", title:"SIGIR 2026 Participation Report", titleJa:"SIGIR 2026参加レポート", url:"https://techblog.zozo.com/entry/sigir2026", date:"Aug 2026" },
   { source:"Sophia University FD", title:"Good Practice Selected by Students — Fall 2025 Awards Ceremony", titleJa:"2025年度秋学期 「学生が選ぶGood Practice」表彰式が開催されました", url:"https://www.fd-sophia.jp/activity/survey/good_practice_260622_02.html", date:"Jun 2026" },
   { source:"ZOZO TECH BLOG", title:"JSAI 2026 Sponsorship and Participation Report", titleJa:"2026年度 人工知能学会全国大会（JSAI2026）協賛&参加レポート", url:"https://techblog.zozo.com/entry/jsai2026", date:"Jun 2026" },
   { source:"ZOZO NEXT", title:"ZOZO Research paper accepted at ECCV 2026", titleJa:"ZOZO研究所の論文がECCV 2026に採択", url:"https://zozonext.com/news/20260728_zozoresearch", date:"Jul 2026" },
