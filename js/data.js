@@ -140,7 +140,7 @@ const PUBLICATIONS = [
   { title:"Conditional StyleGAN2-adaによるユーザの属性情報を考慮した高評価画像の生成に関する研究", authors:["大池樹","清水良太郎","山下遥"], venue:"情報処理学会 第84回全国大会", year:2022, date:"Mar 2022", type:"domestic", citations:0, links:{} },
   { title:"ユーザの多様性を考慮したクラスタワイズ型機械学習モデルの提案とその解釈方法に関する研究", authors:["三池可奈","清水良太郎","山下遥"], venue:"情報処理学会 第84回全国大会", year:2022, date:"Mar 2022", type:"domestic", citations:0, links:{} },
   // ── 2021 ──
-  { title:"An Explainable Recommendation Framework Based on an Improved Knowledge Graph Attention Network with Massive Volumes of Side Information", authors:["Ryotaro Shimizu","Megumi Matsutani","Masayuki Goto"], venue:"Knowledge-Based Systems", year:2021, date:"Dec 2021", type:"journal", citations:86, links:{} },
+  { title:"An Explainable Recommendation Framework Based on an Improved Knowledge Graph Attention Network with Massive Volumes of Side Information", authors:["Ryotaro Shimizu","Megumi Matsutani","Masayuki Goto"], venue:"Knowledge-Based Systems", year:2021, date:"Dec 2021", type:"journal", citations:87, links:{} },
   { title:"外部ドメインデータを活用した潜在顧客発見に向けた取り組み", authors:["清水良太郎","柳圭祐"], venue:"CCSE", year:2021, date:"Dec 2021", type:"domestic", citations:0, links:{} },
   { title:"対照群のデータを考慮したTransformed outcome methodによるコンプライアーの予測とその評価に関する研究", authors:["夏堀雄太","清水良太郎","山下遥"], venue:"日本経営システム学会 第67回全国研究発表大会", year:2021, date:"Nov 2021", type:"domestic", citations:0, links:{} },
   { title:"A discussion on improving fraud detection performance by Generative Adversarial Networks Transactions", authors:["Guanyu Yang","Yuki Tsuboi","Ryotaro Shimizu","Gendo Kumoi","Masayuki Goto"], venue:"The 19th ANQ Congress", year:2021, date:"Oct 2021", type:"conference", citations:0, links:{} },
