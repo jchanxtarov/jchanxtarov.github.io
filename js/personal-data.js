@@ -779,6 +779,12 @@ const ACTIVITIES = {
       result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
     }
   ],
+  "2026-08-29": [
+    { sport:"swimming", emoji:"🏄",
+      focus:{ ja:"ー", en:"ー" },
+      result:{ ja:"ー", en:"ー" }, challenge:{ ja:"ー", en:"ー" }, next:{ ja:"ー", en:"ー" }
+    }
+  ],
   "2026-09-02": [
     { sport:"running", emoji:"\ud83c\udfc3",
       focus:{ ja:"\u30fc", en:"\u30fc" },
