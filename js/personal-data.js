@@ -738,7 +738,7 @@ const ACTIVITIES = {
     }
   ],
   "2026-08-11": [
-    { sport:"swimming", emoji:"\ud83c\udfc4",
+    { sport:"swimming", emoji:"\ud83c\udfca",
       focus:{ ja:"\u30fc", en:"\u30fc" },
       result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
     }
@@ -780,7 +780,7 @@ const ACTIVITIES = {
     }
   ],
   "2026-08-29": [
-    { sport:"swimming", emoji:"🏄",
+    { sport:"swimming", emoji:"🏊",
       focus:{ ja:"ー", en:"ー" },
       result:{ ja:"ー", en:"ー" }, challenge:{ ja:"ー", en:"ー" }, next:{ ja:"ー", en:"ー" }
     }
@@ -798,7 +798,7 @@ const ACTIVITIES = {
     }
   ],
   "2026-09-04": [
-    { sport:"swimming", emoji:"\ud83c\udfc4",
+    { sport:"swimming", emoji:"\ud83c\udfca",
       focus:{ ja:"\u30fc", en:"\u30fc" },
       result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
     }
@@ -808,7 +808,39 @@ const ACTIVITIES = {
       focus:{ ja:"\u30fc", en:"\u30fc" },
       result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
     },
-    { sport:"swimming", emoji:"\ud83c\udfc4",
+    { sport:"swimming", emoji:"\ud83c\udfca",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    }
+  ],
+  "2026-09-09": [
+    { sport:"running", emoji:"\ud83c\udfc3",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    }
+  ],
+  "2026-09-12": [
+    { sport:"swimming", emoji:"\ud83c\udfca",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    },
+    { sport:"tennis", emoji:"\ud83c\udfbe",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    },
+    { sport:"running", emoji:"\ud83c\udfc3",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    }
+  ],
+  "2026-09-13": [
+    { sport:"running", emoji:"\ud83c\udfc3",
+      focus:{ ja:"\u30fc", en:"\u30fc" },
+      result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
+    }
+  ],
+  "2026-09-15": [
+    { sport:"running", emoji:"\ud83c\udfc3",
       focus:{ ja:"\u30fc", en:"\u30fc" },
       result:{ ja:"\u30fc", en:"\u30fc" }, challenge:{ ja:"\u30fc", en:"\u30fc" }, next:{ ja:"\u30fc", en:"\u30fc" }
     }
