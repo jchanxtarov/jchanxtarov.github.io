@@ -3,6 +3,7 @@
 // Run: python scripts/build-data.py
 const PUBLICATIONS = [
   // ── 2026 ──
+  { title:"Transferring Visual Explainability from Self-Explaining to Prediction-Only Vision Transformers via Task Arithmetic", authors:["Yuya Yoshikawa","Ryotaro Shimizu","Takahiro Kawashima","Yuki Saito"], venue:"NeurIPS", year:2026, date:"Dec 2026", type:"conference", citations:0, links:{} },
   { title:"Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback", authors:["Yuki Hirakawa","Takashi Wada","Ryotaro Shimizu","Takuya Furusawa","Yuki Saito","Ryosuke Araki","Tianwei Chen","Fan Mo","Yoshimitsu Aoki"], venue:"ECCV", year:2026, date:"Sep 2026", type:"conference", citations:0, links:{paper:"https://arxiv.org/abs/2603.13057"} },
   { title:"Code2Figure: 学術論文における実装コードに基づくモデル図生成の初期検討", authors:["川田拓朗","守田竜梧","清水良太郎","渡邉洸","彌冨仁"], venue:"YANS", year:2026, date:"Sep 2026", type:"domestic", citations:0, links:{} },
   { title:"子どもにとって安全なLLMを目指して〜想定応答に対する人手評価とLLM-as-a-judgeの比較分析〜", authors:["野村瑛吉","杉山弘晃","黒田麻衣子","清水良太郎","高橋史","高見享佑","安藤祐介","中山功太","森辰則"], venue:"YANS", year:2026, date:"Sep 2026", type:"domestic", citations:0, links:{} },
@@ -197,6 +198,7 @@ const TRANSLATIONS = {
     // News
     "news.title":"News",
     "news.items":[
+      {date:"Dec 2026",text:'Paper accepted at NeurIPS 2026 (poster).',isNew:true},
       {date:"Sep 2026",text:'Visited Amazon Berlin, Zalando Research, and Max Planck Institute, giving presentations and holding discussions with researchers at each organization.',isNew:true},
       {date:"Sep 2026",text:'Gave an invited talk at DFKI (German Research Center for Artificial Intelligence) on data science for resolving fashion-specific ambiguity in the agentic commerce era.',isNew:true},
       {date:"Jun 2026",text:'My course "Practice of Data Science and Artificial Intelligence" (Fall 2025) was selected for the <a href="https://www.fd-sophia.jp/activity/survey/good_practice_260622_02.html" target="_blank">"Good Practice Selected by Students" (GP)</a> award by the Sophia University FD Committee.',isNew:true},
@@ -321,6 +323,7 @@ const TRANSLATIONS = {
     "pub.sort":"並び順","pub.sort.year":"新しい順","pub.sort.oldest":"古い順",
     "news.title":"ニュース",
     "news.items":[
+      {date:"2026年12月",text:'NeurIPS 2026に論文が採択されました（ポスター）。',isNew:true},
       {date:"2026年9月",text:'Amazon Berlin・Zalando Research・Max Planck Institute を訪問し、各所の研究者に向けたプレゼンテーションとディスカッションを行いました。',isNew:true},
       {date:"2026年9月",text:'DFKI（ドイツ人工知能研究所）にて招待講演を行いました。',isNew:true},
       {date:"2026年6月",text:'上智大学にて2025年度秋学期担当科目「データサイエンスと人工知能の実践」が<a href="https://www.fd-sophia.jp/activity/survey/good_practice_260622_02.html" target="_blank">「学生が選ぶGood Practice」（GP）</a>に選出されました。',isNew:true},
