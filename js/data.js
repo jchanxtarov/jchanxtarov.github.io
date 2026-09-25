@@ -327,7 +327,7 @@ const TRANSLATIONS = {
       {date:"2026年9月",text:'Amazon Berlin・Zalando Research・Max Planck Institute を訪問し、各所の研究者に向けたプレゼンテーションとディスカッションを行いました。',isNew:true},
       {date:"2026年9月",text:'DFKI（ドイツ人工知能研究所）にて招待講演を行いました。',isNew:true},
       {date:"2026年6月",text:'上智大学にて2025年度秋学期担当科目「データサイエンスと人工知能の実践」が<a href="https://www.fd-sophia.jp/activity/survey/good_practice_260622_02.html" target="_blank">「学生が選ぶGood Practice」（GP）</a>に選出されました。',isNew:false},
-      {date:"2026年6月",text:'ECCV 2026に1本の論文が採択されました。',isNew:false},
+      {date:"2026年6月",text:'ECCV 2026に論文が採択されました。',isNew:false},
       {date:"2026年5月",text:'区民テニス大会で準優勝しました。',isNew:false},
       {date:"2026年4月",text:'Mercari・LayerX・CyberAgentと共同で<a href="https://layerx.connpass.com/event/388018/" target="_blank">企業R&D勉強会</a>を企画・登壇しました。',isNew:false},
       {date:"2026年4月",text:'<a href="https://sigir2026.org/en-AU" target="_blank">SIGIR 2026</a>に2本の論文が採択されました。',isNew:false},
