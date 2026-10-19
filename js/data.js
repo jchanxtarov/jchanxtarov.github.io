@@ -198,9 +198,10 @@ const TRANSLATIONS = {
     // News
     "news.title":"News",
     "news.items":[
-      {date:"Sep 2026",text:'Paper accepted at NeurIPS 2026.',isNew:true},
-      {date:"Sep 2026",text:'Visited Amazon Berlin, Zalando Research, and Max Planck Institute, giving presentations and holding discussions with researchers at each organization.',isNew:true},
-      {date:"Sep 2026",text:'Gave an invited talk at DFKI (German Research Center for Artificial Intelligence) on data science for resolving fashion-specific ambiguity in the agentic commerce era.',isNew:true},
+      {date:"Oct 2026",text:'Won a local ward tennis tournament.',isNew:true},
+      {date:"Sep 2026",text:'Paper accepted at NeurIPS 2026.',isNew:false},
+      {date:"Sep 2026",text:'Visited Amazon Berlin, Zalando Research, and Max Planck Institute, giving presentations and holding discussions with researchers at each organization.',isNew:false},
+      {date:"Sep 2026",text:'Gave an invited talk at DFKI (German Research Center for Artificial Intelligence) on data science for resolving fashion-specific ambiguity in the agentic commerce era.',isNew:false},
       {date:"Jun 2026",text:'My course "Practice of Data Science and Artificial Intelligence" (Fall 2025) was selected for the <a href="https://www.fd-sophia.jp/activity/survey/good_practice_260622_02.html" target="_blank">"Good Practice Selected by Students" (GP)</a> award by the Sophia University FD Committee.',isNew:false},
       {date:"Jun 2026",text:'Paper accepted at ECCV 2026.',isNew:false},
       {date:"May 2026",text:'Runner-up at a local ward tennis tournament.',isNew:false},
@@ -323,9 +324,10 @@ const TRANSLATIONS = {
     "pub.sort":"並び順","pub.sort.year":"新しい順","pub.sort.oldest":"古い順",
     "news.title":"ニュース",
     "news.items":[
-      {date:"2026年9月",text:'NeurIPS 2026に論文が採択されました。',isNew:true},
-      {date:"2026年9月",text:'Amazon Berlin・Zalando Research・Max Planck Institute を訪問し、各所の研究者に向けたプレゼンテーションとディスカッションを行いました。',isNew:true},
-      {date:"2026年9月",text:'DFKI（ドイツ人工知能研究所）にて招待講演を行いました。',isNew:true},
+      {date:"2026年10月",text:'区民テニス大会で優勝しました。',isNew:true},
+      {date:"2026年9月",text:'NeurIPS 2026に論文が採択されました。',isNew:false},
+      {date:"2026年9月",text:'Amazon Berlin・Zalando Research・Max Planck Institute を訪問し、各所の研究者に向けたプレゼンテーションとディスカッションを行いました。',isNew:false},
+      {date:"2026年9月",text:'DFKI（ドイツ人工知能研究所）にて招待講演を行いました。',isNew:false},
       {date:"2026年6月",text:'上智大学にて2025年度秋学期担当科目「データサイエンスと人工知能の実践」が<a href="https://www.fd-sophia.jp/activity/survey/good_practice_260622_02.html" target="_blank">「学生が選ぶGood Practice」（GP）</a>に選出されました。',isNew:false},
       {date:"2026年6月",text:'ECCV 2026に論文が採択されました。',isNew:false},
       {date:"2026年5月",text:'区民テニス大会で準優勝しました。',isNew:false},
