@@ -1,6 +1,6 @@
 date,text,isNew
 Oct 2026,Won a local ward tennis tournament.,true
-Sep 2026,Paper accepted at NeurIPS 2026.,false
+Sep 2026,"Paper accepted at <a href=""https://neurips.cc/"" target=""_blank"">NeurIPS 2026</a>.",false
 Sep 2026,"Visited Amazon Berlin, Zalando Research, and Max Planck Institute, giving presentations and holding discussions with researchers at each organization.",false
 Sep 2026,Gave an invited talk at DFKI (German Research Center for Artificial Intelligence) on data science for resolving fashion-specific ambiguity in the agentic commerce era.,false
 Jun 2026,"My course ""Practice of Data Science and Artificial Intelligence"" (Fall 2025) was selected for the <a href=""https://www.fd-sophia.jp/activity/survey/good_practice_260622_02.html"" target=""_blank"">""Good Practice Selected by Students"" (GP)</a> award by the Sophia University FD Committee.",false

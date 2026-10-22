@@ -1,6 +1,6 @@
 date,text,isNew
 2026年10月,区民テニス大会で優勝しました。,true
-2026年9月,NeurIPS 2026に論文が採択されました。,false
+2026年9月,"<a href=""https://neurips.cc/"" target=""_blank"">NeurIPS 2026</a>に論文が採択されました。",false
 2026年9月,Amazon Berlin・Zalando Research・Max Planck Institute を訪問し、各所の研究者に向けたプレゼンテーションとディスカッションを行いました。,false
 2026年9月,DFKI（ドイツ人工知能研究所）にて招待講演を行いました。,false
 2026年6月,"上智大学にて2025年度秋学期担当科目「データサイエンスと人工知能の実践」が<a href=""https://www.fd-sophia.jp/activity/survey/good_practice_260622_02.html"" target=""_blank"">「学生が選ぶGood Practice」（GP）</a>に選出されました。",false
