@@ -4,6 +4,7 @@
 const PUBLICATIONS = [
   // ── 2026 ──
   { title:"Transferring Visual Explainability from Self-Explaining to Prediction-Only Vision Transformers via Task Arithmetic", authors:["Yuya Yoshikawa","Ryotaro Shimizu","Takahiro Kawashima","Yuki Saito"], venue:"NeurIPS", year:2026, date:"Dec 2026", type:"conference", citations:3, links:{} },
+  { title:"Is Human Review Still All You Need? Measuring Quality Perception in Qualitative Figures", authors:["Ryugo Morita","Takuro Kawada","Ko Watanabe","Ryotaro Shimizu","Andreas Dengel"], venue:"NeurIPS Workshop", year:2026, date:"Dec 2026", type:"workshop", citations:0, links:{} },
   { title:"Fashion E-Commerce Purchasing Simulation Using LLM Agents: A Model Enabling Trend Observation and Factor Analysis", authors:["Yuki Shibata","Ryotaro Shimizu","Haruka Yamashita"], venue:"ICECCME", year:2026, date:"Oct 2026", type:"conference", citations:0, links:{} },
   { title:"Preference Is Not Permission: Personalizing the Auto-Purchase Line in Agentic Commerce", authors:["Ryotaro Shimizu","Sai HtaungKham","Mo Fan"], venue:"arXiv", year:2026, date:"Oct 2026", type:"preprint", citations:0, links:{paper:"https://arxiv.org/abs/2610.29216"} },
   { title:"Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback", authors:["Yuki Hirakawa","Takashi Wada","Ryotaro Shimizu","Takuya Furusawa","Yuki Saito","Ryosuke Araki","Tianwei Chen","Fan Mo","Yoshimitsu Aoki"], venue:"ECCV", year:2026, date:"Sep 2026", type:"conference", citations:1, links:{paper:"https://arxiv.org/abs/2603.13057"} },
@@ -200,7 +201,8 @@ const TRANSLATIONS = {
     // News
     "news.title":"News",
     "news.items":[
-      {date:"Oct 2026",text:'Won a local ward tennis tournament.',isNew:true},
+      {date:"Nov 2026",text:'Completed my first full marathon.',isNew:true},
+      {date:"Oct 2026",text:'Won a local ward tennis tournament.',isNew:false},
       {date:"Sep 2026",text:'Paper accepted at <a href="https://neurips.cc/" target="_blank">NeurIPS 2026</a>.',isNew:false},
       {date:"Sep 2026",text:'Visited Amazon Berlin, Zalando Research, and Max Planck Institute, giving presentations and holding discussions with researchers at each organization.',isNew:false},
       {date:"Sep 2026",text:'Gave an invited talk at DFKI (German Research Center for Artificial Intelligence) on data science for resolving fashion-specific ambiguity in the agentic commerce era.',isNew:false},
@@ -326,7 +328,8 @@ const TRANSLATIONS = {
     "pub.sort":"並び順","pub.sort.year":"新しい順","pub.sort.oldest":"古い順",
     "news.title":"ニュース",
     "news.items":[
-      {date:"2026年10月",text:'区民テニス大会で優勝しました。',isNew:true},
+      {date:"2026年11月",text:'フルマラソンに初挑戦し、完走しました。',isNew:true},
+      {date:"2026年10月",text:'区民テニス大会で優勝しました。',isNew:false},
       {date:"2026年9月",text:'<a href="https://neurips.cc/" target="_blank">NeurIPS 2026</a>に論文が採択されました。',isNew:false},
       {date:"2026年9月",text:'Amazon Berlin・Zalando Research・Max Planck Institute を訪問し、各所の研究者に向けたプレゼンテーションとディスカッションを行いました。',isNew:false},
       {date:"2026年9月",text:'DFKI（ドイツ人工知能研究所）にて招待講演を行いました。',isNew:false},
