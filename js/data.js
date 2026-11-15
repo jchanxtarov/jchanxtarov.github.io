@@ -96,7 +96,7 @@ const PUBLICATIONS = [
   { title:"大規模画像言語モデルを用いた領域埋め込みによる画像分類手法に関する一考察", authors:["櫻井洸介","石井達也","清水良太郎","宋林鑫","後藤正幸"], venue:"JSAI", year:2024, date:"May 2024", type:"domestic", citations:0, links:{} },
   { title:"不確実性が高い事象の確率的予測と解釈を可能とするGaussian-SAINTの提案", authors:["更家嘉介","磯村時将","清水良太郎","後藤正幸"], venue:"JSAI", year:2024, date:"May 2024", type:"domestic", citations:0, links:{} },
   { title:"商品階層を自動構造化するトピックモデルの提案と小売販売データ分析への適用", authors:["藤田梓子","清水良太郎","石井達也","磯村時将","米田安希子","後藤正幸"], venue:"データ解析コンペティション 決勝大会", year:2024, date:"Mar 2024", type:"domestic", citations:0, links:{} },
-  { title:"On permutation-invariant neural networks", authors:["Masanari Kimura","Ryotaro Shimizu","Yuki Hirakawa","Ryosuke Goto","Yuki Saito"], venue:"arXiv", year:2024, date:"Mar 2024", type:"preprint", citations:29, links:{paper:"https://arxiv.org/abs/2403.17410"} },
+  { title:"On permutation-invariant neural networks", authors:["Masanari Kimura","Ryotaro Shimizu","Yuki Hirakawa","Ryosuke Goto","Yuki Saito"], venue:"arXiv", year:2024, date:"Mar 2024", type:"preprint", citations:30, links:{paper:"https://arxiv.org/abs/2403.17410"} },
   { title:"商品階層を自動構造化するトピックモデルの提案と小売販売データ分析への適用", authors:["藤田梓子","清水良太郎","石井達也","磯村時将","米田安希子","後藤正幸"], venue:"データ解析コンペティション JIMA予選会", year:2024, date:"Feb 2024", type:"domestic", citations:0, links:{} },
   { title:"Effectiveness Verification Framework for Coupon Distribution Marketing Measure Considering Users' Potential Purchase Intentions", authors:["Akiko Yoneda","Ryotaro Shimizu","Shion Sakurai","Makoto Kawata","Haruka Yamashita","Masayuki Goto"], venue:"Cogent Engineering", year:2024, date:"Jan 2024", type:"journal", citations:3, links:{paper:"https://www.tandfonline.com/doi/full/10.1080/23311916.2024.2307718"} },
   // ── 2023 ──
