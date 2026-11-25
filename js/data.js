@@ -202,6 +202,7 @@ const TRANSLATIONS = {
     // News
     "news.title":"News",
     "news.items":[
+      {date:"Nov 2026",text:'Gave an invited talk at the <a href="https://www.datascientist.or.jp/symp/2026/" target="_blank">Data Scientist Association 13th Symposium</a> on data science in the era of AI agents.',isNew:true},
       {date:"Nov 2026",text:'Completed my first full marathon.',isNew:true},
       {date:"Oct 2026",text:'Won a <a href="https://chiyoda-tennis.jp/result/2026autumn_result/" target="_blank">local ward tennis tournament</a>.',isNew:false},
       {date:"Sep 2026",text:'Paper accepted at <a href="https://neurips.cc/" target="_blank">NeurIPS 2026</a>.',isNew:false},
@@ -329,6 +330,7 @@ const TRANSLATIONS = {
     "pub.sort":"並び順","pub.sort.year":"新しい順","pub.sort.oldest":"古い順",
     "news.title":"ニュース",
     "news.items":[
+      {date:"2026年11月",text:'<a href="https://www.datascientist.or.jp/symp/2026/" target="_blank">データサイエンティスト協会 第13回シンポジウム</a>にて招待講演を行いました。',isNew:true},
       {date:"2026年11月",text:'フルマラソンに初挑戦し、完走しました。',isNew:true},
       {date:"2026年10月",text:'<a href="https://chiyoda-tennis.jp/result/2026autumn_result/" target="_blank">区民テニス大会</a>で優勝しました。',isNew:false},
       {date:"2026年9月",text:'<a href="https://neurips.cc/" target="_blank">NeurIPS 2026</a>に論文が採択されました。',isNew:false},
