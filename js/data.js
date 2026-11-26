@@ -453,6 +453,8 @@ const TALKS = [
 
 // ===== Media Data =====
 const MEDIA = [
+  { source:"ZOZO NEXT", title:"Joint research with CIT accepted at NeurIPS 2026", titleJa:"千葉工業大学とZOZO研究所の共同研究が機械学習分野のトップカンファレンス「NeurIPS 2026」に採択", url:"https://zozonext.com/news/20261125_zozoresearch_neurips", date:"Nov 2026" },
+  { source:"ZOZO NEXT", title:"ZOZO NEXT and DFKI begin joint research on AI-driven R&D automation", titleJa:"ZOZO NEXTとドイツ人工知能研究センター（DFKI）、AIで研究開発の各工程を自動化する共同研究を開始", url:"https://zozonext.com/news/20261028_zozoresearch-dfki", date:"Oct 2026" },
   { source:"ZOZO TECH BLOG", title:"MIRU 2026 Participation Report", titleJa:"MIRU2026参加レポート", url:"https://techblog.zozo.com/entry/miru2026", date:"Aug 2026" },
   { source:"ZOZO TECH BLOG", title:"SIGIR 2026 Participation Report", titleJa:"SIGIR 2026参加レポート", url:"https://techblog.zozo.com/entry/sigir2026", date:"Aug 2026" },
   { source:"Sophia University FD", title:"Good Practice Selected by Students — Fall 2025 Awards Ceremony", titleJa:"2025年度秋学期 「学生が選ぶGood Practice」表彰式が開催されました", url:"https://www.fd-sophia.jp/activity/survey/good_practice_260622_02.html", date:"Jun 2026" },
